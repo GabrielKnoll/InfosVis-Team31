@@ -59,6 +59,7 @@ d3.json("./optimizedGermanStates.json", function(data) {
       .enter()
     .append("path")
       .attr("class", "feature")
+      .attr("class", "bundesland")
       .attr("id", setID) // ID-Zuweisung um später Bundesländer anzusteuern
       .attr("d", geoPath)
       .on("click", clickPath);

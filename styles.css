@@ -10,11 +10,9 @@
   stroke-width: 1.25px;
   opacity: 0.85;
 }
-
-/* Bundesländer mit mouseover ansteuern:
-#Bayern:hover{
-  fill: blue;
-} */
+.bundesland:hover{
+  fill: #B2B2B2;
+}
 
 
 #states .active {
