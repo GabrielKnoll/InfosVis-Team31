@@ -12,6 +12,3 @@ For our project we use vanilla HTML, CSS, JS, and D3.js for our visualizations.
 - Gabriel Knoll 
 - Zahra Saremi 
 - Lukas Bormann
-
-
-This is a test
