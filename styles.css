@@ -1,0 +1,28 @@
+.background {
+  fill: none;
+  stroke-width: 3.5px;
+  pointer-events: all;
+}
+
+#states {
+  fill: lightgrey;
+  stroke: #fff;
+  stroke-width: 1.25px;
+  opacity: 0.85;
+}
+
+/* Bundesländer mit mouseover ansteuern:
+#Bayern:hover{
+  fill: blue;
+} */
+
+
+#states .active {
+  fill: grey;
+}
+
+.graticuleLine {
+  fill: none;
+  stroke: #777;
+  stroke-width: 0.5px;
+}
