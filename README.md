@@ -6,7 +6,6 @@ To visualize this impact, we answer two questions in our visualization:
 
 For our project we use vanilla HTML, CSS, JS, and D3.js for our visualizations.
 
-Testing something
 ## Team Members
 - Christina Trossen
 - Nicolas Käufl
