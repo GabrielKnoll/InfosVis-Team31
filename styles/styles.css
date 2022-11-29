@@ -14,7 +14,6 @@
   fill: #B2B2B2;
 }
 
-
 #states .active {
   fill: grey;
 }
@@ -23,4 +22,11 @@
   fill: none;
   stroke: #777;
   stroke-width: 0.5px;
+}
+
+.mouseoverBox{
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: red;
 }

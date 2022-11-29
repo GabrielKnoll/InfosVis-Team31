@@ -23,7 +23,7 @@ var g = svg.append("g")
 
 
 // Hier laden wir Deutschland + Bundesländer aus der lokalen JSON und verarbeiten diese
-d3.json("./optimizedGermanStates.json", function(data) {
+d3.json("./json/optimizedGermanStates.json", function(data) {
 
   // Einstellen der Bounding Box
   var bounds = d3.geoBounds(data),
@@ -63,6 +63,19 @@ d3.json("./optimizedGermanStates.json", function(data) {
       .attr("id", setID) // ID-Zuweisung um später Bundesländer anzusteuern
       .attr("d", geoPath)
       .on("click", clickPath);
+
+//Idee
+  g.selectAll("path.feature")
+        .data(data.features)
+        .enter()
+      .append('div')
+      .attr('class', 'mouseoverBox')
+      .attr('id', function setMouseOverID(d){
+        return d.properties.name+'-Mouseover';
+      });
+//
+
+
 
   // Return der Bundesländer-Namen aus der JSON Datei
   function setID(d){
