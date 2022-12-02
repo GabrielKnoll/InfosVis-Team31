@@ -1,3 +1,42 @@
+*{
+  box-sizing: border-box;
+  font-family: "Proximanova Regular";
+  font-size: 16px;
+}
+@font-face {
+  font-family: "Proximanova Light";
+  src: url("../fonts/proximanova-light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proximanova Regular";
+  src: url("../fonts/proximanova-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proximanova SemiBold";
+  src: url("../fonts/proximanova-semibold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proximanova Bold";
+  src: url("../fonts/proximanova-bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proximanova ExtraBold";
+  src: url("../fonts/proximanova-extrabld.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h3{
+  font-family: Proximanova Regular;
+}
 .background {
   fill: none;
   stroke-width: 3.5px;
@@ -5,28 +44,195 @@
 }
 
 #states {
-  fill: lightgrey;
-  stroke: #fff;
-  stroke-width: 1.25px;
-  opacity: 0.85;
+  stroke: white;
+  stroke-width: 0px;
+}
+.bundesland{
+  shape-rendering: crispEdges;
 }
 .bundesland:hover{
-  fill: #B2B2B2;
+  stroke: white;
+  stroke-linejoin: bevel;
+  stroke-width: 2px;
+  filter: brightness(1.1);
 }
 
 #states .active {
-  fill: grey;
+  stroke: #BCCEF8;
+  stroke-linejoin: bevel;
+  stroke-width: 3.5px;
+  filter: brightness(1.1);
 }
 
 .graticuleLine {
   fill: none;
-  stroke: #777;
-  stroke-width: 0.5px;
+  stroke: none;
 }
 
 .mouseoverBox{
-  display: block;
-  width: 100px;
-  height: 100px;
-  background-color: red;
+  position: absolute;
+  pointer-events: none;
+  display: none;
+  width: auto;
+  height: 110px;
+  background-color: white;
+  box-shadow: 0px 1px 4px lightgrey;
+  border-radius: 15px;
+  -webkit-animation:fadeIn 0.7s;
+  animation: fadeIn 0.7s;
+
+}
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.heatmap-container{
+  position: relative;
+}
+
+#BAYERN-Mouseover{
+  left: 420px;
+  top: 520px;
+}
+#BADEN-WÜTTEMBERG-Mouseover{
+  left: 320px;
+  top: 550px;
+}
+#SACHSEN-Mouseover{
+  left: 480px;
+  top: 410px;
+}
+#THÜRINGEN-Mouseover{
+  left: 380px;
+  top: 420px;
+}
+#RHEINLAND-PFALZ-Mouseover{
+  left: 230px;
+  top: 480px;
+}
+#SAARLAND-Mouseover{
+  left: 210px;
+  top: 520px;
+}
+#HESSEN-Mouseover{
+  left: 310px;
+  top: 420px;
+}
+#SACHSEN-ANHALT-Mouseover{
+  left: 410px;
+  top: 350px;
+}
+#BRANDENBURG-Mouseover{
+  left: 490px;
+  top: 320px;
+}
+#BERLIN-Mouseover{
+  left: 470px;
+  top: 325px;
+}
+#MECKLENBURG-VORPOMMERN-Mouseover{
+  left: 440px;
+  top: 230px;
+}
+#SCHLESWIG-HOLSTEIN-Mouseover{
+  left: 320px;
+  top: 200px;
+}
+#HAMBURG-Mouseover{
+  left: 340px;
+  top: 255px;
+}
+#NIEDERSACHSEN-Mouseover{
+  left: 320px;
+  top: 270px;
+}
+#BREMEN-Mouseover{
+  left: 290px;
+  top: 285px;
+}
+#NORDRHEIN-WESTFALEN-Mouseover{
+  left: 250px;
+  top: 355px;
+}
+
+.revenue-reduction-state-name{
+  padding: 15px 10px 0px 10px;
+  font-size: 17px;
+  font-family: Proximanova SemiBold;
+  margin: 0px;
+}
+.revenue-reduction-state-signature{
+  font-family: Proximanova Regular;
+  font-style: italic;
+  font-size: 15px;
+  padding: 0px 10px 5px 10px;
+  margin: 0px;
+}
+.revenue-reduction-description-one,.revenue-reduction-description-two {
+  font-family: Proximanova Light;
+  font-size: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px 10px 0px 10px;
+}
+.revenue-reduction-description-two {
+  padding-bottom: 15px;
+}
+
+#Hessen{
+  fill: #CDA1AB;
+}
+#Brandenburg{
+  fill: #B77F89;
+}
+#Niedersachen{
+  fill: #B4727F;
+}
+#Thüringen{
+  fill: #C18B96;
+}
+#Saarland{
+  fill: #9F4F5E;
+}
+#Sachsen-Anhalt{
+  fill: #E8D0D4;
+}
+#Schleswig-Holstein{
+  fill: #DAB9C0;
+}
+#Nordrhein-Westfalen{
+  fill: #DAB9C0;
+}
+#Niedersachsen{
+  fill: #B4727F;
+}
+#Baden-Württemberg{
+  fill: #C698A1;
+}
+#Rheinland-Pfalz{
+  fill: #B77F89;
+}
+#Bayern{
+  fill: #8F3748;
+}
+#Sachsen{
+  fill: #A75B68;
+}
+#Berlin{
+  fill: #8A2A3E;
+}
+#Mecklenburg-Vorpommern{
+  fill: #9F4F5E;
+}
+#Hamburg{
+fill: #8A2A3E;
+}
+#Bremen{
+  fill: #8A2A3E;
 }
