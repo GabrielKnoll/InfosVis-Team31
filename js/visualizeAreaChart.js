@@ -1,5 +1,5 @@
 // Set the dimensions and margins of the graph
-var margin = {top: 30, right: 40, bottom: 30, left: 60},
+var margin = {top: 10, right: 10, bottom: 30, left: 30},
     width = 640 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -38,72 +38,59 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
   function(data) {
 
         // Keep only the 90 first rows
-      data = data.filter(function(d,i){ return i>=90})
+      data = data.filter(function(d,i){ return i>90}).filter(function(value, index, Arr) {
+        return index % 100 == 0;
+    });
 
     // Add X axis --> it is a date format
     var x = d3.scaleTime()
-      .domain(d3.extent(data, function(d) { return d.date; }))
+      .domain(d3.extent(data, d => d.date))
       .range([ 0, width ]);
     svg.append("g")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x)
-        .ticks(5)
-        .tickSizeOuter(0)        
+      .attr("transform", `translate(0, ${height})`)
+      .call(d3.axisBottom(x)      
         .ticks(d3.timeMonth.every(3))
-        .tickFormat(d => d <= d3.timeYear(d) ? d.getFullYear() : null)); 
+        .tickFormat(d => d <= d3.timeYear(d) ? d.getFullYear() : null))
+ ; 
 
     // Add Y axis
     var y = d3.scaleLinear()
-      .domain( d3.extent(data, function(d) { return +d.value; }) )
+      .domain( d3.extent(data, d => +d.value ))
       .range([ height, 0 ]);
     svg.append("g")
-      .attr("transform", "translate(0,0)")
-      .call(d3.axisLeft(y).ticks(7).tickSizeOuter(0));
-
-    // Add labels
-    svg.call(g => g.append("text")
-      .attr("x", -5)
-      .attr("y", -10)
-      .attr("fill", "currentColor")
-      .attr("text-anchor", "start")
-      .text("yLabel")); //TODO update label
-
-    svg.call(g => g.append("text")
-      .attr("x", width + 10)
-      .attr("y", height + 5)
-      .attr("fill", "currentColor")
-      .attr("text-anchor", "start")
-      .text("Jahr"));
-
-    // Add helper lines
-    svg.call(g => g.selectAll(".tick line").clone()
-    .attr("x2", width)
-    .attr("stroke-opacity", 0.1))
-
-    // Red covid line
-    svg.append("line")
-    .attr("x1",x(new Date("2017-01-01")))  //<<== change your code here
-    .attr("y1", 0)
-    .attr("x2", x(new Date("2017-01-01")))  //<<== and here
-    .attr("y2", height)
-    .style("stroke-width", 2)
-    .style("stroke", "red")
-    .style("stroke-dasharray", 7)
-    .style("fill", "none");
-
-    // Red covid area
-    svg.append('rect')
-    .attr('x', x(new Date("2017-01-01")))
-    .attr('y', 0)
-    .attr('width', x(new Date("2017-01-01")))
-    .attr('height', height)
-    .attr('fill', 'red')
-    .attr("fill-opacity", .05);
+      .attr("transform", `translate(0, 0)`)
+    .call(d3.axisRight(y)
+        .tickSize(width)
+        .tickFormat(formatTick))
+          .call(g => g.select(".domain").remove())
+          .call(g => g.selectAll(".tick line")
+              .attr("stroke-opacity", 0.5)
+              .attr("stroke-dasharray", "2,2"))
+          .call(g => g.selectAll(".tick text")
+              .attr("x", 4)
+              .attr("dy", -4));
+    
+    // Set the gradient
+    svg.append("linearGradient")
+    .attr("id", "area-gradient")
+    .attr("gradientUnits", "userSpaceOnUse")
+    .attr("x1", x(0))
+    .attr("y1", "50%")
+    .attr("x2", x(0))
+    .attr("y2", "00%")
+    .selectAll("stop")
+      .data([
+        {offset: "0%", color: "transparent"},
+        {offset: "50%", color: "#2798e9"}
+      ])
+    .enter().append("stop")
+      .attr("offset", function(d) { return d.offset; })
+      .attr("stop-color", function(d) { return d.color; });
 
     // Add the area
     svg.append("path")
       .datum(data)
-      .attr("fill", "#2798e9")
+      .attr("fill", "url(#area-gradient)")
       .attr("fill-opacity", .1)
       .attr("stroke", "none")
       .attr("d", d3.area()
@@ -134,7 +121,49 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
         .attr("cy", d => y(d.value))
         .attr("r", 5)
 
+    // Red covid line
+    svg.append("line")
+    .attr("x1",x(new Date("2017-01-01")))  //<<== change your code here
+    .attr("y1", 0)
+    .attr("x2", x(new Date("2017-01-01")))  //<<== and here
+    .attr("y2", height)
+    .style("stroke-width", 2)
+    .style("stroke", "#bd4b57")
+    .style("stroke-dasharray", 7)
+    .style("fill", "none");
+
+    // Set the gradient
+    svg.append("linearGradient")
+    .attr("id", "red-gradient")
+    .attr("gradientUnits", "userSpaceOnUse")
+    .attr("x1", 0)
+    .attr("y1", "90%")
+    .attr("x2", 0)
+    .attr("y2", 0)
+    .selectAll("stop")
+      .data([
+        {offset: "0%", color: "#bd4b57"},
+        {offset: "50%", color: "transparent"}
+      ])
+    .enter().append("stop")
+      .attr("offset", function(d) { return d.offset; })
+      .attr("stop-color", function(d) { return d.color; });
+
+    // Red covid area
+    svg.append('rect')
+    .attr('x', x(new Date("2017-01-01")))
+    .attr('y', 0)
+    .attr('width', width - x(new Date("2017-01-01")))
+    .attr('height', height)
+    .attr('fill', 'url(#red-gradient)')
+    .attr('fill-opacity', .3);
+
 })
 
 
 //TODO show value when hovering over point
+
+function formatTick(d) {
+  const s = (d / 1e3).toFixed(1);
+  return this.parentNode.nextSibling ? `\xa0${s}` : `${s} Mrd €`;
+}
