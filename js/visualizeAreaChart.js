@@ -40,22 +40,44 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
   // Now I can use this dataset:
   function(data) {
 
+        // Keep only the 90 first rows
+      data = data.filter(function(d,i){ return i<90})
+
     // Add X axis --> it is a date format
     var x = d3.scaleTime()
       .domain(d3.extent(data, function(d) { return d.date; }))
       .range([ 0, width ]);
     svg.append("g")
-      .attr("transform", "translate(0," + (height+5) + ")")
-      .call(d3.axisBottom(x).ticks(5).tickSizeOuter(0));
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x).ticks(5).tickSizeOuter(0)); 
 
     // Add Y axis
     var y = d3.scaleLinear()
       .domain( d3.extent(data, function(d) { return +d.value; }) )
       .range([ height, 0 ]);
     svg.append("g")
-      .attr("transform", "translate(-5,0)")
+      .attr("transform", "translate(0,0)")
       .call(d3.axisLeft(y).tickSizeOuter(0));
 
+    // Add labels
+    svg.call(g => g.append("text")
+      .attr("x", 10)
+      .attr("y", margin.top + 10)
+      .attr("fill", "currentColor")
+      .attr("text-anchor", "start")
+      .text("yLabel")); //TODO update label
+
+    svg.call(g => g.append("text")
+      .attr("x", width + 10)
+      .attr("y", height + 5)
+      .attr("fill", "currentColor")
+      .attr("text-anchor", "start")
+      .text("Jahr"));
+
+    // Add helper lines
+    svg.call(g => g.selectAll(".tick line").clone()
+    .attr("x2", width)
+    .attr("stroke-opacity", 0.1))
 
     // Red covid line
     svg.append("line")
@@ -109,7 +131,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
         .attr("stroke", "none")
         .attr("cx", d => x(d.date))
         .attr("cy", d => y(d.value))
-        .attr("r", 4)
+        .attr("r", 5)
 
 })
 
