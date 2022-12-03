@@ -1,5 +1,5 @@
 // Set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 30, left: 60},
+var margin = {top: 30, right: 40, bottom: 30, left: 60},
     width = 640 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -13,13 +13,10 @@ var margin = {top: 10, right: 30, bottom: 30, left: 60},
 var svg = d3.select("#dataviz_areaplot")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom);
-
-var g = svg.append("g")
+    .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform",
-    "translate(" + margin.left + "," + margin.top + ")")
-    ;
+        "translate(" + margin.left + "," + margin.top + ")");
 
 
 // Read the data
@@ -41,7 +38,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
   function(data) {
 
         // Keep only the 90 first rows
-      data = data.filter(function(d,i){ return i<90})
+      data = data.filter(function(d,i){ return i>=90})
 
     // Add X axis --> it is a date format
     var x = d3.scaleTime()
@@ -49,7 +46,11 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
       .range([ 0, width ]);
     svg.append("g")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x).ticks(5).tickSizeOuter(0)); 
+      .call(d3.axisBottom(x)
+        .ticks(5)
+        .tickSizeOuter(0)        
+        .ticks(d3.timeMonth.every(3))
+        .tickFormat(d => d <= d3.timeYear(d) ? d.getFullYear() : null)); 
 
     // Add Y axis
     var y = d3.scaleLinear()
@@ -57,12 +58,12 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
       .range([ height, 0 ]);
     svg.append("g")
       .attr("transform", "translate(0,0)")
-      .call(d3.axisLeft(y).tickSizeOuter(0));
+      .call(d3.axisLeft(y).ticks(7).tickSizeOuter(0));
 
     // Add labels
     svg.call(g => g.append("text")
-      .attr("x", 10)
-      .attr("y", margin.top + 10)
+      .attr("x", -5)
+      .attr("y", -10)
       .attr("fill", "currentColor")
       .attr("text-anchor", "start")
       .text("yLabel")); //TODO update label
