@@ -283,7 +283,7 @@ function clickPath(d) {
 
   function changeEuro()
   {
-  document.body.style.backgroundImage = "url(img/bg-euro.png)";
+  document.body.style.backgroundImage = "url(img/bg-euros.png)";
   }
   
   function changeEmployee()
