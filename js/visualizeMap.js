@@ -277,3 +277,21 @@ function clickPath(d) {
   g.selectAll("path")
       .classed("active", focused && function(d) { return d === focused; });
 }
+
+
+//onButtonClick-Funktionen()
+
+  function changeEuro()
+  {
+  document.body.style.backgroundImage = "url(img/bg-euro.png)";
+  }
+  
+  function changeEmployee()
+  {
+  document.body.style.backgroundImage = "url(img/bg-employees.png)";
+  }
+  
+  function changeInsolvency()
+  {
+  document.body.style.backgroundImage = "url(img/bg-insolvencies.png)";
+  }
