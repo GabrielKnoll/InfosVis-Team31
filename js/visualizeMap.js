@@ -1,6 +1,6 @@
 // Hier können wir die Größe der Heatmap einstellen
-var width = 700,
-    height = 540,
+var width = 500,
+    height = 460,
     focused = null,
     geoPath;
 

@@ -95,6 +95,7 @@ overflow: hidden;
 }
 
 .mouseoverBox{
+  z-index: 2;
   position: absolute;
   pointer-events: none;
   display: none;
@@ -119,11 +120,14 @@ overflow: hidden;
 }
 
 .heatmap-container{
+  width: 500px;
+  margin-left:auto;
+  margin-right: auto;
   position: relative;
 }
 
 .heatmap-section {
-  width:760px; 
+  width:auto;
   height: 550px; 
   margin-top: -50px;
 }
@@ -299,10 +303,6 @@ html{
 }
 
 /*LEGENDE*/
-
-.legende {
-  margin-top:50px;
-}
 
 .legend-position {
   margin-right: 20px; 
