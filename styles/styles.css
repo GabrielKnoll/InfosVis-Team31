@@ -289,6 +289,7 @@ html{
   color: grey; 
   text-align: center; 
   text-decoration: underline;
+  margin-top: 3%;
 }
 
 /*Abtrennungslinie unter Überschriften*/
@@ -486,6 +487,7 @@ margin-top: 5px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.40);
   background-color:#F8F8F8;
 }
+
 
 #reset {
   align-items: right;
