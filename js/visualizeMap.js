@@ -224,22 +224,22 @@ for(let i = 0; i<= STATES.length; i++ ){
       .attr('class', 'mouseoverBox')
       .attr('id', STATES[i]+"-Mouseover");
 }
-var bayernInfo = ["BAYERN","#3 der größten Umsatzeinbusen","Umsatzeinbußen: 7.319.757.000€", "Vorjahresvergleich: -36,0%" ];
-var badenWüttembergInfo = ["BADEN-WÜTTEMBERG","#7 der größten Umsatzeinbusen","Umsatzeinbußen: 3.879.236.000€", "Vorjahresvergleich: -30,1%" ];
-var berlinInfo = ["BERLIN","#1 der größten Umsatzeinbusen","Umsatzeinbußen: 3.128.301.000€", "Vorjahresvergleich: -43,0%" ];
-var brandenburgInfo = ["BRANDENBURG","#15 der größten Umsatzeinbusen","Umsatzeinbußen: 327.182.000€", "Vorjahresvergleich: -18,1%" ];
-var bremenInfo = ["BREMEN","#6 der größten Umsatzeinbusen","Umsatzeinbußen: 200.665.000€", "Vorjahresvergleich: -32,2%" ];
-var hessenInfo = ["HESSEN","#2 der größten Umsatzeinbusen","Umsatzeinbußen: 3.450.120.000€", "Vorjahresvergleich: -36,9%" ];
-var mecklenburgVorpommernInfo = ["MECKLENBURG-VORPOMMERN","#16 der größten Umsatzeinbusen","Umsatzeinbußen: 346.678.000€", "Vorjahresvergleich: -14,6%" ];
-var niedersachenInfo = ["NIEDERSACHSEN","#10 der größten Umsatzeinbusen","Umsatzeinbußen: 2.088.312.000€", "Vorjahresvergleich: -28,4%" ];
-var nordrheinWestfalenInfo = ["NORDRHEIN-WESTFALEN","#4 der größten Umsatzeinbusen","Umsatzeinbußen: 5.709.367.000€", "Vorjahresvergleich: -33,6%" ];
-var rheinlandPfalzInfo = ["RHEINLAND-PFALZ","#9 der größten Umsatzeinbusen","Umsatzeinbußen: 1.167.276.000€", "Vorjahresvergleich: -29,3%" ];
-var saarlandInfo = ["SAARLAND","#8 der größten Umsatzeinbusen","Umsatzeinbußen: 227.142.000€", "Vorjahresvergleich: -29,7%" ];
-var sachsenAnhaltInfo = ["SACHSEN-ANHALT","#12 der größten Umsatzeinbusen","Umsatzeinbußen: 306.882.000€", "Vorjahresvergleich: -23,9%" ];
-var sachsenInfo = ["SACHSEN","#14 der größten Umsatzeinbusen","Umsatzeinbußen: 661.685.000€", "Vorjahresvergleich: -22,9%" ];
-var schleswigHolsteinInfo = ["SCHLESWIG-HOLSTEIN","#13 der größten Umsatzeinbusen","Umsatzeinbußen: 743.857.000€", "Vorjahresvergleich: -23,6%" ];
-var hamburgInfo = ["HAMBURG","#5 der größten Umsatzeinbusen","Umsatzeinbußen: 1.021.549.000€", "Vorjahresvergleich: -32,7%" ];
-var thüringenInfo = ["THÜRINGEN","#11 der größten Umsatzeinbusen","Umsatzeinbußen: 337.028.000€", "Vorjahresvergleich: -27,0%" ];
+var bayernInfo = ["BAYERN","#3 der größten Umsatzeinbußen","Umsatzeinbußen: 7.319.757.000€", "Vorjahresvergleich: -36,0%" ];
+var badenWüttembergInfo = ["BADEN-WÜTTEMBERG","#7 der größten Umsatzeinbußen","Umsatzeinbußen: 3.879.236.000€", "Vorjahresvergleich: -30,1%" ];
+var berlinInfo = ["BERLIN","#1 der größten Umsatzeinbußen","Umsatzeinbußen: 3.128.301.000€", "Vorjahresvergleich: -43,0%" ];
+var brandenburgInfo = ["BRANDENBURG","#15 der größten Umsatzeinbußen","Umsatzeinbußen: 327.182.000€", "Vorjahresvergleich: -18,1%" ];
+var bremenInfo = ["BREMEN","#6 der größten Umsatzeinbußen","Umsatzeinbußen: 200.665.000€", "Vorjahresvergleich: -32,2%" ];
+var hessenInfo = ["HESSEN","#2 der größten Umsatzeinbußen","Umsatzeinbußen: 3.450.120.000€", "Vorjahresvergleich: -36,9%" ];
+var mecklenburgVorpommernInfo = ["MECKLENBURG-VORPOMMERN","#16 der größten Umsatzeinbußen","Umsatzeinbußen: 346.678.000€", "Vorjahresvergleich: -14,6%" ];
+var niedersachenInfo = ["NIEDERSACHSEN","#10 der größten Umsatzeinbußen","Umsatzeinbußen: 2.088.312.000€", "Vorjahresvergleich: -28,4%" ];
+var nordrheinWestfalenInfo = ["NORDRHEIN-WESTFALEN","#4 der größten Umsatzeinbußen","Umsatzeinbußen: 5.709.367.000€", "Vorjahresvergleich: -33,6%" ];
+var rheinlandPfalzInfo = ["RHEINLAND-PFALZ","#9 der größten Umsatzeinbußen","Umsatzeinbußen: 1.167.276.000€", "Vorjahresvergleich: -29,3%" ];
+var saarlandInfo = ["SAARLAND","#8 der größten Umsatzeinbußen","Umsatzeinbußen: 227.142.000€", "Vorjahresvergleich: -29,7%" ];
+var sachsenAnhaltInfo = ["SACHSEN-ANHALT","#12 der größten Umsatzeinbußen","Umsatzeinbußen: 306.882.000€", "Vorjahresvergleich: -23,9%" ];
+var sachsenInfo = ["SACHSEN","#14 der größten Umsatzeinbußen","Umsatzeinbußen: 661.685.000€", "Vorjahresvergleich: -22,9%" ];
+var schleswigHolsteinInfo = ["SCHLESWIG-HOLSTEIN","#13 der größten Umsatzeinbußen","Umsatzeinbußen: 743.857.000€", "Vorjahresvergleich: -23,6%" ];
+var hamburgInfo = ["HAMBURG","#5 der größten Umsatzeinbußen","Umsatzeinbußen: 1.021.549.000€", "Vorjahresvergleich: -32,7%" ];
+var thüringenInfo = ["THÜRINGEN","#11 der größten Umsatzeinbußen","Umsatzeinbußen: 337.028.000€", "Vorjahresvergleich: -27,0%" ];
 
 var statesCollection = [bayernInfo, badenWüttembergInfo, berlinInfo, brandenburgInfo, bremenInfo, hessenInfo, mecklenburgVorpommernInfo, niedersachenInfo, nordrheinWestfalenInfo, rheinlandPfalzInfo, saarlandInfo, sachsenAnhaltInfo, sachsenInfo, schleswigHolsteinInfo, hamburgInfo, thüringenInfo];
 var statesCollectionLen = statesCollection.length;

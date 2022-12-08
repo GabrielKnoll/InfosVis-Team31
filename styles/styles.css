@@ -134,69 +134,70 @@ overflow: hidden;
 }
 
 #BAYERN-Mouseover{
-  left: 480px;
-  top: 620px;
+  left: 470px;
+  top: 450px;
 }
 #BADEN-WÜTTEMBERG-Mouseover{
   left: 400px;
-  top: 650px;
+  top: 490px;
 }
 #SACHSEN-Mouseover{
-  left: 510px;
-  top: 500px;
+  left: 560px;
+  top: 380px;
 }
 #THÜRINGEN-Mouseover{
-  left: 460px;
-  top: 520px;
+  left: 470px;
+  top: 410px;
 }
 #RHEINLAND-PFALZ-Mouseover{
-  left: 310px;
-  top: 570px;
+  left: 340px;
+  top: 420px;
 }
 #SAARLAND-Mouseover{
-  left: 280px;
-  top: 590px;
+  left: 300px;
+  top: 480px;
 }
 #HESSEN-Mouseover{
-  left: 400px;
-  top: 520px;
+  left: 395px;
+  top: 390px;
 }
 #SACHSEN-ANHALT-Mouseover{
   left: 470px;
-  top: 420px;
+  top: 310px;
 }
 #BRANDENBURG-Mouseover{
-  left: 510px;
-  top: 360px;
+  left: 530px;
+  top: 290px;
 }
 #BERLIN-Mouseover{
-  left: 510px;
-  top: 390px;
+  left: 520px;
+  top: 315px;
 }
 #MECKLENBURG-VORPOMMERN-Mouseover{
   left: 510px;
-  top: 330px;
+  top: 235px;
 }
 #SCHLESWIG-HOLSTEIN-Mouseover{
-  left: 420px;
-  top: 320px;
+  left: 430px;
+  top: 250px;
 }
 #HAMBURG-Mouseover{
-  left: 420px;
-  top: 325px;
+  left: 410px;
+  top: 265px;
 }
 #NIEDERSACHSEN-Mouseover{
-  left: 400px;
-  top: 400px;
+  left: 435px;
+  top: 286px;
 }
 #BREMEN-Mouseover{
-  left: 365px;
-  top: 357px;
+  left: 370px;
+  top: 288px;
 }
 #NORDRHEIN-WESTFALEN-Mouseover{
-  left: 350px;
-  top: 450px;
+  left: 370px;
+  top: 340px;
 }
+
 
 .revenue-reduction-state-name{
   padding: 15px 10px 0px 10px;
@@ -290,7 +291,7 @@ html{
   color: grey; 
   text-align: center; 
   text-decoration: underline;
-  margin-top: 3%;
+  margin-top: 5%;
 }
 
 /*Abtrennungslinie unter Überschriften*/
