@@ -495,14 +495,14 @@ margin-top: 5px;
 }
 
 
-#reset {
+#resetbutton {
   align-items: right;
   float:right;
   font-size: 12px;
 }
 
 button:active {
-  background-color: darkgrey;; 
+  background-color: darkgrey;
   color: white;
 }
 

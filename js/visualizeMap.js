@@ -295,3 +295,22 @@ function clickPath(d) {
   {
   document.body.style.backgroundImage = "url(img/bg-insolvencies.png)";
   }
+
+  
+//Resetbutton-Funktionen
+  function enableButton() {
+      document.getElementById("resetbutton").disabled = false;
+     //
+     
+    }
+
+    function disableButton() {
+      document.getElementById("resetbutton").disabled = true;
+    }
+
+  function reset() {
+    var states = document.getElementById("g");
+   g.selectAll("path").classed("active", false);
+   disableButton();
+    }
+  

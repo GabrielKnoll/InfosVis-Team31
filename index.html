@@ -48,9 +48,11 @@
         <!--Heatmap-->
         <h2 id="unterueberschrift" style="text-align:center; margin-bottom: 2px;"> Umsatzeinbußen in % (pro Bundesland) </h2>
          <center><i> im Vergleich von 2019 zu 2020</i></center>
-<right><button id="reset" disabled>Auswahl zurücksetzen</button></right>
-<section class="heatmap-section">
-  <div class="heatmap-container">
+<right><button id="resetbutton" onclick="reset()" disabled >Auswahl zurücksetzen</button></right>
+
+<section class="heatmap-section" id="reset" onclick="enableButton()">
+  <div class="heatmap-container" onclick="enableButton()">
+ 
   </div>
   </section>
         <center>
