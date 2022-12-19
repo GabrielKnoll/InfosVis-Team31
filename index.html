@@ -25,10 +25,10 @@
   </div>
   
   <!--Buttonfilter-->
-  <div class="row">
+  <div class="row heatmap-row">
     <div class="col-3">
-      <div class="buttons" style="margin-bottom:5%;">
         <p id="paragraph">Wähle ein Bundesland, um eine Detailansicht zu erhalten, wie sich Umsatz, Arbeitnehmer und Betriebe verändert haben.</p>
+        <div class="buttons">
         <input type="radio" id="radio1" name="radios" onclick="changeEuro()"value="all" checked>
      <label for="radio1">Umsätze &nbsp; <span class="material-symbols-rounded" style="position: absolute; margin-top: 8px; font-size: 20px;">
       euro_symbol
@@ -48,9 +48,11 @@
         <!--Heatmap-->
         <h2 id="unterueberschrift" style="text-align:center; margin-bottom: 2px;"> Umsatzeinbußen in % (pro Bundesland) </h2>
          <center><i> im Vergleich von 2019 zu 2020</i></center>
-<right><button id="reset" disabled>Auswahl zurücksetzen</button></right>
-<section class="heatmap-section">
-  <div class="heatmap-container">
+<right><button id="resetbutton" onclick="reset()" disabled >Auswahl zurücksetzen</button></right>
+
+<section class="heatmap-section" id="reset" onclick="enableButton()">
+  <div class="heatmap-container" onclick="enableButton()">
+ 
   </div>
   </section>
         <center>
@@ -58,15 +60,15 @@
    <div class="legende">
          <b> Legende </b> <br>
          <div class="legend-position">
-         <div class="legend-color" id="fifth"></div>11-15% </div>
+         <div class="legend-color" id="fifth"></div>12-18% </div>
          <div class="legend-position">
-         <div class="legend-color" id="fourth"></div>16-20%</div>
+         <div class="legend-color" id="fourth"></div>19-25%</div>
          <div class="legend-position">
-         <div class="legend-color" id="third"></div>21-25%</div>
+         <div class="legend-color" id="third"></div>26-32%</div>
          <div class="legend-position">
-         <div class="legend-color" id="second"></div>26-30%</div>
+         <div class="legend-color" id="second"></div>33-39%</div>
          <div class="legend-position">
-         <div class="legend-color" id="first"></div>31-35%</div>
+         <div class="legend-color" id="first"></div>40-46%</div>
            </div>
         </center>
     </div>
@@ -91,7 +93,6 @@
           <br>
           <br>
           <br>
-          <br>
          <center> ###Platzhalter für Ranking### </center>
           <br>
           <br>
@@ -99,7 +100,7 @@
           <br>
           <br>
           <br>
-          <br>
+
          <!--</div>-->
         <center>
           <button class="button-rund"><span class="material-symbols-rounded" style="font-size: 30px; color: #2798E9">keyboard_arrow_down

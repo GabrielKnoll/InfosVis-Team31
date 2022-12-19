@@ -12,6 +12,7 @@
   font-size: 16px;
 }
 
+/*Fonts*/
 @font-face {
   font-family: "Proximanova Light";
   src: url("../fonts/proximanova-light.woff") format("woff");
@@ -94,7 +95,12 @@ overflow: hidden;
   stroke: none;
 }
 
+.heatmap-row{
+  position:relative;
+}
+
 .mouseoverBox{
+  z-index: 2;
   position: absolute;
   pointer-events: none;
   display: none;
@@ -119,79 +125,83 @@ overflow: hidden;
 }
 
 .heatmap-container{
+  width: 500px;
+  margin-left:auto;
+  margin-right: auto;
   position: relative;
 }
 
 .heatmap-section {
-  width:760px; 
+  width:auto;
   height: 550px; 
   margin-top: -50px;
 }
 
 #BAYERN-Mouseover{
-  left: 480px;
-  top: 620px;
-}
-#BADEN-WÜTTEMBERG-Mouseover{
-  left: 400px;
-  top: 650px;
-}
-#SACHSEN-Mouseover{
-  left: 510px;
-  top: 500px;
-}
-#THÜRINGEN-Mouseover{
-  left: 460px;
-  top: 520px;
-}
-#RHEINLAND-PFALZ-Mouseover{
-  left: 310px;
-  top: 570px;
-}
-#SAARLAND-Mouseover{
-  left: 280px;
-  top: 590px;
-}
-#HESSEN-Mouseover{
-  left: 400px;
-  top: 520px;
-}
-#SACHSEN-ANHALT-Mouseover{
-  left: 470px;
-  top: 420px;
-}
-#BRANDENBURG-Mouseover{
-  left: 510px;
+  left: 27%;
   top: 360px;
 }
-#BERLIN-Mouseover{
-  left: 510px;
-  top: 390px;
-}
-#MECKLENBURG-VORPOMMERN-Mouseover{
-  left: 510px;
-  top: 330px;
-}
-#SCHLESWIG-HOLSTEIN-Mouseover{
-  left: 420px;
-  top: 320px;
-}
-#HAMBURG-Mouseover{
-  left: 420px;
-  top: 325px;
-}
-#NIEDERSACHSEN-Mouseover{
-  left: 400px;
+#BADEN-WÜTTEMBERG-Mouseover{
+  left: 22%;
   top: 400px;
 }
+#SACHSEN-Mouseover{
+  left: 30%;
+  top: 280px;
+}
+#THÜRINGEN-Mouseover{
+  left: 26%;
+  top: 295px;
+}
+#RHEINLAND-PFALZ-Mouseover{
+  left: 17%;
+  top: 330px;
+}
+#SAARLAND-Mouseover{
+  left: 16%;
+  top: 380px;
+}
+#HESSEN-Mouseover{
+  left: 22%;
+  top: 300px;
+}
+#SACHSEN-ANHALT-Mouseover{
+  left: 27%;
+  top: 210px;
+}
+#BRANDENBURG-Mouseover{
+  left: 30%;
+  top: 200px;
+}
+#BERLIN-Mouseover{
+  left: 31%;
+  top: 215px;
+}
+#MECKLENBURG-VORPOMMERN-Mouseover{
+  left: 28%;
+  top: 135px;
+}
+#SCHLESWIG-HOLSTEIN-Mouseover{
+  left: 22%;
+  top: 115px;
+}
+#HAMBURG-Mouseover{
+  left: 23%;
+  top: 160px;
+}
+#NIEDERSACHSEN-Mouseover{
+  left: 22%;
+  top: 180px;
+}
 #BREMEN-Mouseover{
-  left: 365px;
-  top: 357px;
+  left: 21%;
+  top: 190px;
 }
 #NORDRHEIN-WESTFALEN-Mouseover{
-  left: 350px;
-  top: 450px;
+  left: 18%;
+  top: 250px;
 }
+
 
 .revenue-reduction-state-name{
   padding: 15px 10px 0px 10px;
@@ -285,6 +295,7 @@ html{
   color: grey; 
   text-align: center; 
   text-decoration: underline;
+  margin-top: 5%;
 }
 
 /*Abtrennungslinie unter Überschriften*/
@@ -299,10 +310,6 @@ html{
 }
 
 /*LEGENDE*/
-
-.legende {
-  margin-top:50px;
-}
 
 .legend-position {
   margin-right: 20px; 
@@ -413,7 +420,7 @@ p {
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-/*für H1 Überschrift*/
+/*Hintergrund bei H1 Überschrift*/
 .card {  
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
@@ -487,15 +494,21 @@ margin-top: 5px;
   background-color:#F8F8F8;
 }
 
-#reset {
+
+#resetbutton {
   align-items: right;
   float:right;
   font-size: 12px;
 }
 
 button:active {
-  background-color: darkgrey;; 
+  background-color: darkgrey;
   color: white;
+}
+
+.buttons {
+  margin-bottom:2%; 
+  text-align: center;
 }
 
 /*HOVER - funktioniert noch nicht*/
