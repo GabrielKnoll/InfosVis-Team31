@@ -204,6 +204,7 @@ d3.json("./json/optimizedGermanStates.json", function(data) {
 
 
 
+
       });
 
   // Return der Bundesländer-Namen aus der JSON Datei
@@ -313,4 +314,6 @@ function clickPath(d) {
    g.selectAll("path").classed("active", false);
    disableButton();
     }
+
+
   
