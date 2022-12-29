@@ -206,6 +206,8 @@ d3.json("./json/optimizedGermanStates.json", function(data) {
             }
 
 
+
+
         });
 
 
@@ -909,4 +911,6 @@ function reset() {
     } else if (document.getElementById("radio3").checked) {
         changeInsolvency();
     }
-}
+
+
+  
