@@ -912,5 +912,5 @@ function reset() {
         changeInsolvency();
     }
 
-
+  }
   
