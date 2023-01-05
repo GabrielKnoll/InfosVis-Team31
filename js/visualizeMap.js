@@ -57,6 +57,8 @@ d3.json("./json/optimizedGermanStates.json", function(data) {
 
     var target;
 
+    changeEuro();
+
     g.selectAll("path.feature")
         .data(data.features)
         .enter()
