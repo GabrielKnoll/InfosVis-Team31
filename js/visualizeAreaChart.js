@@ -1,7 +1,23 @@
+var currentData;
 // Set the dimensions and margins of the graph
 var margin_line = {top: 30, right: 30, bottom: 30, left: 30},
-    width_line = 575 - margin_line.left - margin_line.right,
+    width_line = window.innerWidth / 2 - 160 - margin_line.left - margin_line.right,
     height_line = 400 - margin_line.top - margin_line.bottom;
+
+// Set the width of the diagram whenever the window is resized
+window.addEventListener('resize', setDiagramWidth);
+
+function setDiagramWidth() {
+  width_line = window.innerWidth / 2 - 160 - margin_line.left - margin_line.right;
+  d3.select("#dataviz_areaplot svg")
+    .attr("width", width_line + margin_line.left + margin_line.right)
+    .attr("height", height_line + margin_line.top + margin_line.bottom);
+  d3.select("#dataviz_areaplot svg g")
+    .attr("transform",
+        "translate(" + margin_line.left + "," + margin_line.top + ")");
+        
+  updateAreaGraph(currentData);
+}
 
 // Append the SVG object to the div with id dataviz_areaplot
 var svg_line = d3.select("#dataviz_areaplot")
@@ -27,7 +43,8 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
 
 
 function createAreaGraph(data) {
-  // Keep only the 90 first rows
+  currentData = data
+  // Keep only the 90 first row
   //TODO remove, unnecessary for our data
   data = data.filter(function(d,i){ return i>90}).filter(function(value, index, Arr) {
     return index % 100 == 0;
@@ -177,6 +194,7 @@ function formatTick(d) {
 // =================================================================================
 
 function updateAreaGraph(data) {
+  currentData = data
   // Add X axis --> it is a date format
   var x = d3.scaleTime()
     .domain(d3.extent(data, d => d.date))
