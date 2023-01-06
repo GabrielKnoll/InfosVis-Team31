@@ -281,389 +281,21 @@ function clickPath(d) {
     if ((focused === null) || !(focused === d)) {
         focused = d;
         //Einblenden des Graphs je nach Bundesland, Bsp: Schleswig-Holstein
+        document.getElementById("umsatz-ranking").style.display = 'none';
+        target = document.getElementById('card-graph');
+        target.style.display = 'block';
+        target.style.transition = "background-image 0.2s ease-in-out";
+        
+        // change title
         var state = d.properties.name;
-
-        if (state === 'Bayern') {
-            target = document.getElementById('card-graph-bayern');
-            target.style.display = 'block';
-            target.style.transition = "background-image 0.2s ease-in-out";
-
-            //Rankingcards ausblenden
-            document.getElementById("umsatz-ranking").style.display = 'none';
-            document.getElementById("arbeitnehmer-ranking").style.display = 'none';
-            document.getElementById("insolvenzen-ranking").style.display = 'none';
-
-            document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-            document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-            document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-saarland").style.display = 'none';
-            document.getElementById("card-graph-hamburg").style.display = 'none';
-            document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-bremen").style.display = 'none';
-            document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-            document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-            document.getElementById("card-graph-brandenburg").style.display = 'none';
-            document.getElementById("card-graph-sachsen").style.display = 'none';
-            document.getElementById("card-graph-thueringen").style.display = 'none';
-            document.getElementById("card-graph-hessen").style.display = 'none';
-        } else if (state === 'Schleswig-Holstein') {
-            target = document.getElementById('card-graph-schleswigholstein');
-            target.style.display = 'block';
-            target.style.transition = "background-image 0.2s ease-in-out";
-            //Rankingcards ausblenden
-            document.getElementById("umsatz-ranking").style.display = 'none';
-            document.getElementById("arbeitnehmer-ranking").style.display = 'none';
-            document.getElementById("insolvenzen-ranking").style.display = 'none';
-            document.getElementById("card-graph-bayern").style.display = 'none';
-            document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-            document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-saarland").style.display = 'none';
-            document.getElementById("card-graph-hamburg").style.display = 'none';
-            document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-bremen").style.display = 'none';
-            document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-            document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-            document.getElementById("card-graph-brandenburg").style.display = 'none';
-            document.getElementById("card-graph-sachsen").style.display = 'none';
-            document.getElementById("card-graph-thueringen").style.display = 'none';
-            document.getElementById("card-graph-hessen").style.display = 'none';
-        } else if (state === 'Rheinland-Pfalz') {
-            target = document.getElementById('card-graph-rheinlandpfalz');
-            target.style.display = 'block';
-            target.style.transition = "background-image 0.2s ease-in-out";
-            //Rankingcards ausblenden
-            document.getElementById("umsatz-ranking").style.display = 'none';
-            document.getElementById("arbeitnehmer-ranking").style.display = 'none';
-            document.getElementById("insolvenzen-ranking").style.display = 'none';
-
-            document.getElementById("card-graph-bayern").style.display = 'none';
-            document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-            document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-saarland").style.display = 'none';
-            document.getElementById("card-graph-hamburg").style.display = 'none';
-            document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-bremen").style.display = 'none';
-            document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-            document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-            document.getElementById("card-graph-brandenburg").style.display = 'none';
-            document.getElementById("card-graph-sachsen").style.display = 'none';
-            document.getElementById("card-graph-thueringen").style.display = 'none';
-            document.getElementById("card-graph-hessen").style.display = 'none';
-        } else if (state === 'Nordrhein-Westfalen') {
-            target = document.getElementById('card-graph-nordrheinwestfalen');
-            target.style.display = 'block';
-            target.style.transition = "background-image 0.2s ease-in-out";
-            //Rankingcards ausblenden
-            document.getElementById("umsatz-ranking").style.display = 'none';
-            document.getElementById("arbeitnehmer-ranking").style.display = 'none';
-            document.getElementById("insolvenzen-ranking").style.display = 'none';
-
-            document.getElementById("card-graph-bayern").style.display = 'none';
-            document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-            document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-saarland").style.display = 'none';
-            document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-            document.getElementById("card-graph-hamburg").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-bremen").style.display = 'none';
-            document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-            document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-            document.getElementById("card-graph-brandenburg").style.display = 'none';
-            document.getElementById("card-graph-sachsen").style.display = 'none';
-            document.getElementById("card-graph-thueringen").style.display = 'none';
-            document.getElementById("card-graph-hessen").style.display = 'none';
-
-
-
-
-        } else if (state === 'Niedersachsen') {
-            target = document.getElementById('card-graph-niedersachsen');
-            target.style.display = 'block';
-            target.style.transition = "background-image 0.2s ease-in-out";
-            //Rankingcards ausblenden
-            document.getElementById("umsatz-ranking").style.display = 'none';
-            document.getElementById("arbeitnehmer-ranking").style.display = 'none';
-            document.getElementById("insolvenzen-ranking").style.display = 'none';
-
-            document.getElementById("card-graph-bayern").style.display = 'none';
-            document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-            document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-            document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-            document.getElementById("card-graph-saarland").style.display = 'none';
-            document.getElementById("card-graph-hamburg").style.display = 'none';
-            document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-bremen").style.display = 'none';
-            document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-            document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-            document.getElementById("card-graph-brandenburg").style.display = 'none';
-            document.getElementById("card-graph-sachsen").style.display = 'none';
-            document.getElementById("card-graph-thueringen").style.display = 'none';
-            document.getElementById("card-graph-hessen").style.display = 'none';
-        } else if (state === 'Saarland') {
-            target = document.getElementById('card-graph-saarland');
-            target.style.display = 'block';
-            target.style.transition = "background-image 0.2s ease-in-out";
-            document.getElementById("umsatz-ranking").style.display = 'none';
-            document.getElementById("arbeitnehmer-ranking").style.display = 'none';
-            document.getElementById("insolvenzen-ranking").style.display = 'none';
-
-            document.getElementById("card-graph-bayern").style.display = 'none';
-            document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-            document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-            document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-            document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-hamburg").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-bremen").style.display = 'none';
-            document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-            document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-            document.getElementById("card-graph-brandenburg").style.display = 'none';
-            document.getElementById("card-graph-sachsen").style.display = 'none';
-            document.getElementById("card-graph-thueringen").style.display = 'none';
-            document.getElementById("card-graph-hessen").style.display = 'none';
-        } else if (state === 'Hamburg') {
-            target = document.getElementById('card-graph-hamburg');
-            target.style.display = 'block';
-            target.style.transition = "background-image 0.2s ease-in-out";
-            document.getElementById("umsatz-ranking").style.display = 'none';
-            document.getElementById("arbeitnehmer-ranking").style.display = 'none';
-            document.getElementById("insolvenzen-ranking").style.display = 'none';
-
-            document.getElementById("card-graph-bayern").style.display = 'none';
-            document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-            document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-            document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-            document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-saarland").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-bremen").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-            document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-            document.getElementById("card-graph-brandenburg").style.display = 'none';
-            document.getElementById("card-graph-sachsen").style.display = 'none';
-            document.getElementById("card-graph-thueringen").style.display = 'none';
-            document.getElementById("card-graph-hessen").style.display = 'none';
-        } else if (state === 'Baden-Württemberg') {
-            target = document.getElementById('card-graph-badenwuerttemberg');
-            target.style.display = 'block';
-            target.style.transition = "background-image 0.2s ease-in-out";
-            document.getElementById("umsatz-ranking").style.display = 'none';
-            document.getElementById("arbeitnehmer-ranking").style.display = 'none';
-            document.getElementById("insolvenzen-ranking").style.display = 'none';
-
-            document.getElementById("card-graph-bayern").style.display = 'none';
-            document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-            document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-            document.getElementById("card-graph-hamburg").style.display = 'none';
-            document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-saarland").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-bremen").style.display = 'none';
-            document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-            document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-            document.getElementById("card-graph-brandenburg").style.display = 'none';
-            document.getElementById("card-graph-sachsen").style.display = 'none';
-            document.getElementById("card-graph-thueringen").style.display = 'none';
-            document.getElementById("card-graph-hessen").style.display = 'none';
-        } else if (state === 'Berlin') {
-            target = document.getElementById('card-graph-berlin');
-            target.style.display = 'block';
-            target.style.transition = "background-image 0.2s ease-in-out";
-            document.getElementById("umsatz-ranking").style.display = 'none';
-            document.getElementById("arbeitnehmer-ranking").style.display = 'none';
-            document.getElementById("insolvenzen-ranking").style.display = 'none';
-
-            document.getElementById("card-graph-bayern").style.display = 'none';
-            document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-            document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-            document.getElementById("card-graph-hamburg").style.display = 'none';
-            document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-saarland").style.display = 'none';
-            document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-            document.getElementById("card-graph-bremen").style.display = 'none';
-            document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-            document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-            document.getElementById("card-graph-brandenburg").style.display = 'none';
-            document.getElementById("card-graph-sachsen").style.display = 'none';
-            document.getElementById("card-graph-thueringen").style.display = 'none';
-            document.getElementById("card-graph-hessen").style.display = 'none';
-        } else if (state === 'Bremen') {
-            target = document.getElementById('card-graph-bremen');
-            target.style.display = 'block';
-            target.style.transition = "background-image 0.2s ease-in-out";
-            document.getElementById("umsatz-ranking").style.display = 'none';
-            document.getElementById("arbeitnehmer-ranking").style.display = 'none';
-            document.getElementById("insolvenzen-ranking").style.display = 'none';
-
-            document.getElementById("card-graph-bayern").style.display = 'none';
-            document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-            document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-            document.getElementById("card-graph-hamburg").style.display = 'none';
-            document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-saarland").style.display = 'none';
-            document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-            document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-            document.getElementById("card-graph-brandenburg").style.display = 'none';
-            document.getElementById("card-graph-sachsen").style.display = 'none';
-            document.getElementById("card-graph-thueringen").style.display = 'none';
-            document.getElementById("card-graph-hessen").style.display = 'none';
-        } else if (state === 'Sachsen-Anhalt') {
-            target = document.getElementById('card-graph-sachsenanhalt');
-            target.style.display = 'block';
-            target.style.transition = "background-image 0.2s ease-in-out";
-            document.getElementById("umsatz-ranking").style.display = 'none';
-            document.getElementById("arbeitnehmer-ranking").style.display = 'none';
-            document.getElementById("insolvenzen-ranking").style.display = 'none';
-
-            document.getElementById("card-graph-bayern").style.display = 'none';
-            document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-            document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-            document.getElementById("card-graph-hamburg").style.display = 'none';
-            document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-saarland").style.display = 'none';
-            document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-bremen").style.display = 'none';
-            document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-            document.getElementById("card-graph-brandenburg").style.display = 'none';
-            document.getElementById("card-graph-sachsen").style.display = 'none';
-            document.getElementById("card-graph-thueringen").style.display = 'none';
-            document.getElementById("card-graph-hessen").style.display = 'none';
-        } else if (state === 'Mecklenburg-Vorpommern') {
-            target = document.getElementById('card-graph-mecklenburgvorpommern');
-            target.style.display = 'block';
-            target.style.transition = "background-image 0.2s ease-in-out";
-            document.getElementById("umsatz-ranking").style.display = 'none';
-            document.getElementById("arbeitnehmer-ranking").style.display = 'none';
-            document.getElementById("insolvenzen-ranking").style.display = 'none';
-
-            document.getElementById("card-graph-bayern").style.display = 'none';
-            document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-            document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-            document.getElementById("card-graph-hamburg").style.display = 'none';
-            document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-saarland").style.display = 'none';
-            document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-bremen").style.display = 'none';
-            document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-            document.getElementById("card-graph-brandenburg").style.display = 'none';
-            document.getElementById("card-graph-sachsen").style.display = 'none';
-            document.getElementById("card-graph-thueringen").style.display = 'none';
-            document.getElementById("card-graph-hessen").style.display = 'none';
-        } else if (state === 'Brandenburg') {
-            target = document.getElementById('card-graph-brandenburg');
-            target.style.display = 'block';
-            target.style.transition = "background-image 0.2s ease-in-out";
-            document.getElementById("umsatz-ranking").style.display = 'none';
-            document.getElementById("arbeitnehmer-ranking").style.display = 'none';
-            document.getElementById("insolvenzen-ranking").style.display = 'none';
-
-            document.getElementById("card-graph-bayern").style.display = 'none';
-            document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-            document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-            document.getElementById("card-graph-hamburg").style.display = 'none';
-            document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-saarland").style.display = 'none';
-            document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-bremen").style.display = 'none';
-            document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-            document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-            document.getElementById("card-graph-sachsen").style.display = 'none';
-            document.getElementById("card-graph-thueringen").style.display = 'none';
-            document.getElementById("card-graph-hessen").style.display = 'none';
-        } else if (state === 'Sachsen') {
-            target = document.getElementById('card-graph-sachsen');
-            target.style.display = 'block';
-            target.style.transition = "background-image 0.2s ease-in-out";
-            document.getElementById("umsatz-ranking").style.display = 'none';
-            document.getElementById("arbeitnehmer-ranking").style.display = 'none';
-            document.getElementById("insolvenzen-ranking").style.display = 'none';
-
-            document.getElementById("card-graph-bayern").style.display = 'none';
-            document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-            document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-            document.getElementById("card-graph-hamburg").style.display = 'none';
-            document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-saarland").style.display = 'none';
-            document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-bremen").style.display = 'none';
-            document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-            document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-            document.getElementById("card-graph-brandenburg").style.display = 'none';
-            document.getElementById("card-graph-thueringen").style.display = 'none';
-            document.getElementById("card-graph-hessen").style.display = 'none';
-        } else if (state === 'Thüringen') {
-            target = document.getElementById('card-graph-thueringen');
-            target.style.display = 'block';
-            target.style.transition = "background-image 0.2s ease-in-out";
-            document.getElementById("umsatz-ranking").style.display = 'none';
-            document.getElementById("arbeitnehmer-ranking").style.display = 'none';
-            document.getElementById("insolvenzen-ranking").style.display = 'none';
-
-            document.getElementById("card-graph-bayern").style.display = 'none';
-            document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-            document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-            document.getElementById("card-graph-hamburg").style.display = 'none';
-            document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-saarland").style.display = 'none';
-            document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-bremen").style.display = 'none';
-            document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-            document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-            document.getElementById("card-graph-brandenburg").style.display = 'none';
-            document.getElementById("card-graph-sachsen").style.display = 'none';
-            document.getElementById("card-graph-hessen").style.display = 'none';
-        } else if (state === 'Hessen') {
-            target = document.getElementById('card-graph-hessen');
-            target.style.display = 'block';
-            target.style.transition = "background-image 0.2s ease-in-out";
-            document.getElementById("umsatz-ranking").style.display = 'none';
-            document.getElementById("arbeitnehmer-ranking").style.display = 'none';
-            document.getElementById("insolvenzen-ranking").style.display = 'none';
-
-            document.getElementById("card-graph-bayern").style.display = 'none';
-            document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-            document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-            document.getElementById("card-graph-hamburg").style.display = 'none';
-            document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-saarland").style.display = 'none';
-            document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-bremen").style.display = 'none';
-            document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-            document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-            document.getElementById("card-graph-brandenburg").style.display = 'none';
-            document.getElementById("card-graph-sachsen").style.display = 'none';
-            document.getElementById("card-graph-thueringen").style.display = 'none';
-        }
-
+        document.getElementById("unterueberschrift-text").innerHTML = "Umsatzentwicklung in " + state
+        
+        // change diagram
+        updateAreaGraph([
+            {date: d3.timeParse("%Y-%m-%d")("2016-04-28"), value : 5},
+            {date: d3.timeParse("%Y-%m-%d")("2017-04-28"), value : 10},
+            {date: d3.timeParse("%Y-%m-%d")("2018-04-28"), value : 15}]);
+        
 
     } else {
         focused = null;
@@ -673,68 +305,19 @@ function clickPath(d) {
         if (document.getElementById("radio1").checked) {
             document.getElementById('umsatz-ranking').style.display = 'block';
             //Blende andere Bundesländer aus
-            document.getElementById("card-graph-bayern").style.display = 'none';
-            document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-            document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-            document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-saarland").style.display = 'none';
-            document.getElementById("card-graph-hamburg").style.display = 'none';
-            document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-bremen").style.display = 'none';
-            document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-            document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-            document.getElementById("card-graph-brandenburg").style.display = 'none';
-            document.getElementById("card-graph-sachsen").style.display = 'none';
-            document.getElementById("card-graph-thueringen").style.display = 'none';
-            document.getElementById("card-graph-hessen").style.display = 'none';
-
-
+            document.getElementById("card-graph").style.display = 'none';
         }
 
         // //Wenn Arbeitnehmer ausgewählt sind, blende das Ranking ein, wenn kein Bundesland gewählt wurde
         else if (document.getElementById("radio2").checked) {
             document.getElementById('arbeitnehmer-ranking').style.display = 'block';
-            //Blende andere Bundesländer aus
-            document.getElementById("card-graph-bayern").style.display = 'none';
-            document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-            document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-            document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-saarland").style.display = 'none';
-            document.getElementById("card-graph-hamburg").style.display = 'none';
-            document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-bremen").style.display = 'none';
-            document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-            document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-            document.getElementById("card-graph-brandenburg").style.display = 'none';
-            document.getElementById("card-graph-sachsen").style.display = 'none';
-            document.getElementById("card-graph-thueringen").style.display = 'none';
-            document.getElementById("card-graph-hessen").style.display = 'none';
+            document.getElementById("card-graph").style.display = 'none';
         }
 
         //Wenn Insolvenzen ausgewählt sind, blende das Ranking ein, wenn kein Bundesland gewählt wurde
         else if (document.getElementById("radio3").checked) {
             document.getElementById('insolvenzen-ranking').style.display = 'block';
-            //Blende andere Bundesländer aus
-            document.getElementById("card-graph-bayern").style.display = 'none';
-            document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-            document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-            document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-            document.getElementById("card-graph-niedersachsen").style.display = 'none';
-            document.getElementById("card-graph-saarland").style.display = 'none';
-            document.getElementById("card-graph-hamburg").style.display = 'none';
-            document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-            document.getElementById("card-graph-berlin").style.display = 'none';
-            document.getElementById("card-graph-bremen").style.display = 'none';
-            document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-            document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-            document.getElementById("card-graph-brandenburg").style.display = 'none';
-            document.getElementById("card-graph-sachsen").style.display = 'none';
-            document.getElementById("card-graph-thueringen").style.display = 'none';
-            document.getElementById("card-graph-hessen").style.display = 'none';
+            document.getElementById("card-graph").style.display = 'none';
         }
 
     };
@@ -764,22 +347,8 @@ function changeEuro() {
     // TBD: Ranking Umsätze einblenden, Ranking Arbeitnehmer+Insolvenzen ausblenden
 
     // TBD: Heatmap Datensätze, Graphen Datensätze, Ranking Datensätze auf style.display='none' setzen
-    document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-    document.getElementById("card-graph-niedersachsen").style.display = 'none';
-    document.getElementById("card-graph-bremen").style.display = 'none';
-    document.getElementById("card-graph-hamburg").style.display = 'none';
-    document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-    document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-    document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-    document.getElementById("card-graph-hessen").style.display = 'none';
-    document.getElementById("card-graph-saarland").style.display = 'none';
-    document.getElementById("card-graph-bayern").style.display = 'none';
-    document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-    document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-    document.getElementById("card-graph-sachsen").style.display = 'none';
-    document.getElementById("card-graph-berlin").style.display = 'none';
-    document.getElementById("card-graph-thueringen").style.display = 'none';
-    document.getElementById("card-graph-brandenburg").style.display = 'none';
+    document.getElementById("card-graph").style.display = 'none';
+
 }
 
 function changeEmployee() {
@@ -801,21 +370,7 @@ function changeEmployee() {
        document.getElementById("arbeitnehmer-ranking").style.display='none';
      }*/
     //Blende alles andere aus
-    document.getElementById("card-graph-niedersachsen").style.display = 'none';
-    document.getElementById("card-graph-bremen").style.display = 'none';
-    document.getElementById("card-graph-hamburg").style.display = 'none';
-    document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-    document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-    document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-    document.getElementById("card-graph-hessen").style.display = 'none';
-    document.getElementById("card-graph-saarland").style.display = 'none';
-    document.getElementById("card-graph-bayern").style.display = 'none';
-    document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-    document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-    document.getElementById("card-graph-sachsen").style.display = 'none';
-    document.getElementById("card-graph-berlin").style.display = 'none';
-    document.getElementById("card-graph-thueringen").style.display = 'none';
-    document.getElementById("card-graph-brandenburg").style.display = 'none';
+    document.getElementById("card-graph").style.display = 'none';
     // TBD: Heatmap Arbeitnehmer einblenden, Heatmap Umsätze+Insolvenzen ausblenden
     // TBD: Ranking Arbeitnehmer einblenden, Ranking Umsätze+Insolvenzen ausblenden
 }
@@ -837,23 +392,7 @@ function changeInsolvency() {
     // TBD: Heatmap Insolvenzen einblenden, Heatmap Umsätze+Arbeitnehmer ausblenden
 
     //GRAPH UMSÄTZE AUSBLENDEN
-    document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-    document.getElementById("card-graph-niedersachsen").style.display = 'none';
-    document.getElementById("card-graph-bremen").style.display = 'none';
-    document.getElementById("card-graph-hamburg").style.display = 'none';
-    document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-    document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-    document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-    document.getElementById("card-graph-hessen").style.display = 'none';
-    document.getElementById("card-graph-saarland").style.display = 'none';
-    document.getElementById("card-graph-bayern").style.display = 'none';
-    document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-    document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-    document.getElementById("card-graph-sachsen").style.display = 'none';
-    document.getElementById("card-graph-berlin").style.display = 'none';
-    document.getElementById("card-graph-thueringen").style.display = 'none';
-    document.getElementById("card-graph-brandenburg").style.display = 'none';
-
+    document.getElementById("card-graph").style.display = 'none';
     // TBD: Ranking Insolvenzen einblenden, Ranking Umsätze+Arbeitnehmer ausblenden
 
 
@@ -879,6 +418,7 @@ function toggleButton() {
 
 function disableButton() {
     document.getElementById("resetbutton").disabled = true;
+    focused = null;
 }
 
 function reset() {
@@ -887,22 +427,7 @@ function reset() {
     disableButton();
 
     //GRAPH UMSÄTZE AUSBLENDEN
-    document.getElementById("card-graph-schleswigholstein").style.display = 'none';
-    document.getElementById("card-graph-niedersachsen").style.display = 'none';
-    document.getElementById("card-graph-bremen").style.display = 'none';
-    document.getElementById("card-graph-hamburg").style.display = 'none';
-    document.getElementById("card-graph-mecklenburgvorpommern").style.display = 'none';
-    document.getElementById("card-graph-rheinlandpfalz").style.display = 'none';
-    document.getElementById("card-graph-nordrheinwestfalen").style.display = 'none';
-    document.getElementById("card-graph-hessen").style.display = 'none';
-    document.getElementById("card-graph-saarland").style.display = 'none';
-    document.getElementById("card-graph-bayern").style.display = 'none';
-    document.getElementById("card-graph-badenwuerttemberg").style.display = 'none';
-    document.getElementById("card-graph-sachsenanhalt").style.display = 'none';
-    document.getElementById("card-graph-sachsen").style.display = 'none';
-    document.getElementById("card-graph-berlin").style.display = 'none';
-    document.getElementById("card-graph-thueringen").style.display = 'none';
-    document.getElementById("card-graph-brandenburg").style.display = 'none';
+    document.getElementById("card-graph").style.display = 'none';
 
     if (document.getElementById("radio1").checked) {
         changeEuro();

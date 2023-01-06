@@ -548,12 +548,6 @@ h2 {
 
 }
 
-/*Fügt den H2-Überschriften spezielle Eigenschaften hinzu, 
-jedoch NICHT den H2-Überschriften innerhalb der Heatmap!*/
-#unterueberschrift {
-  margin-bottom: 6x;
-}
-
 /*H1-Überschrift*/
 #mainheading {
   padding-left: 20px; 
@@ -561,6 +555,20 @@ jedoch NICHT den H2-Überschriften innerhalb der Heatmap!*/
 
 h3 {
   font-family: "Proximanova ExtraBold";
+}
+
+.card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 25px;
+  margin: 21.6px 0 16.6px 0;
+
+}
+.card-heading > div {
+  display: flex;
+  justify-items: left;
+  align-items: baseline;
 }
 
 /*Überschrift rechts in Blau*/
