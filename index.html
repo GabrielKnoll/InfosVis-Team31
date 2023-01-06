@@ -82,11 +82,14 @@
             <!--Spalte rechts-->
             <!--Ranking-->
             <div class="col-3">
-               <div class="card-ranking" id="umsatz-ranking">
-                  <h2 id="unterueberschrift"> <span class="material-symbols-rounded" id="down">
-                     trending_down
-                     </span>   Umsatzentwicklung nach Bundesländer (in %) <span class="right">2019-2020</span>
-                  </h2>
+               <div class="card-ranking" id="ranking">
+                  <div id="unterueberschrift" class="card-heading">
+                     <div>
+                        <span class="material-symbols-rounded" style="color: #9F4F5E; position: relative; top: 4px;">trending_down</span>
+                        <h2 id="ranking_header_text" style="margin-left: 5px;"> Umsatzentwicklung nach Bundesländer (in %)</h2>
+                     </div>
+                     <span class="right">2019-2020</span>
+                  </div>
                   <div class="hr-line"></div>
                   <div class="Rang" id="rang">Rang</div>
                   <div class="Bundesland" id="bundesland">Bundesland</div>
@@ -108,61 +111,7 @@
                   </p>
                   <i id="quelle">Quelle: Statistisches Bundesamt Deutschland 2022</i>
                </div>
-
-               <!--Arbeitnehmer-->
-               <div class="card-ranking" id="arbeitnehmer-ranking">
-                  <h2 id="unterueberschrift"> <span class="material-symbols-rounded" style="color: #9F4F5E; position: relative; top: 4px;">
-                     trending_down
-                     </span>   Arbeitnehmerentwicklung nach Bundesländer (in %) <span class="right">2019-2020</span>
-                  </h2>
-                  <div class="hr-line"></div>
-                  <div class="Rang" id="rang">Rang</div>
-                  <div class="Bundesland" id="bundesland">Bundesland</div>
-                  <div class="Wert" id="wert">Wert</div>
-                  <div class="ranking-card">
-                     <center>
-                        <button class="button-rund"><span class="material-symbols-rounded" id="extend">keyboard_arrow_down
-                        </span></button>
-                  </div>
-                  <p id="hint">Mehr anzeigen</p> </center>
-                  <!--Hintergrundinformationen-->
-                  <h2 id="unterueberschrift"><span class="material-symbols-rounded" style="color: darkgrey; position: relative; top: 4px; ">
-                     info
-                     </span> Weitere Informationen
-                  </h2>
-                  <div class="hr-line"></div>
-                  <p id="paragraph">
-                     Regionaler Lockdown, Kontaktbeschränkungen, Ausgangssperre – die Maßnahmen zur Eindämmung der COVID-19-Pandemie treffen die Gastwirtschaft besonders stark. Die Branche, zu der Restaurants und Cafés, Caterer und Bars gehören, muss seit Corona-bedingten Shutdowns im März 2020 massive Umsatzeinbußen hinnehmen. Darüber hinaus waren hohe Arbeitsplatzverluste sowie Insolvenzanträge zu verzeichnen. <br>
-                  </p>
-                  <i style=" float: right;">Quelle: Statistisches Bundesamt Deutschland 2022</i>
-               </div>
-               <!--Insolvenzen-->
-               <div class="card-ranking" id="insolvenzen-ranking">
-                  <h2 id="unterueberschrift"> <span class="material-symbols-rounded" style="color: #9F4F5E; position: relative; top: 4px;">
-                     trending_down
-                     </span>   Insolvenzenentwicklung nach Bundesländer (in %) <span class="right">2019-2020</span>
-                  </h2>
-                  <div class="hr-line"></div>
-                  <div class="rang" id="rang">Rang</div>
-                  <div class="bundesland" id="bundesland">Bundesland</div>
-                  <div class="wert" id ="wert">Wert</div>
-                  <div class="ranking-card">
-                     <center>
-                        <button class="button-rund"><span class="material-symbols-rounded" id="extend">keyboard_arrow_down
-                        </span></button>
-                  </div>
-                  <p id="hint">Mehr anzeigen</p> </center>
-                  <!--Hintergrundinformationen-->
-                  <h2 id="unterueberschrift"><span class="material-symbols-rounded" style="color: darkgrey; position: relative; top: 4px; ">
-                     info
-                     </span> Weitere Informationen
-                  </h2>
-                  <div class="hr-line"></div>
-                  <p id="paragraph">
-                     Regionaler Lockdown, Kontaktbeschränkungen, Ausgangssperre – die Maßnahmen zur Eindämmung der COVID-19-Pandemie treffen die Gastwirtschaft besonders stark. Die Branche, zu der Restaurants und Cafés, Caterer und Bars gehören, muss seit Corona-bedingten Shutdowns im März 2020 massive Umsatzeinbußen hinnehmen. Darüber hinaus waren hohe Arbeitsplatzverluste sowie Insolvenzanträge zu verzeichnen. <br>
-                  </p>
-                  <i style=" float: right;">Quelle: Statistisches Bundesamt Deutschland 2022</i>
-               </div>
+               
                <!--------------------------------Hier beginnt die Graph Section-------------------------------->
                
                <div class="graph-section" id="card-graph" style="display: none;">

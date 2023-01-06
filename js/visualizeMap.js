@@ -283,7 +283,7 @@ function clickPath(d) {
     if ((focused === null) || !(focused === d)) {
         focused = d;
         //Einblenden des Graphs je nach Bundesland, Bsp: Schleswig-Holstein
-        document.getElementById("umsatz-ranking").style.display = 'none';
+        document.getElementById("ranking").style.display = 'none';
         target = document.getElementById('card-graph');
         target.style.display = 'block';
         target.style.transition = "background-image 0.2s ease-in-out";
@@ -306,20 +306,20 @@ function clickPath(d) {
 
         //Wenn Umsätze ausgewählt sind, blende das Ranking ein, wenn kein Bundesland gewählt wurde
         if (document.getElementById("radio1").checked) {
-            document.getElementById('umsatz-ranking').style.display = 'block';
+            document.getElementById('ranking').style.display = 'block';
             //Blende andere Bundesländer aus
             document.getElementById("card-graph").style.display = 'none';
         }
 
         // //Wenn Arbeitnehmer ausgewählt sind, blende das Ranking ein, wenn kein Bundesland gewählt wurde
         else if (document.getElementById("radio2").checked) {
-            document.getElementById('arbeitnehmer-ranking').style.display = 'block';
+            document.getElementById('ranking').style.display = 'block';
             document.getElementById("card-graph").style.display = 'none';
         }
 
         //Wenn Insolvenzen ausgewählt sind, blende das Ranking ein, wenn kein Bundesland gewählt wurde
         else if (document.getElementById("radio3").checked) {
-            document.getElementById('insolvenzen-ranking').style.display = 'block';
+            document.getElementById('ranking').style.display = 'block';
             document.getElementById("card-graph").style.display = 'none';
         }
 
@@ -344,14 +344,15 @@ function changeEuro() {
     document.body.style.animation = "fadeBackground 6s";
 
     //Umsatz-Ranking einblenden, Rest ausblenden
-    document.getElementById("arbeitnehmer-ranking").style.display = 'none';
-    document.getElementById("insolvenzen-ranking").style.display = 'none';
-    document.getElementById("umsatz-ranking").style.display = 'block';
+    document.getElementById("ranking_header_text").innerHTML = 'Umsatzentwicklung nach Bundesländer (in %)';
+
     // TBD: Heatmap Umsätze einblenden, Heatmap Arbeitnehmer+Insolvenzen ausblenden
     // TBD: Ranking Umsätze einblenden, Ranking Arbeitnehmer+Insolvenzen ausblenden
 
     // TBD: Heatmap Datensätze, Graphen Datensätze, Ranking Datensätze auf style.display='none' setzen
+    document.getElementById("ranking").style.display = 'block';
     document.getElementById("card-graph").style.display = 'none';
+    disableButton();
 
 }
 
@@ -364,10 +365,7 @@ function changeEmployee() {
     //document.body.style.transition = "background-image 0.2s ease-in-out";
     document.body.style.animation = "fadeBackground 6s";
     //Korrektes Ranking einblenden, Rest ausblenden
-    document.getElementById("umsatz-ranking").style.display = 'none';
-    document.getElementById("insolvenzen-ranking").style.display = 'none';
-    document.getElementById("arbeitnehmer-ranking").style.display = 'block';
-
+    document.getElementById("ranking_header_text").innerHTML = 'Arbeitnehmerentwicklung nach Bundesländer (in %)';
     //Beispielcode: Zeige Arbeitnehmergraph für SW an, wenn SW ausgewählt bei Umsätze ODER bei Insolvenzen
     /* if (document.getElementById("card-graph-schleswigholstein" || "card-graph-schleswigholstein3").style.display='block') {
        document.getElementById("card-graph-schleswigholstein2").style.display='block';
@@ -375,7 +373,9 @@ function changeEmployee() {
        document.getElementById("arbeitnehmer-ranking").style.display='none';
      }*/
     //Blende alles andere aus
+    document.getElementById("ranking").style.display = 'block';
     document.getElementById("card-graph").style.display = 'none';
+    disableButton();
     // TBD: Heatmap Arbeitnehmer einblenden, Heatmap Umsätze+Insolvenzen ausblenden
     // TBD: Ranking Arbeitnehmer einblenden, Ranking Umsätze+Insolvenzen ausblenden
 }
@@ -392,13 +392,13 @@ function changeInsolvency() {
     document.querySelector("body").style.backgroundImage = "url(img/bg-insolvencies.png)";
 
     //Korrektes Ranking einblenden, Rest ausblenden
-    document.getElementById("umsatz-ranking").style.display = 'none';
-    document.getElementById("arbeitnehmer-ranking").style.display = 'none';
-    document.getElementById("insolvenzen-ranking").style.display = 'block';
+    document.getElementById("ranking_header_text").innerHTML = 'Insolvenzenentwicklung nach Bundesländer (in %)';
     // TBD: Heatmap Insolvenzen einblenden, Heatmap Umsätze+Arbeitnehmer ausblenden
 
     //GRAPH UMSÄTZE AUSBLENDEN
+    document.getElementById("ranking").style.display = 'block';
     document.getElementById("card-graph").style.display = 'none';
+    disableButton();
     // TBD: Ranking Insolvenzen einblenden, Ranking Umsätze+Arbeitnehmer ausblenden
 
 
@@ -433,6 +433,7 @@ function reset() {
     disableButton();
 
     //GRAPH UMSÄTZE AUSBLENDEN
+    document.getElementById("ranking").style.display = 'block';
     document.getElementById("card-graph").style.display = 'none';
 
     if (document.getElementById("radio1").checked) {
