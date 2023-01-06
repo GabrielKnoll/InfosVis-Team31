@@ -27,8 +27,8 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
 
 
 function createAreaGraph(data) {
-
   // Keep only the 90 first rows
+  //TODO remove, unnecessary for our data
   data = data.filter(function(d,i){ return i>90}).filter(function(value, index, Arr) {
     return index % 100 == 0;
   });
@@ -44,10 +44,9 @@ function createAreaGraph(data) {
 
   svg_line.append("g")
   .attr("transform", `translate(0, ${height_line})`)
-  .call(xAxis);
-  
-  svg_line.select('.x-axis')
-  .call(xAxis);
+  .call(xAxis)
+  .attr('class', 'x-axis');
+
 
   // Add Y axis
   var y = d3.scaleLinear()
@@ -67,10 +66,9 @@ function createAreaGraph(data) {
           .attr("stroke-dasharray", "2,2"))
       .call(g => g.selectAll(".tick text")
           .attr("x", 4)
-          .attr("dy", -4));
-  
-  svg_line.select('.y-axis')
-  .call(yAxis);
+          .attr("dy", -4))
+      .attr('class', 'y-axis');
+
       
   // Set the gradient
   svg_line.append("linearGradient")
@@ -193,6 +191,7 @@ function updateAreaGraph(data) {
     .tickFormat(d => d <= d3.timeYear(d) ? d.getFullYear() : null);
 
   svg_line.select('.x-axis')
+    .attr("transform", `translate(0, ${height_line})`)
     .call(xAxis);
 
   // Update the y-axis
@@ -201,7 +200,15 @@ function updateAreaGraph(data) {
     .tickFormat(formatTick);
 
   svg_line.select('.y-axis')
-    .call(yAxis);
+    .attr("transform", `translate(0, 0)`)
+    .call(yAxis)
+        .call(g => g.select(".domain").remove())
+        .call(g => g.selectAll(".tick line")
+            .attr("stroke-opacity", 0.5)
+            .attr("stroke-dasharray", "2,2"))
+        .call(g => g.selectAll(".tick text")
+            .attr("x", 4)
+            .attr("dy", -4));
 
   // Update the gradient
   svg_line.select('#area-gradient')
@@ -251,10 +258,10 @@ function updateAreaGraph(data) {
   .attr("cy", d => y(d.value));
 
   // Update the red covid line
-  svg_line.select('.covid-line')
-  .attr("x1", x(new Date("2017-01-01")))
-  .attr("y1", 0)
-  .attr("x2", x(new Date("2017-01-01")))
-  .attr("y2", height_line);
+  //svg_line.select('.covid-line')
+  //.attr("x1", x(new Date("2017-01-01")))
+  //.attr("y1", 0)
+  //.attr("x2", x(new Date("2017-01-01")))
+  //.attr("y2", height_line);
 
 }

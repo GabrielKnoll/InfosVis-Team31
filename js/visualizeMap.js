@@ -293,10 +293,11 @@ function clickPath(d) {
         document.getElementById("unterueberschrift-text").innerHTML = "Umsatzentwicklung in " + state
         
         // change diagram
+        //TODO pass correct data
         updateAreaGraph([
-            {date: d3.timeParse("%Y-%m-%d")("2016-04-28"), value : 5},
-            {date: d3.timeParse("%Y-%m-%d")("2017-04-28"), value : 10},
-            {date: d3.timeParse("%Y-%m-%d")("2018-04-28"), value : 15}]);
+            {date: d3.timeParse("%Y-%m-%d")("2016-01-1"), value : Math.floor(Math.random() * 1000.0) + 1},
+            {date: d3.timeParse("%Y-%m-%d")("2017-01-1"), value : Math.floor(Math.random() * 1000.0) + 1},
+            {date: d3.timeParse("%Y-%m-%d")("2018-01-1"), value : Math.floor(Math.random() * 1000.0) + 1}]);
         
 
     } else {
