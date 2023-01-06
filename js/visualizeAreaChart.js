@@ -134,6 +134,7 @@ function createAreaGraph(data) {
   .attr("y1", 0)
   .attr("x2", x(new Date("2017-01-01")))  //<<== and here
   .attr("y2", height_line)
+  .attr("class", "covid-line")
   .style("stroke-width", 2)
   .style("stroke", "#bd4b57")
   .style("stroke-dasharray", 7)
@@ -141,12 +142,12 @@ function createAreaGraph(data) {
 
   // Set the Covid gradient
   svg_line.append("linearGradient")
-  .attr("id", "red-gradient")
   .attr("gradientUnits", "userSpaceOnUse")
   .attr("x1", "0%")
   .attr("y1", "110%")
   .attr("x2", "0%")
   .attr("y2", "0%")
+  .attr("id", "covid-area-gradient")
   .selectAll("stop")
   .data([
     {offset: "0%", color: "#bd4b57"},
@@ -162,8 +163,9 @@ function createAreaGraph(data) {
   .attr('y', 0)
   .attr('width', width_line - x(new Date("2017-01-01")))
   .attr('height', height_line)
-  .attr('fill', 'url(#red-gradient)')
-  .attr('fill-opacity', .15);
+  .attr('fill', 'url(#covid-area-gradient)')
+  .attr('fill-opacity', .15)
+  .attr('class', 'covid-area');
 
 }
 
@@ -258,10 +260,36 @@ function updateAreaGraph(data) {
   .attr("cy", d => y(d.value));
 
   // Update the red covid line
-  //svg_line.select('.covid-line')
-  //.attr("x1", x(new Date("2017-01-01")))
-  //.attr("y1", 0)
-  //.attr("x2", x(new Date("2017-01-01")))
-  //.attr("y2", height_line);
+  svg_line.select('.covid-line')
+  .attr("x1", x(new Date("2017-01-01")))
+  .attr("y1", 0)
+  .attr("x2", x(new Date("2017-01-01")))
+  .attr("y2", height_line);
+  
+    // Update the gradient
+    svg_line.select('#covid-area-gradient')
+      .attr("gradientUnits", "userSpaceOnUse")
+      .attr("x1", "0%")
+      .attr("y1", "110%")
+      .attr("x2", "0%")
+      .attr("y2", "0%")
+      .selectAll("stop")
+      .data([
+        {offset: "0%", color: "#bd4b57"},
+        {offset: "100%", color: "transparent"}
+      ])
+      .enter().append("stop")
+      .attr("offset", function(d) { return d.offset; })
+      .attr("stop-color", function(d) { return d.color; });
+
+  // Update the covid area
+  svg_line.select('.covid-area')
+    .attr('x', x(new Date("2017-01-01")))
+    .attr('y', 0)
+    .attr('width', width_line - x(new Date("2017-01-01")))
+    .attr('height', height_line)
+    .attr('fill', 'url(#covid-area-gradient)')
+    .attr('fill-opacity', .15);
+
 
 }
