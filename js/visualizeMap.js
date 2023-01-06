@@ -57,6 +57,8 @@ d3.json("./json/optimizedGermanStates.json", function(data) {
 
     var target;
 
+    changeEuro();
+
     g.selectAll("path.feature")
         .data(data.features)
         .enter()
@@ -332,6 +334,7 @@ function clickPath(d) {
 
 //onButtonClick-Funktionen => Wechsel der Kategorie bei ButtonClick
 function changeEuro() {
+    colorHeatmap(Category.Revenue.name);
     document.getElementById("bg-euros").style.display = "block";
     document.getElementById("bg-insolvencies").style.display = "none";
     document.getElementById("bg-employees").style.display = "none";
@@ -352,6 +355,7 @@ function changeEuro() {
 }
 
 function changeEmployee() {
+    colorHeatmap(Category.Employee.name);
     document.getElementById("bg-euros").style.display = "none";
     document.getElementById("bg-insolvencies").style.display = "none";
     document.getElementById("bg-employees").style.display = "block";
@@ -377,6 +381,7 @@ function changeEmployee() {
 
 
 function changeInsolvency() {
+    colorHeatmap(Category.Insolvency.name);
     document.getElementById("bg-insolvencies").style.display = "block";
     document.getElementById("bg-euros").style.display = "none";
     document.getElementById("bg-employees").style.display = "none";
