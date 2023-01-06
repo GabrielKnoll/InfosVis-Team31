@@ -282,6 +282,17 @@ function clickPath(d) {
 
     if ((focused === null) || !(focused === d)) {
         focused = d;
+
+        //Checke Radio button
+        var selectedInfo;
+        if (document.getElementById("radio1").checked) {
+            selectedInfo = "Umsatzentwicklung"
+        } else if (document.getElementById("radio2").checked) {
+            selectedInfo = "Arbeitnehmerentwicklung"
+        } else if (document.getElementById("radio3").checked) {
+            selectedInfo = "Insolvenzenentwicklung"
+        }
+
         //Einblenden des Graphs je nach Bundesland, Bsp: Schleswig-Holstein
         document.getElementById("ranking").style.display = 'none';
         target = document.getElementById('card-graph');
@@ -290,10 +301,10 @@ function clickPath(d) {
         
         // change title
         var state = d.properties.name;
-        document.getElementById("unterueberschrift-text").innerHTML = "Umsatzentwicklung in " + state
+        document.getElementById("unterueberschrift-text").innerHTML = `${selectedInfo} in ${state}`
         
         // change diagram
-        //TODO pass correct data
+        //TODO pass correct data based on selectedInfo
         updateAreaGraph([
             {date: d3.timeParse("%Y-%m-%d")("2016-01-1"), value : Math.floor(Math.random() * 1000.0) + 1},
             {date: d3.timeParse("%Y-%m-%d")("2017-01-1"), value : Math.floor(Math.random() * 1000.0) + 1},

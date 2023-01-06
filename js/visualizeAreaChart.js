@@ -290,6 +290,4 @@ function updateAreaGraph(data) {
     .attr('height', height_line)
     .attr('fill', 'url(#covid-area-gradient)')
     .attr('fill-opacity', .15);
-
-
 }
