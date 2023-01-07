@@ -646,3 +646,18 @@ input[type=radio]:hover:before {
   color: black; 
   font-size:18px;
 }
+
+table {
+  height: 100%;
+  width: 100%;
+  padding-top: 15px;
+  font-size: 30px;
+  table-layout: fixed;
+}
+
+
+td {
+  border: 1px gray;
+  text-align: left;
+  padding: 10px;
+}
