@@ -6,6 +6,7 @@ class Category {
     constructor(name) {
         this.name = name;
     }
+
     toString() {
         return this.name;
     }
@@ -30,11 +31,27 @@ function colorHeatmap(category) {
 }
 
 function applyHeatmapColorsFromFile(filename) {
-    d3.csv(filename, function(data) {
-        data.forEach(function(x,_) {
+    d3.csv(filename, function (data) {
+        data.forEach(function (x, _) {
             const state = x['Bundesländer'];
             const value = x['Vorjahresvergleich'];
             setColor(state, value);
         })
     });
+}
+
+function updateChart(category, state) {
+    d3.csv("./Dataset/csv/employees.csv", function (data) {
+        const stateEntry = data.filter(entry => entry['Bundesland'] === state);
+        const months = Object.entries((Object.entries(stateEntry)[0][1])).slice(1);
+        let result = [];
+        for (const key in months) {
+            const date = d3.timeParse("%Y-%m-%d")(months[key][0]);
+            const value = months[key][1];
+            if (value != "NaN") {
+                result.push({date, value});
+            }
+        }
+        updateAreaGraph(result);
+    })
 }

@@ -305,10 +305,7 @@ function clickPath(d) {
         
         // change diagram
         //TODO pass correct data based on selectedInfo
-        updateAreaGraph([
-            {date: d3.timeParse("%Y-%m-%d")("2016-01-1"), value : Math.floor(Math.random() * 1000.0) + 1},
-            {date: d3.timeParse("%Y-%m-%d")("2017-01-1"), value : Math.floor(Math.random() * 1000.0) + 1},
-            {date: d3.timeParse("%Y-%m-%d")("2018-01-1"), value : Math.floor(Math.random() * 1000.0) + 1}]);
+        updateChart(selectedInfo, state);
         
 
     } else {
