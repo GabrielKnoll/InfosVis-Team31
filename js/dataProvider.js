@@ -11,10 +11,8 @@ class Category {
     }
 }
 
-const ssv = d3.dsvFormat(';');
 function colorHeatmap(category) {
     console.log('called colorHeatmap');
-    var data;
     switch (category) {
         case Category.Revenue.name:
             console.log('selected revenue');
