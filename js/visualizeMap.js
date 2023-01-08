@@ -356,6 +356,7 @@ function changeEuro() {
 
     //Umsatz-Ranking einblenden, Rest ausblenden
     document.getElementById("ranking_header_text").innerHTML = 'Umsatzentwicklung nach Bundesländer (in %)';
+    document.getElementById("legend-unit").innerHTML = "Umsätze in Euro";
 
     // TBD: Heatmap Umsätze einblenden, Heatmap Arbeitnehmer+Insolvenzen ausblenden
     // TBD: Ranking Umsätze einblenden, Ranking Arbeitnehmer+Insolvenzen ausblenden
@@ -377,6 +378,7 @@ function changeEmployee() {
     document.body.style.animation = "fadeBackground 6s";
     //Korrektes Ranking einblenden, Rest ausblenden
     document.getElementById("ranking_header_text").innerHTML = 'Arbeitnehmerentwicklung nach Bundesländer (in %)';
+    document.getElementById("legend-unit").innerHTML = "Anzahl Arbeitnehmende";
     //Beispielcode: Zeige Arbeitnehmergraph für SW an, wenn SW ausgewählt bei Umsätze ODER bei Insolvenzen
     /* if (document.getElementById("card-graph-schleswigholstein" || "card-graph-schleswigholstein3").style.display='block') {
        document.getElementById("card-graph-schleswigholstein2").style.display='block';
@@ -404,6 +406,7 @@ function changeInsolvency() {
 
     //Korrektes Ranking einblenden, Rest ausblenden
     document.getElementById("ranking_header_text").innerHTML = 'Insolvenzenentwicklung nach Bundesländer (in %)';
+    document.getElementById("legend-unit").innerHTML = "Anzahl Insolvenzen";
     // TBD: Heatmap Insolvenzen einblenden, Heatmap Umsätze+Arbeitnehmer ausblenden
 
     //GRAPH UMSÄTZE AUSBLENDEN

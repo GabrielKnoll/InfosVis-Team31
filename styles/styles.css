@@ -367,6 +367,10 @@ html{
   margin-top:10px;
 }
 
+.legend-unit {
+  display: inline-block;
+}
+
 #first {
   background-color:#9F4F5E; 
 }
