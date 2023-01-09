@@ -41,7 +41,7 @@ function applyHeatmapColorsFromFile(filename) {
 }
 
 function updateChart(category, state) {
-    d3.csv("./Dataset/csv/employees.csv", function (data) {
+    d3.csv(datasetForCategory(category), function (data) {
         const stateEntry = data.filter(entry => entry['Bundesland'] === state);
         const months = Object.entries((Object.entries(stateEntry)[0][1])).slice(1);
         let result = [];
@@ -54,4 +54,15 @@ function updateChart(category, state) {
         }
         updateAreaGraph(result);
     })
+}
+
+function datasetForCategory(category) {
+    switch (category) {
+        case Category.Employee.name:
+            return "./Dataset/csv/employees.csv";
+        case Category.Insolvency.name:
+            return "./Dataset/csv/insolvencies.csv";
+        case Category.Revenue.name:
+            return "./Dataset/csv/revenue.csv";
+    }
 }

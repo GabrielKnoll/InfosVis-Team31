@@ -284,13 +284,16 @@ function clickPath(d) {
         focused = d;
 
         //Checke Radio button
-        var selectedInfo;
+        var selectedInfo, selectedCategory;
         if (document.getElementById("radio1").checked) {
-            selectedInfo = "Umsatzentwicklung"
+            selectedInfo = "Umsatzentwicklung";
+            selectedCategory = Category.Revenue.name;
         } else if (document.getElementById("radio2").checked) {
-            selectedInfo = "Arbeitnehmerentwicklung"
+            selectedInfo = "Arbeitnehmerentwicklung";
+            selectedCategory = Category.Employee.name;
         } else if (document.getElementById("radio3").checked) {
-            selectedInfo = "Insolvenzenentwicklung"
+            selectedInfo = "Insolvenzenentwicklung";
+            selectedCategory = Category.Insolvency.name;
         }
 
         //Einblenden des Graphs je nach Bundesland, Bsp: Schleswig-Holstein
@@ -305,7 +308,7 @@ function clickPath(d) {
         
         // change diagram
         //TODO pass correct data based on selectedInfo
-        updateChart(selectedInfo, state);
+        updateChart(selectedCategory, state);
         
 
     } else {
