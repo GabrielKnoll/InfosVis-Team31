@@ -52,7 +52,7 @@ function updateChart(category, state) {
                 result.push({date, value});
             }
         }
-        updateAreaGraph(result);
+        createAreaGraph(result);
     })
 }
 
