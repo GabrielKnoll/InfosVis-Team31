@@ -90,10 +90,13 @@ font-size: 20px;
   color: darkgrey; 
   position: relative; 
   top: 4px;
+  visibility: visible;
 }
 
 #quelle {
 float:right;
+display: block;
+visibility: visible;
 }
 
 #wert {
@@ -347,6 +350,7 @@ html{
   height:1px; 
   background-color:#E1E1E1; 
   padding-right:5%;
+  visibility: visible;
 }
 
 /*LEGENDE*/
@@ -421,6 +425,7 @@ section{
 #paragraph {
   margin-top: 0;
   margin-bottom: 10px;
+  visibility: visible;
 }
 
 .col-2{
@@ -656,16 +661,90 @@ input[type=radio]:hover:before {
 }
 
 table {
+  position: relative;
   height: 100%;
   width: 100%;
   padding-top: 15px;
   font-size: 30px;
   table-layout: fixed;
+  border-collapse: collapse;
 }
-
 
 td {
   border: 1px gray;
   text-align: left;
   padding: 10px;
+}
+
+tr{
+  border-bottom: 0.8px solid rgba(128, 128, 128, 0.24);
+}
+
+tr:hover {
+  border-radius: 5px;
+}
+
+.table-row:hover {
+  background-color: #f2f2f2; /* Change the background color when the mouse cursor hovers over the row */
+  cursor: pointer; /* Change the cursor to a pointer to indicate that the row is clickable */
+}
+
+.hidden-row {
+  display: none; /* Hide the rows by default */
+}
+
+.content {
+padding: 0 18px;
+background-color: white;
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.2s ease-out;
+}
+
+th:nth-child(1), td:nth-child(1) {
+  width: 130px;
+  position: relative;
+}
+
+th:nth-child(2), td:nth-child(2) {
+  width: 280px;
+  position: relative;
+  text-decoration: underline;
+}
+
+th:nth-child(3), td:nth-child(3) {
+  width: 163px;
+  position: relative;
+}
+
+table tr td:nth-child(3)::before {
+  /* content: "⬇"; */
+  position: relative; 
+  /* Add some additional styling to the descending symbol */
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(103, 171, 214, 0.311); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(103, 171, 214, 0.493); 
+}
+
+#unterueberschrift {
+  display: block;
 }
