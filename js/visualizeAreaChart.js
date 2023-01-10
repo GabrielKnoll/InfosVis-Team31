@@ -46,9 +46,9 @@ function createAreaGraph(data) {
   currentData = data
   // Keep only the 90 first row
   //TODO remove, unnecessary for our data
-  data = data.filter(function(d,i){ return i>90}).filter(function(value, index, Arr) {
+  /*data = data.filter(function(d,i){ return i>90}).filter(function(value, index, Arr) {
     return index % 100 == 0;
-  });
+  });*/
 
   // Add X axis --> it is a date format
   var x = d3.scaleTime()
