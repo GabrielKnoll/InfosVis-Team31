@@ -747,7 +747,3 @@ table tr td:nth-child(3)::before {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(103, 171, 214, 0.493); 
 }
-
-#unterueberschrift {
-  display: block;
-}

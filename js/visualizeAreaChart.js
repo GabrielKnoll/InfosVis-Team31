@@ -75,9 +75,6 @@ function createAreaGraph(data) {
           .attr("dy", -4))
       .attr('class', 'y-axis')
       .raise();
-
-  // Raise the y-axis tick elements to the top
-  svg.selectAll(".y.axis .tick").raise();
       
   // Set the gradient
   svg_line.append("linearGradient")
