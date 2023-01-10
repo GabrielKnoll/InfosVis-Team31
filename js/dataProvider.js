@@ -6,15 +6,14 @@ class Category {
     constructor(name) {
         this.name = name;
     }
+
     toString() {
         return this.name;
     }
 }
 
-const ssv = d3.dsvFormat(';');
 function colorHeatmap(category) {
     console.log('called colorHeatmap');
-    var data;
     switch (category) {
         case Category.Revenue.name:
             console.log('selected revenue');
@@ -32,11 +31,38 @@ function colorHeatmap(category) {
 }
 
 function applyHeatmapColorsFromFile(filename) {
-    d3.csv(filename, function(data) {
-        data.forEach(function(x,_) {
+    d3.csv(filename, function (data) {
+        data.forEach(function (x, _) {
             const state = x['Bundesländer'];
             const value = x['Vorjahresvergleich'];
             setColor(state, value);
         })
     });
+}
+
+function updateChart(category, state) {
+    d3.csv(datasetForCategory(category), function (data) {
+        const stateEntry = data.filter(entry => entry['Bundesland'] === state);
+        const months = Object.entries((Object.entries(stateEntry)[0][1])).slice(1);
+        let result = [];
+        for (const key in months) {
+            const date = d3.timeParse("%Y-%m-%d")(months[key][0]);
+            const value = months[key][1];
+            if (value != "NaN") {
+                result.push({date, value});
+            }
+        }
+        updateAreaGraph(result);
+    })
+}
+
+function datasetForCategory(category) {
+    switch (category) {
+        case Category.Employee.name:
+            return "./Dataset/csv/employees.csv";
+        case Category.Insolvency.name:
+            return "./Dataset/csv/insolvencies.csv";
+        case Category.Revenue.name:
+            return "./Dataset/csv/revenue.csv";
+    }
 }

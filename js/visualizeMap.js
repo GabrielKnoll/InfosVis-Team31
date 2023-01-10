@@ -70,146 +70,13 @@ d3.json("./json/optimizedGermanStates.json", function(data) {
         .on("click", clickPath)
         .on("mouseover", function(d) { // MouseoverBox Logic
             var state = d.properties.name;
-            if (state === 'Bayern') {
-                target = document.getElementById('BAYERN-Mouseover');
-                target.style.display = 'block';
-
-            } else if (state === 'Baden-Württemberg') {
-                target = document.getElementById('BADEN-WÜTTEMBERG-Mouseover');
-                target.style.display = 'block';
-
-            } else if (state === 'Thüringen') {
-                target = document.getElementById('THÜRINGEN-Mouseover');
-                target.style.display = 'block';
-
-            } else if (state === 'Hessen') {
-                target = document.getElementById('HESSEN-Mouseover');
-                target.style.display = 'block';
-
-            } else if (state === 'Sachsen') {
-                target = document.getElementById('SACHSEN-Mouseover');
-                target.style.display = 'block';
-
-            } else if (state === 'Rheinland-Pfalz') {
-                target = document.getElementById('RHEINLAND-PFALZ-Mouseover');
-                target.style.display = 'block';
-
-            } else if (state === 'Saarland') {
-                target = document.getElementById('SAARLAND-Mouseover');
-                target.style.display = 'block';
-
-            } else if (state === 'Brandenburg') {
-                target = document.getElementById('BRANDENBURG-Mouseover');
-                target.style.display = 'block';
-
-            } else if (state === 'Berlin') {
-                target = document.getElementById('BERLIN-Mouseover');
-                target.style.display = 'block';
-
-            } else if (state === 'Sachsen-Anhalt') {
-                target = document.getElementById('SACHSEN-ANHALT-Mouseover');
-                target.style.display = 'block';
-
-            } else if (state === 'Niedersachsen') {
-                target = document.getElementById('NIEDERSACHSEN-Mouseover');
-                target.style.display = 'block';
-
-            } else if (state === 'Nordrhein-Westfalen') {
-                target = document.getElementById('NORDRHEIN-WESTFALEN-Mouseover');
-                target.style.display = 'block';
-
-            } else if (state === 'Bremen') {
-                target = document.getElementById('BREMEN-Mouseover');
-                target.style.display = 'block';
-
-            } else if (state === 'Mecklenburg-Vorpommern') {
-                target = document.getElementById('MECKLENBURG-VORPOMMERN-Mouseover');
-                target.style.display = 'block';
-
-            } else if (state === 'Hamburg') {
-                target = document.getElementById('HAMBURG-Mouseover');
-                target.style.display = 'block';
-
-            } else if (state === 'Schleswig-Holstein') {
-                target = document.getElementById('SCHLESWIG-HOLSTEIN-Mouseover');
-                target.style.display = 'block';
-            }
-
-
+            target = document.getElementById(state.toUpperCase() + '-Mouseover');
+            target.style.display = 'block';
         })
         .on("mouseout", function(d) { // MouseoverBox Logic
             var state = d.properties.name;
-
-            if (state === 'Bayern') {
-                target = document.getElementById('BAYERN-Mouseover');
-                target.style.display = 'none';
-
-            } else if (state === 'Baden-Württemberg') {
-                target = document.getElementById('BADEN-WÜTTEMBERG-Mouseover');
-                target.style.display = 'none';
-
-            } else if (state === 'Thüringen') {
-                target = document.getElementById('THÜRINGEN-Mouseover');
-                target.style.display = 'none';
-
-
-            } else if (state === 'Hessen') {
-                target = document.getElementById('HESSEN-Mouseover');
-                target.style.display = 'none';
-
-
-            } else if (state === 'Sachsen') {
-                target = document.getElementById('SACHSEN-Mouseover');
-                target.style.display = 'none';
-
-            } else if (state === 'Rheinland-Pfalz') {
-                target = document.getElementById('RHEINLAND-PFALZ-Mouseover');
-                target.style.display = 'none';
-
-            } else if (state === 'Saarland') {
-                target = document.getElementById('SAARLAND-Mouseover');
-                target.style.display = 'none';
-
-            } else if (state === 'Brandenburg') {
-                target = document.getElementById('BRANDENBURG-Mouseover');
-                target.style.display = 'none';
-
-            } else if (state === 'Berlin') {
-                target = document.getElementById('BERLIN-Mouseover');
-                target.style.display = 'none';
-
-            } else if (state === 'Sachsen-Anhalt') {
-                target = document.getElementById('SACHSEN-ANHALT-Mouseover');
-                target.style.display = 'none';
-
-            } else if (state === 'Niedersachsen') {
-                target = document.getElementById('NIEDERSACHSEN-Mouseover');
-                target.style.display = 'none';
-
-            } else if (state === 'Nordrhein-Westfalen') {
-                target = document.getElementById('NORDRHEIN-WESTFALEN-Mouseover');
-                target.style.display = 'none';
-
-            } else if (state === 'Bremen') {
-                target = document.getElementById('BREMEN-Mouseover');
-                target.style.display = 'none';
-
-            } else if (state === 'Mecklenburg-Vorpommern') {
-                target = document.getElementById('MECKLENBURG-VORPOMMERN-Mouseover');
-                target.style.display = 'none';
-
-            } else if (state === 'Hamburg') {
-                target = document.getElementById('HAMBURG-Mouseover');
-                target.style.display = 'none';
-
-            } else if (state === 'Schleswig-Holstein') {
-                target = document.getElementById('SCHLESWIG-HOLSTEIN-Mouseover');
-                target.style.display = 'none';
-            }
-
-
-
-
+            target = document.getElementById(state.toUpperCase() + '-Mouseover');
+            target.style.display = 'none';
         });
 
 
@@ -223,7 +90,7 @@ d3.json("./json/optimizedGermanStates.json", function(data) {
 });
 
 // Multidimensionaler Array zum verwalten und aufbauen der Mouseover-Boxen
-const STATES = ["BADEN-WÜTTEMBERG", "BAYERN", "BERLIN", "BRANDENBURG", "BREMEN", "HESSEN", "MECKLENBURG-VORPOMMERN", "NIEDERSACHSEN", "NORDRHEIN-WESTFALEN", "RHEINLAND-PFALZ", "SAARLAND", "SACHSEN-ANHALT", "SACHSEN", "SCHLESWIG-HOLSTEIN", "HAMBURG", "THÜRINGEN"];
+const STATES = ["BADEN-WÜRTTEMBERG", "BAYERN", "BERLIN", "BRANDENBURG", "BREMEN", "HESSEN", "MECKLENBURG-VORPOMMERN", "NIEDERSACHSEN", "NORDRHEIN-WESTFALEN", "RHEINLAND-PFALZ", "SAARLAND", "SACHSEN-ANHALT", "SACHSEN", "SCHLESWIG-HOLSTEIN", "HAMBURG", "THÜRINGEN"];
 
 for (let i = 0; i <= STATES.length; i++) {
     d3.select(".heatmap-section")
@@ -232,7 +99,7 @@ for (let i = 0; i <= STATES.length; i++) {
         .attr('id', STATES[i] + "-Mouseover");
 }
 var bayernInfo = ["BAYERN", "#3 der größten Umsatzeinbußen", "Umsatzeinbußen: 7.319.757.000€", "Vorjahresvergleich: -36,0%"];
-var badenWüttembergInfo = ["BADEN-WÜTTEMBERG", "#7 der größten Umsatzeinbußen", "Umsatzeinbußen: 3.879.236.000€", "Vorjahresvergleich: -30,1%"];
+var badenWürttembergInfo = ["BADEN-WÜRTTEMBERG", "#7 der größten Umsatzeinbußen", "Umsatzeinbußen: 3.879.236.000€", "Vorjahresvergleich: -30,1%"];
 var berlinInfo = ["BERLIN", "#1 der größten Umsatzeinbußen", "Umsatzeinbußen: 3.128.301.000€", "Vorjahresvergleich: -43,0%"];
 var brandenburgInfo = ["BRANDENBURG", "#15 der größten Umsatzeinbußen", "Umsatzeinbußen: 327.182.000€", "Vorjahresvergleich: -18,1%"];
 var bremenInfo = ["BREMEN", "#6 der größten Umsatzeinbußen", "Umsatzeinbußen: 200.665.000€", "Vorjahresvergleich: -32,2%"];
@@ -248,7 +115,7 @@ var schleswigHolsteinInfo = ["SCHLESWIG-HOLSTEIN", "#13 der größten Umsatzeinb
 var hamburgInfo = ["HAMBURG", "#5 der größten Umsatzeinbußen", "Umsatzeinbußen: 1.021.549.000€", "Vorjahresvergleich: -32,7%"];
 var thüringenInfo = ["THÜRINGEN", "#11 der größten Umsatzeinbußen", "Umsatzeinbußen: 337.028.000€", "Vorjahresvergleich: -27,0%"];
 
-var statesCollection = [bayernInfo, badenWüttembergInfo, berlinInfo, brandenburgInfo, bremenInfo, hessenInfo, mecklenburgVorpommernInfo, niedersachenInfo, nordrheinWestfalenInfo, rheinlandPfalzInfo, saarlandInfo, sachsenAnhaltInfo, sachsenInfo, schleswigHolsteinInfo, hamburgInfo, thüringenInfo];
+var statesCollection = [bayernInfo, badenWürttembergInfo, berlinInfo, brandenburgInfo, bremenInfo, hessenInfo, mecklenburgVorpommernInfo, niedersachenInfo, nordrheinWestfalenInfo, rheinlandPfalzInfo, saarlandInfo, sachsenAnhaltInfo, sachsenInfo, schleswigHolsteinInfo, hamburgInfo, thüringenInfo];
 var statesCollectionLen = statesCollection.length;
 
 // Erstelleung der Mouseover-Boxen für alle Bundesländer
@@ -284,13 +151,16 @@ function clickPath(d) {
         focused = d;
 
         //Checke Radio button
-        var selectedInfo;
+        var selectedInfo, selectedCategory;
         if (document.getElementById("radio1").checked) {
-            selectedInfo = "Umsatzentwicklung"
+            selectedInfo = "Umsatzentwicklung";
+            selectedCategory = Category.Revenue.name;
         } else if (document.getElementById("radio2").checked) {
-            selectedInfo = "Arbeitnehmerentwicklung"
+            selectedInfo = "Arbeitnehmerentwicklung";
+            selectedCategory = Category.Employee.name;
         } else if (document.getElementById("radio3").checked) {
-            selectedInfo = "Insolvenzenentwicklung"
+            selectedInfo = "Insolvenzenentwicklung";
+            selectedCategory = Category.Insolvency.name;
         }
 
         //Einblenden des Graphs je nach Bundesland, Bsp: Schleswig-Holstein
@@ -305,10 +175,7 @@ function clickPath(d) {
         
         // change diagram
         //TODO pass correct data based on selectedInfo
-        updateAreaGraph([
-            {date: d3.timeParse("%Y-%m-%d")("2016-01-1"), value : Math.floor(Math.random() * 1000.0) + 1},
-            {date: d3.timeParse("%Y-%m-%d")("2017-01-1"), value : Math.floor(Math.random() * 1000.0) + 1},
-            {date: d3.timeParse("%Y-%m-%d")("2018-01-1"), value : Math.floor(Math.random() * 1000.0) + 1}]);
+        updateChart(selectedCategory, state);
         
 
     } else {
@@ -356,6 +223,7 @@ function changeEuro() {
 
     //Umsatz-Ranking einblenden, Rest ausblenden
     document.getElementById("ranking_header_text").innerHTML = 'Umsatzentwicklung nach Bundesländer (in %)';
+    document.getElementById("legend-unit").innerHTML = "Umsätze in Euro";
 
     // TBD: Heatmap Umsätze einblenden, Heatmap Arbeitnehmer+Insolvenzen ausblenden
     // TBD: Ranking Umsätze einblenden, Ranking Arbeitnehmer+Insolvenzen ausblenden
@@ -377,6 +245,7 @@ function changeEmployee() {
     document.body.style.animation = "fadeBackground 6s";
     //Korrektes Ranking einblenden, Rest ausblenden
     document.getElementById("ranking_header_text").innerHTML = 'Arbeitnehmerentwicklung nach Bundesländer (in %)';
+    document.getElementById("legend-unit").innerHTML = "Anzahl Arbeitnehmende";
     //Beispielcode: Zeige Arbeitnehmergraph für SW an, wenn SW ausgewählt bei Umsätze ODER bei Insolvenzen
     /* if (document.getElementById("card-graph-schleswigholstein" || "card-graph-schleswigholstein3").style.display='block') {
        document.getElementById("card-graph-schleswigholstein2").style.display='block';
@@ -404,6 +273,7 @@ function changeInsolvency() {
 
     //Korrektes Ranking einblenden, Rest ausblenden
     document.getElementById("ranking_header_text").innerHTML = 'Insolvenzenentwicklung nach Bundesländer (in %)';
+    document.getElementById("legend-unit").innerHTML = "Anzahl Insolvenzen";
     // TBD: Heatmap Insolvenzen einblenden, Heatmap Umsätze+Arbeitnehmer ausblenden
 
     //GRAPH UMSÄTZE AUSBLENDEN

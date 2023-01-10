@@ -147,7 +147,7 @@ visibility: visible;
 
 #states {
   stroke: white;
-  stroke-width: 0px;
+  stroke-width: 0.5px;
 }
 
 .bundesland{
@@ -219,7 +219,7 @@ visibility: visible;
   left: 27%;
   top: 360px;
 }
-#BADEN-WÜTTEMBERG-Mouseover{
+#BADEN-WÜRTTEMBERG-Mouseover{
   left: 22%;
   top: 400px;
 }
@@ -369,6 +369,10 @@ html{
   margin-bottom:-2px;
   border:1px solid #222222;
   margin-top:10px;
+}
+
+.legend-unit {
+  display: inline-block;
 }
 
 #first {
