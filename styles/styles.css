@@ -670,7 +670,7 @@ table {
   width: 100%;
   padding-top: 15px;
   font-size: 30px;
-  table-layout: fixed;
+  table-layout:auto;
   border-collapse: collapse;
 }
 
@@ -699,7 +699,6 @@ tr:hover {
 
 .content {
 padding: 0 18px;
-background-color: white;
 max-height: 0;
 overflow: hidden;
 transition: max-height 0.2s ease-out;
@@ -711,7 +710,7 @@ th:nth-child(1), td:nth-child(1) {
 }
 
 th:nth-child(2), td:nth-child(2) {
-  width: 280px;
+  width: 200px;
   position: relative;
   text-decoration: underline;
 }
