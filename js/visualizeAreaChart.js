@@ -147,9 +147,9 @@ function createAreaGraph(data) {
 
   // Red covid line
   svg_line.append("line")
-  .attr("x1",x(new Date("2017-01-01")))  //<<== change your code here
+  .attr("x1",x(new Date("2020-01-01")))  //<<== change your code here
   .attr("y1", 0)
-  .attr("x2", x(new Date("2017-01-01")))  //<<== and here
+  .attr("x2", x(new Date("2020-01-01")))  //<<== and here
   .attr("y2", height_line)
   .attr("class", "covid-line")
   .style("stroke-width", 2)
@@ -176,9 +176,9 @@ function createAreaGraph(data) {
 
   // Red covid area
   svg_line.append('rect')
-  .attr('x', x(new Date("2017-01-01")))
+  .attr('x', x(new Date("2020-01-01")))
   .attr('y', 0)
-  .attr('width', width_line - x(new Date("2017-01-01")))
+  .attr('width', width_line - x(new Date("2020-01-01")))
   .attr('height', height_line)
   .attr('fill', 'url(#covid-area-gradient)')
   .attr('fill-opacity', .15)
@@ -279,9 +279,9 @@ function updateAreaGraph(data) {
 
   // Update the red covid line
   svg_line.select('.covid-line')
-  .attr("x1", x(new Date("2017-01-01")))
+  .attr("x1", x(new Date("2020-01-01")))
   .attr("y1", 0)
-  .attr("x2", x(new Date("2017-01-01")))
+  .attr("x2", x(new Date("2020-01-01")))
   .attr("y2", height_line);
   
     // Update the gradient
@@ -302,9 +302,9 @@ function updateAreaGraph(data) {
 
   // Update the covid area
   svg_line.select('.covid-area')
-    .attr('x', x(new Date("2017-01-01")))
+    .attr('x', x(new Date("2020-01-01")))
     .attr('y', 0)
-    .attr('width', width_line - x(new Date("2017-01-01")))
+    .attr('width', width_line - x(new Date("2020-01-01")))
     .attr('height', height_line)
     .attr('fill', 'url(#covid-area-gradient)')
     .attr('fill-opacity', .15);
