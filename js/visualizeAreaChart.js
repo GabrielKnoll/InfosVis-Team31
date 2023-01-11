@@ -33,6 +33,7 @@ function createAreaGraph(data) {
   svg_line.selectAll('.covid-area').remove();
   svg_line.selectAll('.line-path').remove();
   svg_line.selectAll('.circle').remove();
+  d3.select("body").selectAll('.tooltip').remove();
 
   // Append the SVG object to the div with id dataviz_areaplot
   svg_line.append("g")
@@ -118,18 +119,38 @@ function createAreaGraph(data) {
     .y(d => y(d.value))
   )
 
-  // Add the circles
-  const circles = svg_line.selectAll('.circle')
-    .data(data);
+// Create a div for the tooltip
+var tooltip = d3.select("body")
+  .append("div")
+  .attr("class", "tooltip")
+  .style("opacity", 0)
+  .style("position", "absolute")
+  .style("background-color", "white")
+  .style("border-radius", "15px")
+  .style("padding", "10px");
 
-    circles.enter()
-      .append('circle')
-      .attr("class", "circle")
-      .attr("fill", "darkgray")
-      .attr("stroke", "none")
-      .attr("r", 3)
-      .attr("cx", d => x(d.date))
-      .attr("cy", d => y(d.value));
+  svg_line.selectAll(".circle")
+    .data(data)
+    .enter().append("circle")
+    .attr("class", "circle")
+    .attr("fill", "darkgray")
+    .attr("stroke", "none")
+    .attr("r", 3)
+    .attr("cx", d => x(d.date))
+    .attr("cy", d => y(d.value))
+    .on("mouseover", function(d) {
+      tooltip.transition()
+      .duration(200)
+      .style("opacity", .9);
+      tooltip.html("<b>Datum:</b> "+d.date.toLocaleDateString('de-DE') + "<br>"+ "<b>Wert:</b> " + d.value)
+      .style("left", (d3.event.pageX + 5) + "px")
+      .style("top", (d3.event.pageY - 28) + "px");
+  })
+  .on("mouseout", function(d) {
+      tooltip.transition()
+      .duration(500)
+      .style("opacity", 0);
+  });
 
   // Red covid line
   svg_line.append("line")
