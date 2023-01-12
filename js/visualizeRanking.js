@@ -1,10 +1,27 @@
 // Toggle the visibility of the table rows
+function addTableRowsClass() {
+    var table = document.getElementById('Ranking-table');
+    var rows = table.getElementsByTagName('tr');
+
+    for (var i = 0; i < rows.length; i++) {
+        if (i <= 4) {
+        rows[i].classList.add('table-row');   
+        }
+        else { // Show the first 5 rows
+        rows[i].classList.add('hidden-row');
+        rows[i].classList.add('table-row');
+        rows[i].classList.add('content');
+        }
+    }
+}
+
+// Toggle the visibility of the table rows
 function toggleTableRows() {
     var table = document.getElementById('Ranking-table');
     var rows = table.getElementsByTagName('tr');
 
     for (var i = 0; i < rows.length; i++) {
-        if (i > 5 ) { // Show the first 5 rows
+        if (i > 4) { // Show the first 5 rows
         rows[i].classList.toggle('hidden-row');
         }
     }
@@ -18,14 +35,14 @@ function expandDiv() {
     var button = document.getElementById("extend");
     if (isExpanded) {
         hint.innerHTML = "Mehr anzeigen";
-        div.style.height = "233px";
+        div.style.height = "200px";
         div.style.transition = "height 0.2s ease";
         button.style.transform = "rotate(360deg)";
         button.style.transition = "transform 0.8s";
         isExpanded = false;
     } else {
         hint.innerHTML = "Weniger anzeigen";
-        div.style.height = "380px";
+        div.style.height = "395px";
         div.style.transition = "height 0.2s ease";
         button.style.transform = "rotate(180deg)";
         button.style.transition = "transform 0.8s";

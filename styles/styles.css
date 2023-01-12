@@ -691,7 +691,6 @@ tr{
 .table-row:hover {
   background-color: #f2f2f2;
   cursor: pointer;
-  border-radius: 20px;
 }
 
 .hidden-row {
@@ -706,18 +705,18 @@ transition: max-height 0.2s ease-out;
 }
 
 th:nth-child(1), td:nth-child(1) {
-  width: 130px;
+  width: 22%;
   position: relative;
 }
 
 th:nth-child(2), td:nth-child(2) {
-  width: 200px;
+  width: 47%;
   position: relative;
   text-decoration: underline;
 }
 
 th:nth-child(3), td:nth-child(3) {
-  width: 163px;
+  width: 31%;
   position: relative;
 }
 
@@ -747,4 +746,9 @@ table tr td:nth-child(3)::before {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(103, 171, 214, 0.493); 
+}
+
+.Ranking-table {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
