@@ -684,13 +684,14 @@ tr{
   border-bottom: 0.8px solid rgba(128, 128, 128, 0.24);
 }
 
-tr:hover {
-  border-radius: 5px;
-}
+/*tr:hover {
+  border-radius: 20px;
+}*/
 
 .table-row:hover {
-  background-color: #f2f2f2; /* Change the background color when the mouse cursor hovers over the row */
-  cursor: pointer; /* Change the cursor to a pointer to indicate that the row is clickable */
+  background-color: #f2f2f2;
+  cursor: pointer;
+  border-radius: 20px;
 }
 
 .hidden-row {

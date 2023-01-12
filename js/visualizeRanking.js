@@ -15,15 +15,20 @@ var isExpanded = false;
 function expandDiv() {
     var hint = document.getElementById("hint");
     var div = document.getElementById("ranking_div");
+    var button = document.getElementById("extend");
     if (isExpanded) {
         hint.innerHTML = "Mehr anzeigen";
         div.style.height = "233px";
         div.style.transition = "height 0.2s ease";
+        button.style.transform = "rotate(360deg)";
+        button.style.transition = "transform 0.8s";
         isExpanded = false;
     } else {
         hint.innerHTML = "Weniger anzeigen";
         div.style.height = "380px";
         div.style.transition = "height 0.2s ease";
+        button.style.transform = "rotate(180deg)";
+        button.style.transition = "transform 0.8s";
         isExpanded = true;
     }
 }
