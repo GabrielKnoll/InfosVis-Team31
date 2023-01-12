@@ -396,6 +396,18 @@ html{
   background-color: #E8D0D4;
 }
 
+#pandemie-beginn {
+  background-color: rgb(189, 75, 87)
+}
+
+#pandemie-zeitraum {
+  background-color: #f2e8ea;
+}
+
+#kategorie {
+  background-color: lightgrey;
+}
+
 section{
   padding-top: 4rem;
   padding-bottom: 4rem;

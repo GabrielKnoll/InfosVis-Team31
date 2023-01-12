@@ -34,13 +34,13 @@
                <p id="paragraph">Wähle ein Bundesland, um eine Detailansicht zu erhalten, wie sich Umsatz, Arbeitnehmer und Betriebe verändert haben.</p>
                <div class="buttons">
                   <input type="radio" id="radio1" name="radios" onclick="changeEuro()" checked>
-                  <label for="radio1">Umsätze&nbsp;<img src="img/euro-icon.svg" id="umsaetze"></label>
+                  <label for="radio1">Umsätze&nbsp;<img src="img/euro-icon.svg" alt="icon for euro" id="umsaetze"></label>
 
                   <input type="radio" id="radio2" name="radios" onclick="changeEmployee()">
-                  <label for="radio2">Arbeitnehmer&nbsp;<img src="img/employee-icon.svg" id="arbeitnehmer"></label>
+                  <label for="radio2">Arbeitnehmer&nbsp;<img src="img/employee-icon.svg" alt="icon for employees" id="arbeitnehmer"></label>
 
                   <input type="radio" id="radio3" name="radios" onclick="changeInsolvency()">
-                  <label for="radio3">Insolvenzen&nbsp;<img src="img/insolvency-icon.svg" id="insolvenzen"></label>
+                  <label for="radio3">Insolvenzen&nbsp;<img src="img/insolvency-icon.svg" alt="icon for insolvency" id="insolvenzen"></label>
                   
                </div>
                <!--Heatmap-->
@@ -82,7 +82,7 @@
             <!--Ranking-->
             <div class="col-3">
                <div class="card-ranking" id="ranking">
-                  <div id="unterueberschrift" class="card-heading">
+                  <div class="card-heading">
                      <div>
                         <span class="material-symbols-rounded" style="color: #9F4F5E; position: relative; top: 4px;">trending_down</span>
                         <h2 id="ranking_header_text" style="margin-left: 5px;"> Umsatzentwicklung nach Bundesländer (in %)</h2>
@@ -185,13 +185,13 @@
                   </div>
                   <p id="hint">Mehr anzeigen</p> </center>
                   <!--Hintergrundinformationen-->
-                  <h2 id="unterueberschrift"><span class="material-symbols-rounded" id="information">
+                  <h2 id="mehr-infos"><span class="material-symbols-rounded" id="information">
                      info
                      </span> Weitere Informationen
                   </h2>
                   <div class="hr-line" id="hr-line"></div>
                   <p id="additional-info">
-                     Regionaler Lockdown, Kontaktbeschränkungen, Ausgangssperre – die Maßnahmen zur Eindämmung der COVID-19-Pandemie treffen die Gastwirtschaft besonders stark. Die Branche, zu der Restaurants und Cafés, Caterer und Bars gehören, muss seit Corona-bedingten Shutdowns im März 2020 massive Umsatzeinbußen hinnehmen. Darüber hinaus waren hohe Arbeitsplatzverluste sowie Insolvenzanträge zu verzeichnen. <br>
+                     Regionaler Lockdown, Kontaktbeschränkungen, Ausgangssperre – die Maßnahmen zur Eindämmung der COVID-19-Pandemie treffen die Gastwirtschaft besonders stark. Die Branche, zu der die Gastronomie und die Beherbergungsbranche gehören, verzeichnet seit den Corona-bedingten Shutdowns im März 2020 massive Umsatzeinbußen, Arbeitsplatzverluste und Insolvenzanträge.<br>
                   </p>
                   <i id="quelle">Quelle: Statistisches Bundesamt Deutschland 2022</i>
                </div>
@@ -201,7 +201,7 @@
                <div class="graph-section" id="card-graph" style="display: none;">
                   <button class="close-button"><span class="material-symbols-rounded" style="font-size: 30px; color: #2798E9; " onclick="changeEuro(); reset();">close
                   </span></button>
-                  <div id="unterueberschrift" class="card-heading">
+                  <div class="card-heading">
                      <div>
                         <span class="material-symbols-rounded" style="color: #9F4F5E; position: relative; top: 4px;">trending_down</span>
                         <h2 id="unterueberschrift-text" style="margin-left: 5px;">Umsatzentwicklung in ...</h2>
@@ -214,19 +214,19 @@
                   <div class="legende" style="text-align:left;">
                      <b> Legende </b> <br>
                      <div class="legend-position">
-                        <div class="legend-color" id="fifth"></div>
+                        <div class="legend-color" id="kategorie"></div>
                         <div class="legend-unit" id="legend-unit">
                         Umsätze in Millionen €
                         </div>
                      </div>
                      <br>
                      <div class="legend-position">
-                        <div class="legend-color" id="fourth"></div>
+                        <div class="legend-color" id="pandemie-zeitraum"></div>
                         Zeitraum der Corona-Pandemie
                      </div>
                      <br>
                      <div class="legend-position">
-                        <div class="legend-color" id="third"></div>
+                        <div class="legend-color" id="pandemie-beginn"></div>
                         Beginn der Corona-Pandemie 2020
                      </div>
                   </div>
