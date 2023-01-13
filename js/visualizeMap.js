@@ -213,6 +213,10 @@ function clickPath(d) {
 
 //onButtonClick-Funktionen => Wechsel der Kategorie bei ButtonClick
 function changeEuro() {
+    document.getElementById("heatmapheader").innerHTML = "Umsatzeinbußen in % (pro Bundesland)";
+    document.getElementById("umsaetze").src="img/euro-icon.svg";
+    document.getElementById("arbeitnehmer").src="img/employee-icon-blue.svg";
+    document.getElementById("insolvenzen").src="img/insolvency-icon-blue.svg";
     colorHeatmap(Category.Revenue.name);
     document.getElementById("bg-euros").style.display = "block";
     document.getElementById("bg-insolvencies").style.display = "none";
@@ -236,6 +240,11 @@ function changeEuro() {
 }
 
 function changeEmployee() {
+    
+    document.getElementById("heatmapheader").innerHTML = "Arbeitnehmerrückgang in % (pro Bundesland)";
+    document.getElementById("umsaetze").src="img/euro-icon-blue.svg";
+    document.getElementById("arbeitnehmer").src="img/employee-icon.svg";
+    document.getElementById("insolvenzen").src="img/insolvency-icon-blue.svg";
     colorHeatmap(Category.Employee.name);
     document.getElementById("bg-euros").style.display = "none";
     document.getElementById("bg-insolvencies").style.display = "none";
@@ -262,6 +271,11 @@ function changeEmployee() {
 
 
 function changeInsolvency() {
+    document.getElementById("heatmapheader").innerHTML = "Insolvenzentwicklung in % (pro Bundesland)";
+    document.getElementById("umsaetze").src="img/euro-icon-blue.svg";
+    document.getElementById("arbeitnehmer").src="img/employee-icon-blue.svg";
+    document.getElementById("insolvenzen").src="img/insolvency-icon.svg";
+
     colorHeatmap(Category.Insolvency.name);
     document.getElementById("bg-insolvencies").style.display = "block";
     document.getElementById("bg-euros").style.display = "none";

@@ -75,6 +75,7 @@ function createAreaGraph(data) {
           .attr("x", 4)
           .attr("dy", -4))
       .attr('class', 'y-axis')
+      .style("z-index", "3")
       .raise();
       
   // Set the gradient
@@ -93,64 +94,6 @@ function createAreaGraph(data) {
   .enter().append("stop")
   .attr("offset", function(d) { return d.offset; })
   .attr("stop-color", function(d) { return d.color; });
-
-  // Add the area
-  svg_line.append("path")
-  .datum(data)
-  .attr('class', 'area')
-  .attr("fill", "url(#area-gradient)")
-  .attr("fill-opacity", .1)
-  .attr("stroke", "none")
-  .attr("d", d3.area()
-    .x(d => x(d.date))
-    .y0( height_line )
-    .y1(d => y(d.value))
-    )
-
-  // Add the line
-  svg_line.append("path")
-  .datum(data)
-  .attr('class', 'line-path')
-  .attr("fill", "none")
-  .attr("stroke", "#d4d4d4")
-  .attr("stroke-width", 2.5)
-  .attr("d", d3.line()
-    .x(d => x(d.date))
-    .y(d => y(d.value))
-  )
-
-// Create a div for the tooltip
-var tooltip = d3.select("body")
-  .append("div")
-  .attr("class", "tooltip")
-  .style("opacity", 0)
-  .style("position", "absolute")
-  .style("background-color", "white")
-  .style("border-radius", "15px")
-  .style("padding", "10px");
-
-  svg_line.selectAll(".circle")
-    .data(data)
-    .enter().append("circle")
-    .attr("class", "circle")
-    .attr("fill", "darkgray")
-    .attr("stroke", "none")
-    .attr("r", 3)
-    .attr("cx", d => x(d.date))
-    .attr("cy", d => y(d.value))
-    .on("mouseover", function(d) {
-      tooltip.transition()
-      .duration(200)
-      .style("opacity", .9);
-      tooltip.html("<b>Datum:</b> "+d.date.toLocaleDateString('de-DE') + "<br>"+ "<b>Wert:</b> " + d.value)
-      .style("left", (d3.event.pageX + 5) + "px")
-      .style("top", (d3.event.pageY - 28) + "px");
-  })
-  .on("mouseout", function(d) {
-      tooltip.transition()
-      .duration(500)
-      .style("opacity", 0);
-  });
 
   // Red covid line
   svg_line.append("line")
@@ -172,6 +115,7 @@ var tooltip = d3.select("body")
   .attr("x2", "0%")
   .attr("y2", "0%")
   .attr("id", "covid-area-gradient")
+  .style("z-index", "3")
   .selectAll("stop")
   .data([
     {offset: "0%", color: "#bd4b57"},
@@ -190,6 +134,65 @@ var tooltip = d3.select("body")
   .attr('fill', 'url(#covid-area-gradient)')
   .attr('fill-opacity', .15)
   .attr('class', 'covid-area');
+
+    // Add the area
+    svg_line.append("path")
+    .datum(data)
+    .attr('class', 'area')
+    .attr("fill", "url(#area-gradient)")
+    .attr("fill-opacity", .1)
+    .attr("stroke", "none")
+    .attr("d", d3.area()
+      .x(d => x(d.date))
+      .y0( height_line )
+      .y1(d => y(d.value))
+      )
+  
+    // Add the line
+    svg_line.append("path")
+    .datum(data)
+    .attr('class', 'line-path')
+    .attr("fill", "none")
+    .attr("stroke", "#d4d4d4")
+    .attr("stroke-width", 2.5)
+    .attr("d", d3.line()
+      .x(d => x(d.date))
+      .y(d => y(d.value))
+    )
+  
+  // Create a div for the tooltip
+  var tooltip = d3.select("body")
+    .append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0)
+    .style("position", "absolute")
+    .style("background-color", "white")
+    .style("border-radius", "15px")
+    .style("padding", "10px");
+  
+  svg_line.selectAll(".circle")
+    .data(data)
+    .enter().append("circle")
+    .attr("class", "circle")
+    .attr("fill", "darkgray")
+    .attr("stroke", "none")
+    .attr("r", 3)
+    .attr("cx", d => x(d.date))
+    .attr("cy", d => y(d.value))
+    .style("z-index", "2")
+    .on("mouseover", function(d) {
+      tooltip.transition()
+      .duration(200)
+      .style("opacity", .9);
+      tooltip.html("<b>Datum:</b> "+d.date.toLocaleDateString('de-DE') + "<br>"+ "<b>Wert:</b> " + d.value)
+      .style("left", (d3.event.pageX + 5) + "px")
+      .style("top", (d3.event.pageY - 28) + "px");
+    })
+    .on("mouseout", function(d) {
+        tooltip.transition()
+        .duration(500)
+        .style("opacity", 0);
+    });
 
 }
 
