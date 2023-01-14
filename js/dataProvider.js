@@ -35,7 +35,12 @@ function applyHeatmapColorsFromFile(filename) {
         data.forEach(function (x, _) {
             const state = x['Bundesländer'];
             const value = x['Vorjahresvergleich'];
-            setColor(state, value);
+            if(filename.includes('Arbeitsplatzverlust') ){
+                setColorEmployees(state, value);
+            }else{
+                setColor(state, value);
+            }
+
         })
     });
 }
