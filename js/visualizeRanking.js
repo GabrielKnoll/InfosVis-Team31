@@ -35,7 +35,6 @@ function divOriginalSize() {
     div.style.height = "200px";
     div.style.transition = "height 0.2s ease";
     button.style.transform = "rotate(360deg)";
-    button.style.transition = "transform 0.8s";
     isExpanded = false;
 }
 
