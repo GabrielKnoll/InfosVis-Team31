@@ -796,6 +796,12 @@ table tr td:nth-child(3)::before {
   /* Add some additional styling to the descending symbol */
 }
 
+table tr td:nth-child(3)::after {
+  content: "%";
+  position: relative; 
+  /* Add some additional styling to the descending symbol */
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
