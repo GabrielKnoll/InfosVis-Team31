@@ -242,7 +242,7 @@ function changeEuro() {
 function changeEmployee() {
     
     document.getElementById("heatmapheader").innerHTML = "Arbeitnehmerrückgang in % (pro Bundesland)";
-    document.getElementById("umsaetze").src="img/euro-icon-blue.svg";
+    document.getElementById("umsaetze").src="img/euro-Icon-blue.svg";
     document.getElementById("arbeitnehmer").src="img/employee-icon.svg";
     document.getElementById("insolvenzen").src="img/insolvency-icon-blue.svg";
     colorHeatmap(Category.Employee.name);
