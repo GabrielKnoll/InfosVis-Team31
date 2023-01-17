@@ -85,8 +85,6 @@ d3.json("./json/optimizedGermanStates.json", function(data) {
         var germanStates = d.properties.name;
         return germanStates;
     }
-
-
 });
 
 // Multidimensionaler Array zum verwalten und aufbauen der Mouseover-Boxen
@@ -213,6 +211,7 @@ function clickPath(d) {
 
 //onButtonClick-Funktionen => Wechsel der Kategorie bei ButtonClick
 function changeEuro() {
+    document.getElementById("wert").innerHTML = "Umsatzrückgang";
     document.getElementById("heatmapheader").innerHTML = "Umsatzeinbußen in % (pro Bundesland)";
     document.getElementById("umsaetze").src="img/euro-icon.svg";
     document.getElementById("arbeitnehmer").src="img/employee-icon-blue.svg";
@@ -240,7 +239,7 @@ function changeEuro() {
 }
 
 function changeEmployee() {
-    
+    document.getElementById("wert").innerHTML = "Arbeitnehmerrückgang";
     document.getElementById("heatmapheader").innerHTML = "Arbeitnehmerrückgang in % (pro Bundesland)";
     document.getElementById("umsaetze").src="img/euro-icon-blue.svg";
     document.getElementById("arbeitnehmer").src="img/employee-icon.svg";
@@ -271,6 +270,7 @@ function changeEmployee() {
 
 
 function changeInsolvency() {
+    document.getElementById("wert").innerHTML = "Insolvenzrückgang";
     document.getElementById("heatmapheader").innerHTML = "Insolvenzentwicklung in % (pro Bundesland)";
     document.getElementById("umsaetze").src="img/euro-icon-blue.svg";
     document.getElementById("arbeitnehmer").src="img/employee-icon-blue.svg";

@@ -16,9 +16,9 @@
    </head>
   
    <body>
-      <img src="img/bg-euros.png" id="bg-euros" style="position: absolute; z-index:-1; display:block;" alt="Euro icon as a symbol for revenue development"/>
-      <img src="img/bg-employees.png" id="bg-employees" style="position: absolute; z-index:-1; display: none;" alt="Employees icon as a symbol for employee development"/>
-      <img src="img/bg-insolvencies.png" id="bg-insolvencies" style="position: absolute; z-index:-1; display: none;" alt="Crossed money sign as a symbol for insolvency development"/>
+      <img src="img/bg-euros2.png" id="bg-euros" style="position: absolute; z-index:-1; display:block;" alt="Euro icon as a symbol for revenue development"/>
+      <img src="img/bg-employees2.png" id="bg-employees" style="position: absolute; z-index:-1; display: none;" alt="Employees icon as a symbol for employee development"/>
+      <img src="img/bg-insolvencies2.png" id="bg-insolvencies" style="position: absolute; z-index:-1; display: none;" alt="Crossed money sign as a symbol for insolvency development"/>
       <!-- Grid System Structure -->
       <div class="container">
          <div class="row">
@@ -34,14 +34,24 @@
                <p id="paragraph">Wähle ein Bundesland, um eine Detailansicht zu erhalten, wie sich Umsatz, Arbeitnehmer und Betriebe verändert haben.</p>
                <div class="buttons">
                   <input type="radio" id="radio1" name="radios" onclick="changeEuro(); displayRevenue(); divOriginalSize()" checked>
-                  <label for="radio1">Umsätze&nbsp;<img src="img/euro-icon.svg" alt="icon for euro" id="umsaetze"></label>
+                  <label for="radio1">Umsätze&nbsp;<span class="material-symbols-rounded" id="umsaetze">
+                     euro
+                     </span>
+                     <!--<img src="img/euro-icon.svg" alt="icon for euro" id="umsaetze">--></label>
 
                   <input type="radio" id="radio2" name="radios" onclick="changeEmployee(); displayEmployees(); divOriginalSize()">
-                  <label for="radio2">Arbeitnehmer&nbsp;<img src="img/employee-icon.svg" alt="icon for employees" id="arbeitnehmer"></label>
+                  <label for="radio2">Arbeitnehmer&nbsp;<span class="material-symbols-rounded" id="arbeitnehmer">
+                     groups
+                     </span>
+                    <!-- <img src="img/employee-icon.svg" alt="icon for employees" id="arbeitnehmer">--></label>
 
                   <input type="radio" id="radio3" name="radios" onclick="changeInsolvency(); displayIncolvencies(); divOriginalSize()">
-                  <label for="radio3">Insolvenzen&nbsp;<img src="img/insolvency-icon.svg" alt="icon for insolvency" id="insolvenzen"></label>
-                  
+                  <label for="radio3">Insolvenzen&nbsp;<span class="material-symbols-rounded" id="insolvenzen">
+                     apartment
+                     </span>
+                    <!-- <span class="material-symbols-rounded" id="insolvenzen" alt="icon for insolvency">
+                     domain_disabled
+                     </span>--> </label>
                </div>
                <!--Heatmap-->
                <h2 id="heatmapheader" style="text-align:center; margin-bottom: 2px;"> Umsatzeinbußen in % (pro Bundesland) </h2>
@@ -84,7 +94,10 @@
                <div class="card-ranking" id="ranking">
                   <div class="card-heading">
                      <div>
-                        <span class="material-symbols-rounded" style="color: #9F4F5E; position: relative; top: 4px;">trending_down</span>
+                        <span class="material-symbols-rounded" style="color: darkgrey; font-size:20px; position: relative; top: 4px;">
+                           euro
+                           </span>
+               
                         <h2 id="ranking_header_text" style="margin-left: 5px;"> Umsatzentwicklung nach Bundesländer (in %)</h2>
                      </div>
                      <span class="right">2019-2020</span>
@@ -92,7 +105,7 @@
                   <div class="hr-line"></div>
                   <div class="Rang" id="rang">Rang</div>
                   <div class="Bundesland" id="bundesland">Bundesland</div>
-                  <div class="Wert" id="wert">Wert</div>
+                  <div class="Wert" id="wert">Umsatzrückgang</div>
                   <div class="ranking-card">
                      <div style="height: 200px; width: 100%; overflow: auto;" id="ranking_div" class="Ranking-table">  
                         <table id="Ranking-table">
