@@ -225,7 +225,7 @@ function changeEuro() {
     document.body.style.animation = "fadeBackground 6s";
 
     //Umsatz-Ranking einblenden, Rest ausblenden
-    document.getElementById("ranking_header_text").innerHTML = 'Umsatzentwicklung nach Bundesländer (in %)';
+    document.getElementById("ranking_header_text").innerHTML = '<span class="material-symbols-rounded" style="color: darkgrey; font-size:19px; position: relative; top: 3px;">euro</span>&nbsp;Umsatzentwicklung nach Bundesländer (in %)';
     document.getElementById("legend-unit").innerHTML = "Umsätze in Euro";
 
     // TBD: Heatmap Umsätze einblenden, Heatmap Arbeitnehmer+Insolvenzen ausblenden
@@ -252,7 +252,7 @@ function changeEmployee() {
     //document.body.style.transition = "background-image 0.2s ease-in-out";
     document.body.style.animation = "fadeBackground 6s";
     //Korrektes Ranking einblenden, Rest ausblenden
-    document.getElementById("ranking_header_text").innerHTML = 'Arbeitnehmerentwicklung nach Bundesländer (in %)';
+    document.getElementById("ranking_header_text").innerHTML = '<span class="material-symbols-rounded" style="color:darkgrey;"id="arbeitnehmer">groups</span>&nbsp;Arbeitnehmerentwicklung nach Bundesländer (in %)';
     document.getElementById("legend-unit").innerHTML = "Anzahl Arbeitnehmende";
     //Beispielcode: Zeige Arbeitnehmergraph für SW an, wenn SW ausgewählt bei Umsätze ODER bei Insolvenzen
     /* if (document.getElementById("card-graph-schleswigholstein" || "card-graph-schleswigholstein3").style.display='block') {
@@ -286,7 +286,7 @@ function changeInsolvency() {
     document.querySelector("body").style.backgroundImage = "url(img/bg-insolvencies.png)";
 
     //Korrektes Ranking einblenden, Rest ausblenden
-    document.getElementById("ranking_header_text").innerHTML = 'Insolvenzenentwicklung nach Bundesländer (in %)';
+    document.getElementById("ranking_header_text").innerHTML = '<span class="material-symbols-rounded" id="insolvenzen" style="color: darkgrey;">apartment</span>&nbsp;Insolvenzenentwicklung nach Bundesländer (in %)';
     document.getElementById("legend-unit").innerHTML = "Anzahl Insolvenzen";
     // TBD: Heatmap Insolvenzen einblenden, Heatmap Umsätze+Arbeitnehmer ausblenden
 
@@ -305,7 +305,6 @@ function toggleButton() {
     var buttonEnabled = true;
 
     if (document.getElementById("resetbutton").disabled = true) {
-
         document.getElementById("resetbutton").disabled = false;
         buttonEnabled = false;
     }
