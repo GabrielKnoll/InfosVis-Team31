@@ -18,14 +18,17 @@ function colorHeatmap(category) {
         case Category.Revenue.name:
             console.log('selected revenue');
             applyHeatmapColorsFromFile('Dataset/csv/Umsatzrückgang.csv');
+            buildLegendRevenue();
             break;
         case Category.Employee.name:
             console.log('selected employees');
             applyHeatmapColorsFromFile('Dataset/csv/Arbeitsplatzverlust.csv');
+            buildLegendEmplyees();
             break;
         case Category.Insolvency.name:
             console.log('selected insolvency');
             applyHeatmapColorsFromFile('Dataset/csv/Insolvenzentwicklung.csv');
+            buildLegendInsolvencies();
             break;
     }
 }
@@ -35,10 +38,12 @@ function applyHeatmapColorsFromFile(filename) {
         data.forEach(function (x, _) {
             const state = x['Bundesländer'];
             const value = x['Vorjahresvergleich'];
-            if(filename.includes('Arbeitsplatzverlust') ){
+            if(filename.includes('Umsatzrückgang') ){
+                setColorRevenue(state, value);
+            }else if(filename.includes('Arbeitsplatzverlust') ){
                 setColorEmployees(state, value);
             }else{
-                setColor(state, value);
+                setColorInsolvencies(state, value);
             }
 
         })
