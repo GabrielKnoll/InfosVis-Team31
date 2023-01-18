@@ -166,7 +166,7 @@ visibility: visible;
 }
 
 #states .active {
-  stroke: #BCCEF8;
+  stroke: white;
   stroke-linejoin: bevel;
   stroke-width: 3.5px;
   filter: brightness(1.1);
@@ -361,6 +361,7 @@ html{
 .legend-position {
   margin-right: 20px; 
   display: inline-block;
+
 }
 
 .legend-color {
@@ -370,33 +371,70 @@ html{
   width:15px; 
   height:15px;
   margin-bottom:-2px;
-  border:1px solid #222222;
   margin-top:10px;
+  border: 1px solid white;
+}
+
+div.legende{
+  display: flex;
+  justify-content: center;
 }
 
 .legend-unit {
   display: inline-block;
 }
 
-#first {
-  background-color:#9F4F5E; 
+#first-r {
+  background-color:#E4CDD1;
+}
+#second-r{
+  background-color:#D2ACB2;
+}
+#third-r {
+  background-color:#BF8993;
+}
+#fourth-r {
+  background-color:#AD6775;
+}
+#fifth-r {
+  background-color: #9B4557;
 }
 
-#second {
-  background-color:#B4727F;
+#first-e {
+  background-color:#E3E5F1;
+}
+#second-e{
+  background-color:#C9CBE3;
+}
+#third-e {
+  background-color:#ADB1D5;
+}
+#fourth-e {
+  background-color:#9297C7;
+}
+#fifth-e {
+  background-color: #757CB9;
 }
 
-#third {
-  background-color:#B77F89;
+#positive-i{
+  background-color:#84B6D5;
+}
+#first-i {
+  background-color:#CCCBCB;
+}
+#second-i{
+  background-color:#A8A8A7;
+}
+#third-i {
+  background-color:#858686;
+}
+#fourth-i {
+  background-color:#616363;
+}
+#fifth-i {
+  background-color: #3F403F;
 }
 
-#fourth {
-  background-color:#CDA1AB;
-}
-
-#fifth {
-  background-color: #E8D0D4;
-}
 
 #pandemie-beginn {
   background-color: rgb(189, 75, 87)
@@ -559,7 +597,7 @@ h3 {
 /*Überschrift rechts in Blau*/
 .right {
   float: right;
-  color: darkgrey;
+  color: #339DFF;
   font-size: 20px;
   font-family: "Proximanova Condensed ExtraBold";
 margin-top: 5px;
@@ -693,11 +731,11 @@ input[type=radio] + label {
 
 
 #radio1:checked + label {
-  background-color: #ad6775;
+  background-color: #339DFF;
 }
 
 #radio2:checked + label {
-  background-color: purple;
+  background-color: #339DFF;
 }
 
 #radio3:checked + label {
