@@ -85,9 +85,8 @@ overflow: hidden;
 }
 
 #down {
-  color: #9F4F5E; 
   position: relative; 
-  top: 4px;
+  top: 6px;
 }
 
 #information {
@@ -107,14 +106,19 @@ visibility: visible;
  color:grey; 
  position: absolute; 
  float: right; 
- padding-left: 29%;
+ padding-left: 28%;
 }
 
+#wert2 {
+  color:grey; 
+  margin-top:-10px;
+  display: inline-block;
+ }
 #bundesland {
   color:grey; 
   position: absolute;  
   float: right; 
-  padding-left: 10%;
+  padding-left: 5.5%;
 }
 
 #rang {
@@ -838,7 +842,7 @@ transition: max-height 0.2s ease-out;
 }
 
 th:nth-child(1), td:nth-child(1) {
-  width: 22%;
+  width: 10%;
   position: relative;
 }
 
