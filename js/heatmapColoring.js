@@ -6,11 +6,11 @@ function setColorInsolvencies(stateName, difference){
     let castedDifference = +difference.replace('%', '');
 
     if(castedDifference <= -40){
-        d3.select("#states").select("#"+stateName).style("fill", "#84B6D5"); //hier
+        d3.select("#states").select("#"+stateName).style("fill", "#84B6D5");
     }else if(castedDifference <= -30){
         d3.select("#states").select("#"+stateName).style("fill", "#93BFDA");
     }else if(castedDifference <= -20){
-        d3.select("#states").select("#"+stateName).style("fill", "#B2D1E4");//hier
+        d3.select("#states").select("#"+stateName).style("fill", "#B2D1E4");
     }else if(castedDifference <= -10){
         d3.select("#states").select("#"+stateName).style("fill", "#D1E3EF");
     }else if(castedDifference <= 0){
@@ -58,6 +58,21 @@ function setColorRevenue(stateName, difference){
 
 }
 
+function setColorEmployees(stateName, difference){
+    let castedDifference = +difference.replace('%', '');
+    if(castedDifference <= 5){
+        d3.select("#states").select("#"+stateName).style("fill", "#E3E5F1");
+    }else if(castedDifference <= 7){
+        d3.select("#states").select("#"+stateName).style("fill", "#C9CBE3");
+    }else if(castedDifference <= 9){
+        d3.select("#states").select("#"+stateName).style("fill", "#ADB1D5");
+    }else if(castedDifference <= 11){
+        d3.select("#states").select("#"+stateName).style("fill", "#9297C7");
+    }else if(castedDifference <= 13){
+        d3.select("#states").select("#"+stateName).style("fill", "#757CB9");
+    }
+}
+
 function buildLegendRevenue(){
 
     d3.select(".legende").selectAll("*").remove();
@@ -99,7 +114,7 @@ function buildLegendInsolvencies(){
 
     d3.select(".legende").selectAll("*").remove();
     const legendIDs= ["positive-i","first-i","second-i","third-i", "fourth-i", "fifth-i"];
-    const legendText = ["weniger","< 5%","5-7%","7-9%", "9-11%", "11-13%"];
+    const legendText = ["weniger als 2019","< 5%","5-7%","7-9%", "9-11%", "11-13%"];
 
     for (let i=0; i<legendIDs.length; i++ ){
         var legend = d3.select(".legende")
@@ -114,17 +129,4 @@ function buildLegendInsolvencies(){
     }
 }
 
-function setColorEmployees(stateName, difference){
-    let castedDifference = +difference.replace('%', '');
-   if(castedDifference <= 5){
-        d3.select("#states").select("#"+stateName).style("fill", "#E3E5F1");
-    }else if(castedDifference <= 7){
-        d3.select("#states").select("#"+stateName).style("fill", "#C9CBE3");
-    }else if(castedDifference <= 9){
-        d3.select("#states").select("#"+stateName).style("fill", "#ADB1D5");
-    }else if(castedDifference <= 11){
-        d3.select("#states").select("#"+stateName).style("fill", "#9297C7");
-    }else if(castedDifference <= 13){
-        d3.select("#states").select("#"+stateName).style("fill", "#757CB9");
-    }
-}
+
