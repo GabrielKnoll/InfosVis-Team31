@@ -597,7 +597,7 @@ h3 {
 /*Überschrift rechts in Blau*/
 .right {
   float: right;
-  color: darkgrey;
+  color: #339DFF;
   font-size: 20px;
   font-family: "Proximanova Condensed ExtraBold";
 margin-top: 5px;
@@ -731,11 +731,11 @@ input[type=radio] + label {
 
 
 #radio1:checked + label {
-  background-color: #ad6775;
+  background-color: #339DFF;
 }
 
 #radio2:checked + label {
-  background-color: purple;
+  background-color: #339DFF;
 }
 
 #radio3:checked + label {
