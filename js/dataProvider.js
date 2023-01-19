@@ -13,7 +13,6 @@ class Category {
 }
 
 function colorHeatmap(category) {
-    console.log('called colorHeatmap');
     switch (category) {
         case Category.Revenue.name:
             console.log('selected revenue');
@@ -51,8 +50,9 @@ function applyHeatmapColorsFromFile(filename) {
 }
 
 function updateMouseOvers(category) {
-    const statesCollection = statesCollectionForCategory(category)
-    configureMouseOvers(statesCollection);
+    mouseOverInfoCollectionForCategory(category, function(collection) {
+        configureMouseOvers(collection);
+    })
 }
 
 function updateChart(category, state) {
@@ -71,12 +71,38 @@ function updateChart(category, state) {
     })
 }
 
-function statesCollectionForCategory(category) {
-    return STATES.map(function(state) {
-        return [state, "# Opfer", "Umsatzeinbußen: 12345", "Vorjahresvergleich: -69,0%"];
-    });
+function mouseOverInfoCollectionForCategory(category, callback) {
+    d3.csv(rankingForCategory(category), function(data) {
+        callback(STATES.map(function(state) {
+            const stateData = data.filter(entry => entry["Bundesland"] === toTitleCase(state))[0];
+            const rankingInfo = new RankingInfo(
+                state,
+                stateData["Entwicklung"],
+                stateData["Vergleich"],
+                stateData["Platz"]
+            );
+            return mouseOverConfig(category, rankingInfo)
+        }));
+    })
 }
 
+function RankingInfo(state, development, comparison, rank) {
+    this.state = state;
+    this.development = development;
+    this.comparison = comparison;
+    this.rank = rank;
+}
+
+function mouseOverConfig(category, rankingInfo) {
+    switch (category) {
+        case Category.Employee.name:
+            return [rankingInfo.state, rankingInfo.rank + " der höchsten Arbeitsplatzverluste", "Rückgang: " + rankingInfo.development, "Vorjahresvergleich: -" + rankingInfo.comparison + "%"];
+        case Category.Insolvency.name:
+            return [rankingInfo.state, rankingInfo.rank + " der Insolvenzentwicklung", "Entwicklung: " + rankingInfo.development, "Vorjahresvergleich: " + rankingInfo.comparison + "%"];
+        case Category.Revenue.name:
+            return [rankingInfo.state, rankingInfo.rank + " der höchsten Umsatzverluste", "Rückgang: " + rankingInfo.development, "Vorjahresvergleich: -" + rankingInfo.comparison + "%"];
+    }
+}
 function datasetForCategory(category) {
     switch (category) {
         case Category.Employee.name:
@@ -86,4 +112,25 @@ function datasetForCategory(category) {
         case Category.Revenue.name:
             return "./Dataset/csv/revenue.csv";
     }
+}
+
+function rankingForCategory(category) {
+    switch (category) {
+        case Category.Employee.name:
+            return "./Dataset/csv/Arbeitsplatzverlust.csv";
+        case Category.Insolvency.name:
+            return "./Dataset/csv/Insolvenzentwicklung.csv";
+        case Category.Revenue.name:
+            return "./Dataset/csv/Umsatzrückgang.csv";
+    }
+}
+
+//https://stackoverflow.com/questions/196972/convert-string-to-title-case-with-javascript
+function toTitleCase(str) {
+    return str.replace(
+        /([^\W_]+[^\s-]*) */g,
+        function(txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        }
+    );
 }
