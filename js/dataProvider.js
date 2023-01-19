@@ -67,7 +67,8 @@ function updateChart(category, state) {
                 result.push({date, value});
             }
         }
-        createAreaGraph(result);
+        console.log("cart" + category)
+        createAreaGraph(result, category);
     })
 }
 

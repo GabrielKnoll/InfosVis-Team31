@@ -1,4 +1,5 @@
 var currentData = [{date: new Date("2020-01-01"), value: 99}];
+typeTick = "Error";
 // Set the dimensions and margins of the graph
 var margin_line = {top: 30, right: 30, bottom: 30, left: 30},
     width_line = window.innerWidth / 2 - 160 - margin_line.left - margin_line.right,
@@ -25,8 +26,19 @@ function setDiagramWidth() {
   createAreaGraph(currentData);
 }
 
-function createAreaGraph(data) {
+function createAreaGraph(data, category) {
   currentData = data;
+  switch (category) {
+    case "revenue":
+      typeTick = "Mrd €";
+      break;
+    case "employees":
+      typeTick = "Tsd €";
+      break;
+    case "insolvency":
+      typeTick = "Insolvenzen";
+      break;
+  }
   svg_line.selectAll('g').remove();
   svg_line.selectAll('.area').remove();
   svg_line.selectAll('.covid-line').remove();
@@ -57,7 +69,7 @@ function createAreaGraph(data) {
 
   // Add Y axis
   var y = d3.scaleLinear()
-  .domain( d3.extent(data, d => +d.value ))
+  .domain([0, d3.max(data, d => +d.value)])
   .range([ height_line, 0 ]);
 
   const yAxis = d3.axisRight(y)
@@ -97,9 +109,9 @@ function createAreaGraph(data) {
 
   // Red covid line
   svg_line.append("line")
-  .attr("x1",x(new Date("2020-01-01")))  //<<== change your code here
+  .attr("x1",x(new Date("2020-02-01")))  //<<== change your code here
   .attr("y1", 0)
-  .attr("x2", x(new Date("2020-01-01")))  //<<== and here
+  .attr("x2", x(new Date("2020-02-01")))  //<<== and here
   .attr("y2", height_line)
   .attr("class", "covid-line")
   .style("stroke-width", 2)
@@ -127,9 +139,9 @@ function createAreaGraph(data) {
 
   // Red covid area
   svg_line.append('rect')
-  .attr('x', x(new Date("2020-01-01")))
+  .attr('x', x(new Date("2020-02-01")))
   .attr('y', 0)
-  .attr('width', width_line - x(new Date("2020-01-01")))
+  .attr('width', width_line - x(new Date("2020-02-01")))
   .attr('height', height_line)
   .attr('fill', 'url(#covid-area-gradient)')
   .attr('fill-opacity', .15)
@@ -187,17 +199,20 @@ function createAreaGraph(data) {
       tooltip.html("<b>Datum:</b> "+d.date.toLocaleDateString('de-DE') + "<br>"+ "<b>Wert:</b> " + d.value)
       .style("left", (d3.event.pageX + 5) + "px")
       .style("top", (d3.event.pageY - 28) + "px");
+      d3.select(this).style("fill", "#bd4b57").attr("r", 5);
     })
     .on("mouseout", function(d) {
         tooltip.transition()
         .duration(500)
         .style("opacity", 0);
+        d3.select(this).style("fill", "darkgray").attr("r", 3);
     });
 
 }
 
 function formatTick(d) {
   //const s = (d / 1e3).toFixed(1);
-  const s = (d).toFixed(1);
-  return this.parentNode.nextSibling ? `\xa0${s}` : `${s} Mrd €`;
+  const s = (d).toFixed(0);
+  
+  return this.parentNode.nextSibling ? `\xa0${s}` : `${s} ${typeTick}`;
 }
