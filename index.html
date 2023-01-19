@@ -33,19 +33,19 @@
             <div class="col-3">
                <p id="paragraph">Wähle ein Bundesland, um eine Detailansicht zu erhalten, wie sich Umsatz, Arbeitnehmer und Betriebe verändert haben.</p>
                <div class="buttons">
-                  <input type="radio" id="radio1" name="radios" onclick="changeEuro(); displayRevenue(); divOriginalSize()" checked>
+                  <input type="radio" id="radio1" name="radios" onclick="changeEuro(); displayRevenue(); divOriginalSize(); DisplayGraph('revenue')" checked>
                   <label for="radio1">Umsätze&nbsp;<span class="material-symbols-rounded" id="umsaetze">
                      euro
                      </span>
                      <!--<img src="img/euro-icon.svg" alt="icon for euro" id="umsaetze">--></label>
 
-                  <input type="radio" id="radio2" name="radios" onclick="changeEmployee(); displayEmployees(); divOriginalSize()">
+                  <input type="radio" id="radio2" name="radios" onclick="changeEmployee(); displayEmployees(); divOriginalSize(); DisplayGraph('employees')">
                   <label for="radio2">Arbeitnehmer&nbsp;<span class="material-symbols-rounded" id="arbeitnehmer">
                      groups
                      </span>
                     <!-- <img src="img/employee-icon.svg" alt="icon for employees" id="arbeitnehmer">--></label>
 
-                  <input type="radio" id="radio3" name="radios" onclick="changeInsolvency(); displayIncolvencies(); divOriginalSize()">
+                  <input type="radio" id="radio3" name="radios" onclick="changeInsolvency(); displayIncolvencies(); divOriginalSize(); DisplayGraph('insolvency')">
                   <label for="radio3">Insolvenzen&nbsp;<span class="material-symbols-rounded" id="insolvenzen">
                      apartment
                      </span>
@@ -170,7 +170,7 @@
                           </tr>
                         </table>
                       </div>
-                     <center>
+                     <center style="height: 0px">
                         <button class="button-rund" onclick="combinedFunction()"><span class="material-symbols-rounded" id="extend">keyboard_arrow_down
                         </span></button>
                   </div>
