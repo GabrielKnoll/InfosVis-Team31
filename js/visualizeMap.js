@@ -1,3 +1,4 @@
+const STATES = ["BADEN-WÜRTTEMBERG", "BAYERN", "BERLIN", "BRANDENBURG", "BREMEN", "HESSEN", "MECKLENBURG-VORPOMMERN", "NIEDERSACHSEN", "NORDRHEIN-WESTFALEN", "RHEINLAND-PFALZ", "SAARLAND", "SACHSEN-ANHALT", "SACHSEN", "SCHLESWIG-HOLSTEIN", "HAMBURG", "THÜRINGEN"];
 // Hier können wir die Größe der Heatmap einstellen
 var width = 500,
     height = 460,
@@ -87,52 +88,33 @@ d3.json("./json/optimizedGermanStates.json", function(data) {
     }
 });
 
-// Multidimensionaler Array zum verwalten und aufbauen der Mouseover-Boxen
-const STATES = ["BADEN-WÜRTTEMBERG", "BAYERN", "BERLIN", "BRANDENBURG", "BREMEN", "HESSEN", "MECKLENBURG-VORPOMMERN", "NIEDERSACHSEN", "NORDRHEIN-WESTFALEN", "RHEINLAND-PFALZ", "SAARLAND", "SACHSEN-ANHALT", "SACHSEN", "SCHLESWIG-HOLSTEIN", "HAMBURG", "THÜRINGEN"];
-
 for (let i = 0; i <= STATES.length; i++) {
     d3.select(".heatmap-section")
         .append('div')
         .attr('class', 'mouseoverBox')
         .attr('id', STATES[i] + "-Mouseover");
 }
-var bayernInfo = ["BAYERN", "#3 der größten Umsatzeinbußen", "Umsatzeinbußen: 7.319.757.000€", "Vorjahresvergleich: -36,0%"];
-var badenWürttembergInfo = ["BADEN-WÜRTTEMBERG", "#7 der größten Umsatzeinbußen", "Umsatzeinbußen: 3.879.236.000€", "Vorjahresvergleich: -30,1%"];
-var berlinInfo = ["BERLIN", "#1 der größten Umsatzeinbußen", "Umsatzeinbußen: 3.128.301.000€", "Vorjahresvergleich: -43,0%"];
-var brandenburgInfo = ["BRANDENBURG", "#15 der größten Umsatzeinbußen", "Umsatzeinbußen: 327.182.000€", "Vorjahresvergleich: -18,1%"];
-var bremenInfo = ["BREMEN", "#6 der größten Umsatzeinbußen", "Umsatzeinbußen: 200.665.000€", "Vorjahresvergleich: -32,2%"];
-var hessenInfo = ["HESSEN", "#2 der größten Umsatzeinbußen", "Umsatzeinbußen: 3.450.120.000€", "Vorjahresvergleich: -36,9%"];
-var mecklenburgVorpommernInfo = ["MECKLENBURG-VORPOMMERN", "#16 der größten Umsatzeinbußen", "Umsatzeinbußen: 346.678.000€", "Vorjahresvergleich: -14,6%"];
-var niedersachenInfo = ["NIEDERSACHSEN", "#10 der größten Umsatzeinbußen", "Umsatzeinbußen: 2.088.312.000€", "Vorjahresvergleich: -28,4%"];
-var nordrheinWestfalenInfo = ["NORDRHEIN-WESTFALEN", "#4 der größten Umsatzeinbußen", "Umsatzeinbußen: 5.709.367.000€", "Vorjahresvergleich: -33,6%"];
-var rheinlandPfalzInfo = ["RHEINLAND-PFALZ", "#9 der größten Umsatzeinbußen", "Umsatzeinbußen: 1.167.276.000€", "Vorjahresvergleich: -29,3%"];
-var saarlandInfo = ["SAARLAND", "#8 der größten Umsatzeinbußen", "Umsatzeinbußen: 227.142.000€", "Vorjahresvergleich: -29,7%"];
-var sachsenAnhaltInfo = ["SACHSEN-ANHALT", "#12 der größten Umsatzeinbußen", "Umsatzeinbußen: 306.882.000€", "Vorjahresvergleich: -23,9%"];
-var sachsenInfo = ["SACHSEN", "#14 der größten Umsatzeinbußen", "Umsatzeinbußen: 661.685.000€", "Vorjahresvergleich: -22,9%"];
-var schleswigHolsteinInfo = ["SCHLESWIG-HOLSTEIN", "#13 der größten Umsatzeinbußen", "Umsatzeinbußen: 743.857.000€", "Vorjahresvergleich: -23,6%"];
-var hamburgInfo = ["HAMBURG", "#5 der größten Umsatzeinbußen", "Umsatzeinbußen: 1.021.549.000€", "Vorjahresvergleich: -32,7%"];
-var thüringenInfo = ["THÜRINGEN", "#11 der größten Umsatzeinbußen", "Umsatzeinbußen: 337.028.000€", "Vorjahresvergleich: -27,0%"];
 
-var statesCollection = [bayernInfo, badenWürttembergInfo, berlinInfo, brandenburgInfo, bremenInfo, hessenInfo, mecklenburgVorpommernInfo, niedersachenInfo, nordrheinWestfalenInfo, rheinlandPfalzInfo, saarlandInfo, sachsenAnhaltInfo, sachsenInfo, schleswigHolsteinInfo, hamburgInfo, thüringenInfo];
-var statesCollectionLen = statesCollection.length;
-
-// Erstelleung der Mouseover-Boxen für alle Bundesländer
-for (let i = 0; i < statesCollection.length; i++) {
-    var states = statesCollection[i];
-    var infoSelector = '#' + states[0] + '-Mouseover';
-    console.log(infoSelector);
-    var infoBox = d3.select(infoSelector);
-    for (let j = 0; j < states.length; j++) {
-        if (j == 0) {
-            infoBox.append('h3').attr('class', 'revenue-reduction-state-name').text(states[j]);
-        } else if (j == 1) {
-            infoBox.append('h2').attr('class', 'revenue-reduction-state-signature').text(states[j]);
-        } else if (j == 2) {
-            infoBox.append('p').attr('class', 'revenue-reduction-description-one').text(states[j]);
-        } else if (j == 3) {
-            infoBox.append('p').attr('class', 'revenue-reduction-description-two').text(states[j]);
-        } else {
-            console.log('all states pasted');
+function configureMouseOvers(statesCollection) {
+// Erstellung der Mouseover-Boxen für alle Bundesländer
+    for (let i = 0; i < statesCollection.length; i++) {
+        var states = statesCollection[i];
+        var infoSelector = '#' + states[0] + '-Mouseover';
+        console.log(infoSelector);
+        var infoBox = d3.select(infoSelector);
+        infoBox.html("");
+        for (let j = 0; j < states.length; j++) {
+            if (j == 0) {
+                infoBox.append('h3').attr('class', 'revenue-reduction-state-name').text(states[j]);
+            } else if (j == 1) {
+                infoBox.append('h2').attr('class', 'revenue-reduction-state-signature').text(states[j]);
+            } else if (j == 2) {
+                infoBox.append('p').attr('class', 'revenue-reduction-description-one').text(states[j]);
+            } else if (j == 3) {
+                infoBox.append('p').attr('class', 'revenue-reduction-description-two').text(states[j]);
+            } else {
+                console.log('all states pasted');
+            }
         }
     }
 }
@@ -216,7 +198,10 @@ function changeEuro() {
     document.getElementById("umsaetze").src="img/euro-icon.svg";
     document.getElementById("arbeitnehmer").src="img/employee-icon-blue.svg";
     document.getElementById("insolvenzen").src="img/insolvency-icon-blue.svg";
+
     colorHeatmap(Category.Revenue.name);
+    updateMouseOvers(Category.Revenue.name);
+
     document.getElementById("bg-euros").style.display = "block";
     document.getElementById("bg-insolvencies").style.display = "none";
     document.getElementById("bg-employees").style.display = "none";
@@ -245,7 +230,10 @@ function changeEmployee() {
     document.getElementById("umsaetze").src="img/euro-icon-blue.svg";
     document.getElementById("arbeitnehmer").src="img/employee-icon.svg";
     document.getElementById("insolvenzen").src="img/insolvency-icon-blue.svg";
+
     colorHeatmap(Category.Employee.name);
+    updateMouseOvers(Category.Employee.name);
+
     document.getElementById("bg-euros").style.display = "none";
     document.getElementById("bg-insolvencies").style.display = "none";
     document.getElementById("bg-employees").style.display = "block";
@@ -278,6 +266,8 @@ function changeInsolvency() {
     document.getElementById("insolvenzen").src="img/insolvency-icon.svg";
 
     colorHeatmap(Category.Insolvency.name);
+    updateMouseOvers(Category.Insolvency.name);
+
     document.getElementById("bg-insolvencies").style.display = "block";
     document.getElementById("bg-euros").style.display = "none";
     document.getElementById("bg-employees").style.display = "none";

@@ -50,6 +50,11 @@ function applyHeatmapColorsFromFile(filename) {
     });
 }
 
+function updateMouseOvers(category) {
+    const statesCollection = statesCollectionForCategory(category)
+    configureMouseOvers(statesCollection);
+}
+
 function updateChart(category, state) {
     d3.csv(datasetForCategory(category), function (data) {
         const stateEntry = data.filter(entry => entry['Bundesland'] === state);
@@ -64,6 +69,12 @@ function updateChart(category, state) {
         }
         createAreaGraph(result);
     })
+}
+
+function statesCollectionForCategory(category) {
+    return STATES.map(function(state) {
+        return [state, "# Opfer", "Umsatzeinbußen: 12345", "Vorjahresvergleich: -69,0%"];
+    });
 }
 
 function datasetForCategory(category) {
