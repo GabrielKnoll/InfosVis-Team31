@@ -891,6 +891,5 @@ table tr td:nth-child(3)::after {
 }
 
 .Ranking-table {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-radius: 15px;
 }
