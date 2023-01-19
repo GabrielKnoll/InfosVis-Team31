@@ -36,8 +36,8 @@ function colorHeatmap(category) {
 function applyHeatmapColorsFromFile(filename) {
     d3.csv(filename, function (data) {
         data.forEach(function (x, _) {
-            const state = x['Bundesländer'];
-            const value = x['Vorjahresvergleich'];
+            const state = x['Bundesland'];
+            const value = x['Vergleich'];
             if(filename.includes('Umsatzrückgang') ){
                 setColorRevenue(state, value);
             }else if(filename.includes('Arbeitsplatzverlust') ){
