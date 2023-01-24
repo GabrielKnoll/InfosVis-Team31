@@ -146,7 +146,7 @@ var data = [
     { ranking: 12, bundesländer: "Sachsen-Anhalt", vorjahresvergleich: 23.9},
     { ranking: 13, bundesländer: "Schleswig-Holstein", vorjahresvergleich: 23.6},
     { ranking: 14, bundesländer: "Sachsen", vorjahresvergleich: 22.9},
-    { ranking: 15, bundesländer: "Brandenburgn", vorjahresvergleich: 18.1},
+    { ranking: 15, bundesländer: "Brandenburg", vorjahresvergleich: 18.1},
     { ranking: 16, bundesländer: "Mecklenburg-Vorpommern", vorjahresvergleich: 14.6},
 ];
 for (var i = 0; i < data.length; i++) {
@@ -188,7 +188,7 @@ var data = [
     { ranking: 8, bundesländer: "Sachsen-Anhalt", vorjahresvergleich: 21.6},
     { ranking: 9, bundesländer: "Rheinland-Pfalz", vorjahresvergleich: 20.3},
     { ranking: 10, bundesländer: "Berlin", vorjahresvergleich: 17.6},
-    { ranking: 11, bundesländer: "Hessenn", vorjahresvergleich: 16.7},
+    { ranking: 11, bundesländer: "Hessen", vorjahresvergleich: 16.7},
     { ranking: 12, bundesländer: "Baden-Württemberg", vorjahresvergleich: 13.7},
     { ranking: 13, bundesländer: "Bremen", vorjahresvergleich: 7.1},
     { ranking: 14, bundesländer: "Niedersachsen", vorjahresvergleich: 3.8},
