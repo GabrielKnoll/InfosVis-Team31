@@ -63,11 +63,10 @@ function updateChart(category, state) {
         for (const key in months) {
             const date = d3.timeParse("%Y-%m-%d")(months[key][0]);
             const value = months[key][1];
-            if (value != "NaN") {
+            //if (value != "NaN") {
                 result.push({date, value});
-            }
+            //}
         }
-        console.log("cart" + category)
         createAreaGraph(result, category);
     })
 }

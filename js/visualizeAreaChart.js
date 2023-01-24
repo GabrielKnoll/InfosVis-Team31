@@ -151,31 +151,36 @@ function createAreaGraph(data, category) {
   .attr('fill-opacity', .15)
   .attr('class', 'covid-area');
 
-    // Add the area
-    svg_line.append("path")
-    .datum(data)
-    .attr('class', 'area')
-    .attr("fill", "url(#area-gradient)")
-    .attr("fill-opacity", .1)
-    .attr("stroke", "none")
-    .attr("d", d3.area()
-      .x(d => x(d.date))
-      .y0( height_line )
-      .y1(d => y(d.value))
-      )
-  
-    // Add the line
-    svg_line.append("path")
-    .datum(data)
-    .attr('class', 'line-path')
-    .attr("fill", "none")
-    .attr("stroke", "#d4d4d4")
-    .attr("stroke-width", 2.5)
-    .attr("d", d3.line()
-      .x(d => x(d.date))
-      .y(d => y(d.value))
-    )
-  
+// Filter out NaN values from the data
+var filteredData = data.filter(d => !isNaN(d.value));
+
+// Add the area
+svg_line.append("path")
+  .datum(filteredData)
+  .attr('class', 'area')
+  .attr("fill", "url(#area-gradient)")
+  .attr("fill-opacity", .1)
+  .attr("stroke", "none")
+  .attr("d", d3.area()
+    .x(d => x(d.date))
+    .y0(height_line)
+    .y1(d => y(d.value))
+    .defined(d => !isNaN(d.value))
+  );
+
+// Add the line
+svg_line.append("path")
+  .datum(filteredData)
+  .attr('class', 'line-path')
+  .attr("fill", "none")
+  .attr("stroke", "#d4d4d4")
+  .attr("stroke-width", 2.5)
+  .attr("d", d3.line()
+    .x(d => x(d.date))
+    .y(d => y(d.value))
+    .defined(d => !isNaN(d.value))
+  );
+
   // Create a div for the tooltip
   var tooltip = d3.select("body")
     .append("div")
@@ -187,7 +192,7 @@ function createAreaGraph(data, category) {
     .style("padding", "10px");
   
   svg_line.selectAll(".circle")
-    .data(data)
+    .data(filteredData)
     .enter().append("circle")
     .attr("class", "circle")
     .attr("fill", "darkgray")
