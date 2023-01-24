@@ -69,12 +69,11 @@ function createAreaGraph(data, category) {
 
   // Add Y axis
   var y = d3.scaleLinear()
-  .domain([0, d3.max(data, d => +d.value)])
+  .domain([0, d3.max(data, d => +d.value) * 1.2])
   .range([ height_line, 0 ]);
 
   const yAxis = d3.axisRight(y)
-  .tickSize(width_line)
-  .tickFormat(formatTick);  
+  .tickSize(width_line);
 
   svg_line.append("g")
   .attr("transform", `translate(0, 0)`)
@@ -84,12 +83,17 @@ function createAreaGraph(data, category) {
           .attr("stroke-opacity", 0.5)
           .attr("stroke-dasharray", "2,2"))
       .call(g => g.selectAll(".tick text")
-          .attr("x", 4)
-          .attr("dy", -4))
+          .attr("x", -30)
+          .attr("dy", 4))
       .attr('class', 'y-axis')
       .style("z-index", "3")
       .raise();
-      
+
+  svg_line.selectAll('.y-axis .tick').filter(d => !Number.isInteger(d)).remove();
+  svg_line.selectAll('.y-axis .tick:last-of-type line').remove();
+  svg_line.select('.y-axis .tick:last-of-type text')
+  .text(typeTick);
+
   // Set the gradient
   svg_line.append("linearGradient")
   .attr("id", "area-gradient")
@@ -208,11 +212,4 @@ function createAreaGraph(data, category) {
         d3.select(this).style("fill", "darkgray").attr("r", 3);
     });
 
-}
-
-function formatTick(d) {
-  //const s = (d / 1e3).toFixed(1);
-  const s = (d).toFixed(0);
-  
-  return this.parentNode.nextSibling ? `\xa0${s}` : `${s} ${typeTick}`;
 }
