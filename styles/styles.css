@@ -64,6 +64,10 @@ transition: background-image 0.2s ease-in-out;*/
 overflow: hidden;
 }
 
+.remove-bg {
+  background-image: none;
+}
+
 #background {
   transition: background-image 0.5s ease-in-out;
 }
