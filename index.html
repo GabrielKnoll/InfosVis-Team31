@@ -16,9 +16,11 @@
    </head>
   
    <body>
-      <div id="bg-euros" style="background-image: url('img/bg-euros2.png'); background-position: left bottom; background-size: cover; position: absolute; z-index:-1; display:block; width: 100%; height: 100%;" alt="Euro icon as a symbol for revenue development"></div>
-      <div id="bg-employees" style="background-image: url('img/bg-employees2.png'); background-position: left bottom; background-size: cover; position: absolute; z-index:-1; display: none; width: 100%; height: 100%;" alt="Employees icon as a symbol for employee development"></div>
-      <div  id="bg-insolvencies" style="background-image: url('img/bg-insolvencies2.png'); background-position: left bottom; background-size: cover; position: absolute; z-index:-1; display: none; width: 100%; height: 100%;" alt="Crossed money sign as a symbol for insolvency development"></div>
+      <div id="background" style="position: absolute; z-index:-1; width: 100%; height: 100%;" alt="Euro icon as a symbol for revenue development"></div>
+   
+   <!--  <div id="bg-euros" style=" background-position: left bottom; background-size: cover; position: absolute; z-index:-1; display:block; width: 100%; height: 100%;" alt="Euro icon as a symbol for revenue development"></div>
+      <div id="bg-employees" style=" background-position: left bottom; background-size: cover; position: absolute; z-index:-1; display: none; width: 100%; height: 100%;" alt="Employees icon as a symbol for employee development"></div>
+      <div id="bg-insolvencies" style="background-position: left bottom; background-size: cover; position: absolute; z-index:-1; display: none; width: 100%; height: 100%;" alt="Crossed money sign as a symbol for insolvency development"></div>-->
       <!-- Grid System Structure -->
       <div class="container">
          <div class="row">
@@ -202,7 +204,7 @@
                   <div class="hr-line"></div>
                   <div id="dataviz_areaplot"></div>
                   <!--Legende-->
-                  <div class="legende" style="text-align:left;">
+                  <div class="legende-graph" style="text-align:left;">
                      <b> Legende </b> <br>
                      <div class="legend-position">
                         <div class="legend-color" id="kategorie"></div>
@@ -210,7 +212,7 @@
                         Umsätze in Millionen €
                         </div>
                      </div>
-                     <br>
+                  <br/>
                      <div class="legend-position">
                         <div class="legend-color" id="pandemie-zeitraum"></div>
                         Zeitraum der Corona-Pandemie

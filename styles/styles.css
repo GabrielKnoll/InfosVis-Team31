@@ -57,15 +57,24 @@
 
 body{
   margin: 0;
-  background-image: url(../img/bg-euros2.png);
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
+background-image: url(../img/bg-euros2.png);
  /* -webkit-transition: background-image 0.2s ease-in-out;
 transition: background-image 0.2s ease-in-out;*/
 /*wenn wir scrollen abstellen wollen*/
 overflow: hidden;
+}
+
+#background {
+  transition: background-image 0.5s ease-in-out;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 #umsaetze {
