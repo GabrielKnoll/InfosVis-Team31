@@ -433,22 +433,35 @@ div.legende{
 }
 
 #positive-i{
-  background-color:#84B6D5;
+  background-color:#616363;
+  margin-left: 35px;
 }
 #first-i {
-  background-color:#CCCBCB;
+  background-color:#D1E3EF;
 }
 #second-i{
-  background-color:#A8A8A7;
+  background-color:#B2D1E4;
 }
 #third-i {
-  background-color:#858686;
+  background-color:#93BFDA;
 }
 #fourth-i {
-  background-color:#616363;
+  background-color:#73ABCE;
 }
 #fifth-i {
-  background-color: #3F403F;
+  background-color: #549AC5;
+}
+.legendHeaderContainer{
+  position: absolute;
+}
+
+
+
+.legendHeader{
+  font-family: "Proximanova SemiBold";
+  position: absolute;
+  min-width: 103px;
+  top: -50px;
 }
 
 

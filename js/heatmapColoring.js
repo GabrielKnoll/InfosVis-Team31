@@ -6,15 +6,15 @@ function setColorInsolvencies(stateName, difference){
     let castedDifference = +difference.replace('%', '');
 
     if(castedDifference <= -40){
-        d3.select("#states").select("#"+stateName).style("fill", "#84B6D5");
+        d3.select("#states").select("#"+stateName).style("fill", "#549AC5");
     }else if(castedDifference <= -30){
-        d3.select("#states").select("#"+stateName).style("fill", "#93BFDA");
+        d3.select("#states").select("#"+stateName).style("fill", "#73ABCE");
     }else if(castedDifference <= -20){
-        d3.select("#states").select("#"+stateName).style("fill", "#B2D1E4");
+        d3.select("#states").select("#"+stateName).style("fill", "#93BFDA");
     }else if(castedDifference <= -10){
-        d3.select("#states").select("#"+stateName).style("fill", "#D1E3EF");
+        d3.select("#states").select("#"+stateName).style("fill", "#B2D1E4");
     }else if(castedDifference <= 0){
-        d3.select("#states").select("#"+stateName).style("fill", "#EEEDED");
+        d3.select("#states").select("#"+stateName).style("fill", "#D1E3EF");
     }else if(castedDifference <= 10){
         d3.select("#states").select("#"+stateName).style("fill", "#CCCBCB");
     }else if(castedDifference <= 20){
@@ -74,7 +74,7 @@ function setColorEmployees(stateName, difference){
 }
 
 function buildLegendRevenue(){
-
+    d3.select(".legendHeader").style("left","72px");
     d3.select(".legende").selectAll("*").remove();
     const legendIDs= ["first-r","second-r","third-r", "fourth-r", "fifth-r"];
     const legendText = ["< 10%","10-20%","20-30%", "30-40%", "40-50%"];
@@ -89,10 +89,13 @@ function buildLegendRevenue(){
             .attr("id", legendIDs[i]);
 
         legend.append("span").text(legendText[i]);
+
+
     }
+    d3.select("#first-r").append("h4").attr("class", "legendHeader").text("Rückgang um:");
 }
 function buildLegendEmplyees(){
-
+    d3.select(".legendHeader").style("left","108px");
     d3.select(".legende").selectAll("*").remove();
     const legendIDs= ["first-e","second-e","third-e", "fourth-e", "fifth-e"];
     const legendText = ["< 5%","5-7%","7-9%", "9-11%", "11-13%"];
@@ -108,13 +111,14 @@ function buildLegendEmplyees(){
 
         legend.append("span").text(legendText[i]);
     }
+    d3.select("#first-e").append("h4").attr("class", "legendHeader").text("Rückgang um:");
 }
 
 function buildLegendInsolvencies(){
-
+    d3.select(".legendHeader").style("left","40px");
     d3.select(".legende").selectAll("*").remove();
-    const legendIDs= ["positive-i","first-i","second-i","third-i", "fourth-i", "fifth-i"];
-    const legendText = ["weniger als 2019","< 5%","5-7%","7-9%", "9-11%", "11-13%"];
+    const legendIDs= ["first-i","second-i","third-i", "fourth-i", "fifth-i", "positive-i"];
+    const legendText = ["0-10%","10-20%","20-30%","30-40%", "40-50%", "Anstieg"];
 
     for (let i=0; i<legendIDs.length; i++ ){
         var legend = d3.select(".legende")
@@ -127,6 +131,7 @@ function buildLegendInsolvencies(){
 
         legend.append("span").text(legendText[i]);
     }
+    d3.select("#first-i").append("h4").attr("class", "legendHeader").text("Rückgang um:");
 }
 
 

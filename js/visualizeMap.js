@@ -197,7 +197,7 @@ function changeEuro() {
     document.getElementById("wert").innerHTML = "<div id='wert2'>Umsatzentwicklung&nbsp;<span class='material-symbols-rounded' id='down'>trending_down</span></div>";
 
     //changing Heatmap Header
-    document.getElementById("heatmapheader").innerHTML = "Umsatzentwicklung in % (pro Bundesland)";
+    document.getElementById("heatmapheader").innerHTML = "Umsatzrückgang in % (pro Bundesland)";
    
     //color Heatmap and update Hover
     colorHeatmap(Category.Revenue.name);
@@ -226,7 +226,7 @@ function changeEuro() {
     
     
     //Umsatz-Ranking einblenden, Rest ausblenden
-    document.getElementById("ranking_header_text").innerHTML = '<span class="material-symbols-rounded" style="color: darkgrey; font-size:19px; position: relative; top: 3px;">euro</span>&nbsp;Umsatzentwicklung nach Bundesländer (in %)';
+    document.getElementById("ranking_header_text").innerHTML = '<span class="material-symbols-rounded" style="color: darkgrey; font-size:19px; position: relative; top: 3px;">euro</span>&nbsp;Umsatzerückgang nach Bundesländer (in %)';
     document.getElementById("legend-unit").innerHTML = "Umsätze in Euro";
 
     // TBD: Heatmap Datensätze, Graphen Datensätze, Ranking Datensätze auf style.display='none' setzen
@@ -238,7 +238,7 @@ function changeEuro() {
 
 function changeEmployee() {
     document.getElementById("wert").innerHTML = "<div id='wert2'>Arbeitnehmerentwicklung&nbsp;<span class='material-symbols-rounded' id='down'>trending_down</span></div>";
-    document.getElementById("heatmapheader").innerHTML = "Arbeitnehmerentwicklung in % (pro Bundesland)";
+    document.getElementById("heatmapheader").innerHTML = "Arbeitnehmerrückgang in % (pro Bundesland)";
    
     colorHeatmap(Category.Employee.name);
     updateMouseOvers(Category.Employee.name);
@@ -291,7 +291,7 @@ function changeEmployee() {
 
 function changeInsolvency() {
     document.getElementById("wert").innerHTML = "<div id='wert2'>Insolvenzentwicklung&nbsp;<span class='material-symbols-rounded' id='down'>trending_up</span></div>";
-    document.getElementById("heatmapheader").innerHTML = "Insolvenzentwicklung in % (pro Bundesland)";
+    document.getElementById("heatmapheader").innerHTML = "Insolvenzrückgang in % (pro Bundesland)";
 
     colorHeatmap(Category.Insolvency.name);
     updateMouseOvers(Category.Insolvency.name);
@@ -325,7 +325,7 @@ function changeInsolvency() {
     image3.src = "";*/
 
     //Korrektes Ranking einblenden, Rest ausblenden
-    document.getElementById("ranking_header_text").innerHTML = '<span class="material-symbols-rounded" id="insolvenzen" style="color: darkgrey;">apartment</span>&nbsp;Insolvenzenentwicklung nach Bundesländer (in %)';
+    document.getElementById("ranking_header_text").innerHTML = '<span class="material-symbols-rounded" id="insolvenzen" style="color: darkgrey;">apartment</span>&nbsp;Insolvenzrückgang nach Bundesländer (in %)';
     document.getElementById("legend-unit").innerHTML = "Anzahl Insolvenzen";
 
     //Graph Umsätze ausblenden
