@@ -97,7 +97,7 @@ function combinedFunction() {
   }
   
 // Open the linked card graph for each state
-function DisplayGraph(category){
+function displayGraph(category){
     var table = document.getElementById('Ranking-table');
     var rows = table.getElementsByTagName('tr');
     for (var i = 0; i < rows.length; i++) {
@@ -115,6 +115,7 @@ function DisplayGraph(category){
         };
     }
 }
+displayGraph('revenue')
 
 // Show different tables, after selecting different categories (revenue, incolvencies, employees)
 function displayRevenue() {
@@ -134,22 +135,22 @@ table.innerHTML = "";
     }
     });*/
 var data = [
-    { ranking: 1, bundesländer: "Berlin", vorjahresvergleich: '43.0'},
-    { ranking: 2, bundesländer: "Hessen", vorjahresvergleich: 36.9},
-    { ranking: 3, bundesländer: "Bayern", vorjahresvergleich: '36.0'},
-    { ranking: 4, bundesländer: "Nordrhein-Westfalen", vorjahresvergleich: 33.6},
-    { ranking: 5, bundesländer: "Hamburg", vorjahresvergleich: 32.7},
-    { ranking: 6, bundesländer: "Bremen", vorjahresvergleich: 32.3},
-    { ranking: 7, bundesländer: "Baden-Württemberg", vorjahresvergleich: 30.1},
-    { ranking: 8, bundesländer: "Saarland", vorjahresvergleich: 29.7},
-    { ranking: 9, bundesländer: "Rheinland-Pfalz", vorjahresvergleich: 29.3},
-    { ranking: 10, bundesländer: "Niedersachsen", vorjahresvergleich: 28.4},
-    { ranking: 11, bundesländer: "Thüringen", vorjahresvergleich: '27.0'},
-    { ranking: 12, bundesländer: "Sachsen-Anhalt", vorjahresvergleich: 23.9},
-    { ranking: 13, bundesländer: "Schleswig-Holstein", vorjahresvergleich: 23.6},
-    { ranking: 14, bundesländer: "Sachsen", vorjahresvergleich: 22.9},
-    { ranking: 15, bundesländer: "Brandenburg", vorjahresvergleich: 18.1},
-    { ranking: 16, bundesländer: "Mecklenburg-Vorpommern", vorjahresvergleich: 14.6},
+    { ranking: 1, bundesländer: "Berlin", vorjahresvergleich: '-43.0'},
+    { ranking: 2, bundesländer: "Hessen", vorjahresvergleich: -36.9},
+    { ranking: 3, bundesländer: "Bayern", vorjahresvergleich: '-36.0'},
+    { ranking: 4, bundesländer: "Nordrhein-Westfalen", vorjahresvergleich: -33.6},
+    { ranking: 5, bundesländer: "Hamburg", vorjahresvergleich: -32.7},
+    { ranking: 6, bundesländer: "Bremen", vorjahresvergleich: -32.2},
+    { ranking: 7, bundesländer: "Baden-Württemberg", vorjahresvergleich: -30.1},
+    { ranking: 8, bundesländer: "Saarland", vorjahresvergleich: -29.7},
+    { ranking: 9, bundesländer: "Rheinland-Pfalz", vorjahresvergleich: -29.3},
+    { ranking: 10, bundesländer: "Niedersachsen", vorjahresvergleich: -28.4},
+    { ranking: 11, bundesländer: "Thüringen", vorjahresvergleich: '-27.0'},
+    { ranking: 12, bundesländer: "Sachsen-Anhalt", vorjahresvergleich: -23.9},
+    { ranking: 13, bundesländer: "Schleswig-Holstein", vorjahresvergleich: -23.6},
+    { ranking: 14, bundesländer: "Sachsen", vorjahresvergleich: -22.9},
+    { ranking: 15, bundesländer: "Brandenburg", vorjahresvergleich: -18.1},
+    { ranking: 16, bundesländer: "Mecklenburg-Vorpommern", vorjahresvergleich: -14.6},
 ];
 for (var i = 0; i < data.length; i++) {
     var row = table.insertRow();
@@ -159,30 +160,37 @@ for (var i = 0; i < data.length; i++) {
     cell1.innerHTML = data[i].ranking;
     cell2.innerHTML = data[i].bundesländer;
     cell3.innerHTML = data[i].vorjahresvergleich
+    if (cell3.innerHTML < 0) {
+        cell3.style.color = "#de4667";  
+        }
+    else {
+        cell3.style.color = "#549AC5";
+    }
 }
 addTableRowsClass()
 }
+displayRevenue()
   
 function displayIncolvencies() {
 var table = document.getElementById("Ranking-table");
 table.innerHTML = "";
 var data = [
-    { ranking: 1, bundesländer: "Brandenburg", vorjahresvergleich: -33.3},
-    { ranking: 2, bundesländer: "Hamburg", vorjahresvergleich: -17.4},
-    { ranking: 3, bundesländer: "Niedersachsen", vorjahresvergleich: 3.8},
-    { ranking: 4, bundesländer: "Bremen", vorjahresvergleich: 7.1},
-    { ranking: 5, bundesländer: "Baden-Württemberg", vorjahresvergleich: 13.7},
-    { ranking: 6, bundesländer: "Hessen", vorjahresvergleich: 16.7},
-    { ranking: 7, bundesländer: "Berlin", vorjahresvergleich: 17.6},
-    { ranking: 8, bundesländer: "Rheinland-Pfalz", vorjahresvergleich: 20.3},
-    { ranking: 9, bundesländer: "Sachsen-Anhalt", vorjahresvergleich: 21.6},
-    { ranking: 10, bundesländer: "Nordrhein-Westfalen", vorjahresvergleich: 25.1},
-    { ranking: 11, bundesländer: "Schleswig-Holstein", vorjahresvergleich: 27.7},
-    { ranking: 12, bundesländer: "Bayern", vorjahresvergleich: 32.2},
-    { ranking: 13, bundesländer: "Saarland", vorjahresvergleich: 41.7},
-    { ranking: 14, bundesländer: "Thüringen", vorjahresvergleich: 43.8},
-    { ranking: 15, bundesländer: "Mecklenburg-Vorpommern", vorjahresvergleich: 44.8},
-    { ranking: 16, bundesländer: "Sachsen", vorjahresvergleich: 45.7},   
+    { ranking: 1, bundesländer: "Brandenburg", vorjahresvergleich: '+33.3'},
+    { ranking: 2, bundesländer: "Hamburg", vorjahresvergleich: '+17.4'},
+    { ranking: 3, bundesländer: "Niedersachsen", vorjahresvergleich: -3.8},
+    { ranking: 4, bundesländer: "Bremen", vorjahresvergleich: -7.1},
+    { ranking: 5, bundesländer: "Baden-Württemberg", vorjahresvergleich: -13.7},
+    { ranking: 6, bundesländer: "Hessen", vorjahresvergleich: -16.7},
+    { ranking: 7, bundesländer: "Berlin", vorjahresvergleich: -17.6},
+    { ranking: 8, bundesländer: "Rheinland-Pfalz", vorjahresvergleich: -20.3},
+    { ranking: 9, bundesländer: "Sachsen-Anhalt", vorjahresvergleich: -21.6},
+    { ranking: 10, bundesländer: "Nordrhein-Westfalen", vorjahresvergleich: -25.1},
+    { ranking: 11, bundesländer: "Schleswig-Holstein", vorjahresvergleich: -27.7}, 
+    { ranking: 12, bundesländer: "Bayern", vorjahresvergleich: -32.2}, 
+    { ranking: 13, bundesländer: "Saarland", vorjahresvergleich: -41.7},   
+    { ranking: 14, bundesländer: "Thüringen", vorjahresvergleich: -43.8},  
+    { ranking: 15, bundesländer: "Mecklenburg-Vorpommern", vorjahresvergleich: -44.8},
+    { ranking: 16, bundesländer: "Sachsen", vorjahresvergleich: -45.7},
 ];
 for (var i = 0; i < data.length; i++) {
     var row = table.insertRow();
@@ -192,6 +200,14 @@ for (var i = 0; i < data.length; i++) {
     cell1.innerHTML = data[i].ranking;
     cell2.innerHTML = data[i].bundesländer;
     cell3.innerHTML = data[i].vorjahresvergleich
+    if (cell3.innerHTML < 0) {
+        cell3.style.color = "#4292c4"; 
+        //cell3.style.color ="#549AC5"; 
+        }
+    else {
+        //cell3.style.color = "#e2062c";
+        cell3.style.color = "#de4667";
+    }
 }
 addTableRowsClass()
 }
@@ -213,7 +229,7 @@ function displayEmployees() {
     { ranking: 11, bundesländer: "Schleswig-Holstein", vorjahresvergleich: -7.3},
     { ranking: 12, bundesländer: "Hamburg", vorjahresvergleich: -7.1},
     { ranking: 13, bundesländer: "Sachsen-Anhalt", vorjahresvergleich: '-7.0'},
-    { ranking: 14, bundesländer: "Thüringen", vorjahresvergleich: -6.7},
+    { ranking: 14, bundesländer: "Thüringen", vorjahresvergleich: -6.6},
     { ranking: 15, bundesländer: "Mecklenburg-Vorpommern", vorjahresvergleich: -5.3},
     { ranking: 16, bundesländer: "Sachsen", vorjahresvergleich: -5.3},
 ];
@@ -225,6 +241,12 @@ for (var i = 0; i < data.length; i++) {
     cell1.innerHTML = data[i].ranking;
     cell2.innerHTML = data[i].bundesländer;
     cell3.innerHTML = data[i].vorjahresvergleich
+    if (cell3.innerHTML < 0) {
+        cell3.style.color = "#de4667";  
+        }
+    else {
+        cell3.style.color = "#549AC5";
+    }
 }
 addTableRowsClass()
 }

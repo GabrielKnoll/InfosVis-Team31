@@ -861,7 +861,6 @@ th:nth-child(1), td:nth-child(1) {
 th:nth-child(2), td:nth-child(2) {
   width: 47%;
   position: relative;
-  text-decoration: underline;
 }
 
 th:nth-child(3), td:nth-child(3) {

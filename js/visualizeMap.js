@@ -194,10 +194,10 @@ function clickPath(d) {
 //onButtonClick-Funktionen => Wechsel der Kategorie bei ButtonClick
 function changeEuro() {
     //changing Icons
-    document.getElementById("wert").innerHTML = "<div id='wert2'>Umsatzrückgang&nbsp;<span class='material-symbols-rounded' id='down'>trending_down</span></div>";
+    document.getElementById("wert").innerHTML = "<div id='wert2'>Umsatzentwicklung&nbsp;<span class='material-symbols-rounded' id='down'>trending_down</span></div>";
 
     //changing Heatmap Header
-    document.getElementById("heatmapheader").innerHTML = "Umsatzeinbußen in % (pro Bundesland)";
+    document.getElementById("heatmapheader").innerHTML = "Umsatzentwicklung in % (pro Bundesland)";
    
     //color Heatmap and update Hover
     colorHeatmap(Category.Revenue.name);
@@ -237,8 +237,8 @@ function changeEuro() {
 }
 
 function changeEmployee() {
-    document.getElementById("wert").innerHTML = "<div id='wert2'>Arbeitnehmerrückgang&nbsp;<span class='material-symbols-rounded' id='down'>trending_down</span></div>";
-    document.getElementById("heatmapheader").innerHTML = "Arbeitnehmerrückgang in % (pro Bundesland)";
+    document.getElementById("wert").innerHTML = "<div id='wert2'>Arbeitnehmerentwicklung&nbsp;<span class='material-symbols-rounded' id='down'>trending_down</span></div>";
+    document.getElementById("heatmapheader").innerHTML = "Arbeitnehmerentwicklung in % (pro Bundesland)";
    
     colorHeatmap(Category.Employee.name);
     updateMouseOvers(Category.Employee.name);
@@ -290,7 +290,7 @@ function changeEmployee() {
 
 
 function changeInsolvency() {
-    document.getElementById("wert").innerHTML = "<div id='wert2'>Insolvenzzunahme&nbsp;<span class='material-symbols-rounded' id='down'>trending_up</span></div>";
+    document.getElementById("wert").innerHTML = "<div id='wert2'>Insolvenzentwicklung&nbsp;<span class='material-symbols-rounded' id='down'>trending_up</span></div>";
     document.getElementById("heatmapheader").innerHTML = "Insolvenzentwicklung in % (pro Bundesland)";
 
     colorHeatmap(Category.Insolvency.name);
