@@ -97,11 +97,11 @@ function RankingInfo(state, development, comparison, rank) {
 function mouseOverConfig(category, rankingInfo) {
     switch (category) {
         case Category.Employee.name:
-            return [rankingInfo.state, rankingInfo.rank + " der höchsten Arbeitsplatzverluste", "Entwicklung: -" + rankingInfo.development, "Vorjahresvergleich: -" + rankingInfo.comparison + "%"];
+            return [rankingInfo.state, rankingInfo.rank + " der höchsten Arbeitnehmerrückgänge", "Entwicklung: -" + rankingInfo.development, "Vorjahresvergleich: -" + rankingInfo.comparison + "%"];
         case Category.Insolvency.name:
-            return [rankingInfo.state, rankingInfo.rank + " der höchsten Insolvenzzahlen", "Entwicklung: " + rankingInfo.development, "Vorjahresvergleich: " + rankingInfo.comparison + "%"];
+            return [rankingInfo.state, rankingInfo.rank + " der höchsten Insolvenzrückgänge", "Entwicklung: " + rankingInfo.development, "Vorjahresvergleich: " + rankingInfo.comparison + "%"];
         case Category.Revenue.name:
-            return [rankingInfo.state, rankingInfo.rank + " der höchsten Umsatzverluste", "Entwicklung: -" + rankingInfo.development, "Vorjahresvergleich: -" + rankingInfo.comparison + "%"];
+            return [rankingInfo.state, rankingInfo.rank + " der höchsten Umsatzrückgänge", "Entwicklung: -" + rankingInfo.development, "Vorjahresvergleich: -" + rankingInfo.comparison + "%"];
     }
 }
 function datasetForCategory(category) {
