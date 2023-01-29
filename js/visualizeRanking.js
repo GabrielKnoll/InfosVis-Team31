@@ -175,22 +175,22 @@ function displayIncolvencies() {
 var table = document.getElementById("Ranking-table");
 table.innerHTML = "";
 var data = [
-    { ranking: 1, bundesländer: "Brandenburg", vorjahresvergleich: '+33.3'},
-    { ranking: 2, bundesländer: "Hamburg", vorjahresvergleich: '+17.4'},
-    { ranking: 3, bundesländer: "Niedersachsen", vorjahresvergleich: -3.8},
-    { ranking: 4, bundesländer: "Bremen", vorjahresvergleich: -7.1},
-    { ranking: 5, bundesländer: "Baden-Württemberg", vorjahresvergleich: -13.7},
-    { ranking: 6, bundesländer: "Hessen", vorjahresvergleich: -16.7},
-    { ranking: 7, bundesländer: "Berlin", vorjahresvergleich: -17.6},
-    { ranking: 8, bundesländer: "Rheinland-Pfalz", vorjahresvergleich: -20.3},
-    { ranking: 9, bundesländer: "Sachsen-Anhalt", vorjahresvergleich: -21.6},
-    { ranking: 10, bundesländer: "Nordrhein-Westfalen", vorjahresvergleich: -25.1},
-    { ranking: 11, bundesländer: "Schleswig-Holstein", vorjahresvergleich: -27.7}, 
-    { ranking: 12, bundesländer: "Bayern", vorjahresvergleich: -32.2}, 
-    { ranking: 13, bundesländer: "Saarland", vorjahresvergleich: -41.7},   
-    { ranking: 14, bundesländer: "Thüringen", vorjahresvergleich: -43.8},  
-    { ranking: 15, bundesländer: "Mecklenburg-Vorpommern", vorjahresvergleich: -44.8},
-    { ranking: 16, bundesländer: "Sachsen", vorjahresvergleich: -45.7},
+    { ranking: 1, bundesländer: "Sachsen", vorjahresvergleich: -45.7},
+    { ranking: 2, bundesländer: "Mecklenburg-Vorpommern", vorjahresvergleich: -44.8},
+    { ranking: 3, bundesländer: "Thüringen", vorjahresvergleich: -43.8},
+    { ranking: 4, bundesländer: "Saarland", vorjahresvergleich: -41.7},
+    { ranking: 5, bundesländer: "Bayern", vorjahresvergleich: -32.2}, 
+    { ranking: 6, bundesländer: "Schleswig-Holstein", vorjahresvergleich: -27.7},
+    { ranking: 7, bundesländer: "Nordrhein-Westfalen", vorjahresvergleich: -25.1},
+    { ranking: 8, bundesländer: "Sachsen-Anhalt", vorjahresvergleich: -21.6},
+    { ranking: 9, bundesländer: "Rheinland-Pfalz", vorjahresvergleich: -20.3},
+    { ranking: 10, bundesländer: "Berlin", vorjahresvergleich: -17.6},
+    { ranking: 11, bundesländer: "Hessen", vorjahresvergleich: -16.7},
+    { ranking: 12, bundesländer: "Baden-Württemberg", vorjahresvergleich: -13.7},
+    { ranking: 13, bundesländer: "Bremen", vorjahresvergleich: -7.1},
+    { ranking: 14, bundesländer: "Niedersachsen", vorjahresvergleich: -3.8},
+    { ranking: 15, bundesländer: "Hamburg", vorjahresvergleich: '+17.4'},
+    { ranking: 16, bundesländer: "Brandenburg", vorjahresvergleich: '+33.3'},
 ];
 for (var i = 0; i < data.length; i++) {
     var row = table.insertRow();
