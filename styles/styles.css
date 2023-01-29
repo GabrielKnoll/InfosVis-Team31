@@ -827,8 +827,8 @@ input[type=radio]:hover:before {
  */
 
 #cursor {
-  color: black; 
-  font-size:18px;
+  /*color: black; */
+  font-size:15px;
 }
 
 table {
