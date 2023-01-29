@@ -16,9 +16,9 @@
    </head>
   
    <body>
-      <div id="background" style="position: absolute; z-index:-1; width: 100%; height: 100%;" alt="Euro icon as a symbol for revenue development"></div>
+      <div id="background" style="background-position: left bottom; background-size: cover;position: absolute; z-index:-1; width: 100%; height: 100%;" alt="Euro icon as a symbol for revenue development"></div>
    
-   <!--  <div id="bg-euros" style=" background-position: left bottom; background-size: cover; position: absolute; z-index:-1; display:block; width: 100%; height: 100%;" alt="Euro icon as a symbol for revenue development"></div>
+   <!--  <div id="bg-euros" style="  position: absolute; z-index:-1; display:block; width: 100%; height: 100%;" alt="Euro icon as a symbol for revenue development"></div>
       <div id="bg-employees" style=" background-position: left bottom; background-size: cover; position: absolute; z-index:-1; display: none; width: 100%; height: 100%;" alt="Employees icon as a symbol for employee development"></div>
       <div id="bg-insolvencies" style="background-position: left bottom; background-size: cover; position: absolute; z-index:-1; display: none; width: 100%; height: 100%;" alt="Crossed money sign as a symbol for insolvency development"></div>-->
       <!-- Grid System Structure -->
@@ -85,9 +85,32 @@
                      <span class="right">2019-2020</span>
                   </div>
                   <div class="hr-line"></div>
-                  <div class="Rang" id="rang">Rang</div>
-                  <div class="Bundesland" id="bundesland">Bundesland</div>
-                  <div class="Wert" id="wert">Umsatzrückgang</div>
+                 <!-- <table id="ranking-kategorien">
+                     <tr>
+                        <td id="rang" style="  width: 10%;
+                        position: relative;">
+                        Rang
+                     </td>
+                     <td id="bundesland" style="  width: 47%;
+                     position: relative;">
+                        Bundesland
+                     </td>
+                       <td id="wert" style=" width: 31%;
+                       position: relative;">
+                                 Umsatzrückgang
+                              </td>
+                              </tr>
+                  </table>-->
+                  <table id="ranking-kategorien" style="border: none !important;">
+                     <tr style="border-bottom: none;">
+                 <td class="Rang" id="rang" style="width: 11.5%; border: none;
+                        position: relative;">Rang</td>
+                  <td class="Bundesland" style="  width: 44%; border: none;
+                     position: relative;" id="bundesland">Bundesland</td>
+                  <td class="Wert" style=" width: 31%;
+                       position: relative; border: none;" id="wert">Umsatzrückgang</td>
+                 </tr>
+               </table>
                   <div class="ranking-card">
                      <div style="height: 200px; width: 100%; overflow: auto;" id="ranking_div" class="Ranking-table">  
                         <table id="Ranking-table">
@@ -224,9 +247,9 @@
                         Beginn der Corona-Pandemie 2020
                      </div>
                   </div>
-                  <p class="hinweis">  <span class="material-symbols-rounded" id="cursor">
+                  <p class="hinweis" style=" color: grey; ">  <span class="material-symbols-rounded" id="cursor" style="color: darkgrey; ">
                      arrow_selector_tool
-                     </span>Bewege den Cursor über die einzelnen Punkte, um genaue Werte zu entdecken!
+                     </span>&nbsp;Bewege den Cursor über einzelne Punkte, um genaue Werte zu entdecken!
                   </p>
                </div>
             </div>

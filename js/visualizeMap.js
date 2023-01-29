@@ -194,8 +194,8 @@ function clickPath(d) {
 //onButtonClick-Funktionen => Wechsel der Kategorie bei ButtonClick
 function changeEuro() {
     //changing Icons
-    document.getElementById("wert").innerHTML = "<div id='wert2'>Umsatzentwicklung&nbsp;<span class='material-symbols-rounded' id='down'>trending_down</span></div>";
-
+    document.getElementById("wert").innerHTML = "<div id='wert2' style='content:'''>Umsatzrückgang&nbsp;<span class='material-symbols-rounded' id='down'>trending_down</span></div>";
+   
     //changing Heatmap Header
     document.getElementById("heatmapheader").innerHTML = "Umsatzrückgang in % (pro Bundesland)";
    
@@ -226,7 +226,7 @@ function changeEuro() {
     
     
     //Umsatz-Ranking einblenden, Rest ausblenden
-    document.getElementById("ranking_header_text").innerHTML = '<span class="material-symbols-rounded" style="color: darkgrey; font-size:19px; position: relative; top: 3px;">euro</span>&nbsp;Umsatzerückgang nach Bundesländer (in %)';
+    document.getElementById("ranking_header_text").innerHTML = '<span class="material-symbols-rounded" style="color: darkgrey; font-size:19px; position: relative; top: 3px;">euro</span>&nbsp;Umsatzrückgang nach Bundesländer (in %)';
     document.getElementById("legend-unit").innerHTML = "Umsätze in Euro";
 
     // TBD: Heatmap Datensätze, Graphen Datensätze, Ranking Datensätze auf style.display='none' setzen
@@ -237,7 +237,7 @@ function changeEuro() {
 }
 
 function changeEmployee() {
-    document.getElementById("wert").innerHTML = "<div id='wert2'>Arbeitnehmerentwicklung&nbsp;<span class='material-symbols-rounded' id='down'>trending_down</span></div>";
+    document.getElementById("wert").innerHTML = "<div id='wert2'>Arbeitnehmerrückgang&nbsp;<span class='material-symbols-rounded' id='down'>trending_down</span></div>";
     document.getElementById("heatmapheader").innerHTML = "Arbeitnehmerrückgang in % (pro Bundesland)";
    
     colorHeatmap(Category.Employee.name);
@@ -250,7 +250,7 @@ function changeEmployee() {
     //document.body.style.transition = "background-image 0.2s ease-in-out";
    // document.body.style.animation = "fadeBackground 6s";
     //Korrektes Ranking einblenden, Rest ausblenden
-    document.getElementById("ranking_header_text").innerHTML = '<span class="material-symbols-rounded" style="color:darkgrey;"id="arbeitnehmer">groups</span>&nbsp;Arbeitnehmerentwicklung nach Bundesländer (in %)';
+    document.getElementById("ranking_header_text").innerHTML = '<span class="material-symbols-rounded" style="color:darkgrey;"id="arbeitnehmer">groups</span>&nbsp;Arbeitnehmerrückgang nach Bundesländer (in %)';
     document.getElementById("legend-unit").innerHTML = "Anzahl Arbeitnehmende";
    
    /*document.body.style.transition = "background-image 0.2s ease-in-out";
@@ -290,7 +290,7 @@ function changeEmployee() {
 
 
 function changeInsolvency() {
-    document.getElementById("wert").innerHTML = "<div id='wert2'>Insolvenzentwicklung&nbsp;<span class='material-symbols-rounded' id='down'>trending_up</span></div>";
+    document.getElementById("wert").innerHTML = "<div id='wert2'>Insolvenzrückgang&nbsp;<span class='material-symbols-rounded' id='down'>trending_down</span></div>";
     document.getElementById("heatmapheader").innerHTML = "Insolvenzrückgang in % (pro Bundesland)";
 
     colorHeatmap(Category.Insolvency.name);
