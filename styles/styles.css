@@ -117,27 +117,31 @@ visibility: visible;
 
 #wert {
  color:grey; 
- position: absolute; 
- float: right; 
- padding-left: 28%;
+ border: none;
+ text-align: inherit;
+ padding: 0;
 }
 
 #wert2 {
   color:grey; 
   margin-top:-10px;
   display: inline-block;
+  border: none;
+  content: ""
  }
+
 #bundesland {
   color:grey; 
-  position: absolute;  
-  float: right; 
-  padding-left: 5.5%;
+  border: none;
+  text-align: inherit;
+  padding: 0;
 }
 
 #rang {
   color:grey; 
-  position: absolute;  
-  float: right; 
+  border: none;
+  text-align: inherit;
+  padding: 0;
 }
 
 .graph-section {
@@ -173,6 +177,7 @@ visibility: visible;
 
 .bundesland{
   shape-rendering: crispEdges;
+  
 }
 
 .bundesland:hover{
@@ -180,6 +185,7 @@ visibility: visible;
   stroke-linejoin: bevel;
   stroke-width: 2px;
   filter: brightness(1.1)!important;
+  
 }
 
 #states .active {
@@ -339,11 +345,10 @@ visibility: visible;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   background-color: white; 
   border: 1px solid white; border-radius: 15px;
-  margin-top: 10px;
   margin-bottom: 10px;
   box-shadow:none; 
   border-color: #E1E1E1; 
-  margin-top:50px;
+  margin-top:10px;
 }
 
 html{
@@ -832,7 +837,7 @@ table {
   width: 100%;
   padding-top: 15px;
   font-size: 30px;
-  table-layout:auto;
+ table-layout:auto;
   border-collapse: collapse;
 }
 
@@ -841,6 +846,7 @@ td {
   text-align: left;
   padding: 10px;
 }
+
 
 tr{
   border-bottom: 0.8px solid rgba(128, 128, 128, 0.24);
@@ -872,7 +878,7 @@ th:nth-child(1), td:nth-child(1) {
 }
 
 th:nth-child(2), td:nth-child(2) {
-  width: 47%;
+  width: 43%;
   position: relative;
 }
 
@@ -887,12 +893,58 @@ table tr td:nth-child(3)::before {
   /* Add some additional styling to the descending symbol */
 }
 
-table tr td:nth-child(3)::after {
+/*table tr td:nth-child(3)::after {
+  content: "%";
+  position: relative; 
+}*/
+
+#ranking_div table tr td:nth-child(3)::after {
   content: "%";
   position: relative; 
   /* Add some additional styling to the descending symbol */
 }
 
+#wert table tr td:nth-child(3)::after {
+  content: "%" !important;
+  border: none;
+}
+
+
+#bundesland table tr td:nth-child(2) {
+  content: "" !important;
+  border: none;
+}
+
+#rang table tr td:nth-child(1) {
+  content: "" !important;
+  border: none;
+}
+
+#wert2 table tr td:nth-child(3) {
+  content: "" !important;
+  border: none;
+}
+
+#wert table tr td:nth-child(3) {
+  content: "" !important;
+  border: none;
+}
+
+
+#bundesland table tr td:nth-child(2) {
+  content: "" !important;
+  border: none;
+}
+
+#rang table tr td:nth-child(1){
+  content: "" !important;
+  border: none;
+}
+
+#wert2 table tr td:nth-child(3)::after {
+  content: "" !important;
+  border: none;
+}
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -917,4 +969,16 @@ table tr td:nth-child(3)::after {
 
 .Ranking-table {
   border-radius: 15px;
+}
+
+.ranking-kategorien table {
+  border-radius: 15px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding-top: 0px;
+  table-layout:auto;
+  border-color: transparent !important;
+  border-collapse:none;
+  border-bottom: none;
 }
