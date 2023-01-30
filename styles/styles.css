@@ -57,6 +57,7 @@
 
 body{
   margin: 0;
+  background-size: cover; 
 background-image: url(../img/bg-euros2.png);
  /* -webkit-transition: background-image 0.2s ease-in-out;
 transition: background-image 0.2s ease-in-out;*/
@@ -64,11 +65,13 @@ transition: background-image 0.2s ease-in-out;*/
 overflow: hidden;
 }
 
+/*
 .remove-bg {
   background-image: none;
-}
+}*/
 
 #background {
+  background-size: cover; 
   transition: background-image 0.5s ease-in-out;
 }
 

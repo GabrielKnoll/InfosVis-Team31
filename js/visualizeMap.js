@@ -203,15 +203,8 @@ function changeEuro() {
     colorHeatmap(Category.Revenue.name);
     updateMouseOvers(Category.Revenue.name);
 
-    //color Heatmap and update Hover
-   /* document.getElementById("bg-euros").style.display = "block";
-    document.getElementById("bg-insolvencies").style.display = "none";
-    document.getElementById("bg-employees").style.display = "none";*/
-    //document.body.style.backgroundImage = "url(img/bg-euros2.png)";
-    // document.body.style.animation = "fadeIn 1s"; 
-    //document.body.style.animation = "fadeBackground 6s";
-
-    var image1 = new Image();
+  
+   /* var image1 = new Image();
     image1.src="img/bg-euros2.png";
     setTimeout(function(){
         background.style.backgroundImage = "none";
@@ -222,8 +215,20 @@ function changeEuro() {
             background.classList.remove("fade-in");
         },1000);
         image1.src = "";
-      },100);
+      },100);*/
     
+      var image1 = new Image();
+      image1.src="img/bg-euros2.png";
+      setTimeout(function(){
+          background.style.backgroundImage = "none";
+          background.style.backgroundImage = "url('img/bg-euros2.png')";
+          background.classList.add("fade-in");
+          setTimeout(function(){
+              ackground.classList.remove("remove-bg");
+            background.classList.remove("fade-in");
+          },1000);
+          image1.src = "";
+        },100);
     
     //Umsatz-Ranking einblenden, Rest ausblenden
     document.getElementById("ranking_header_text").innerHTML = '<span class="material-symbols-rounded" style="color: darkgrey; font-size:19px; position: relative; top: 3px;">euro</span>&nbsp;Umsatzrückgang nach Bundesländer (in %)';
@@ -243,43 +248,22 @@ function changeEmployee() {
     colorHeatmap(Category.Employee.name);
     updateMouseOvers(Category.Employee.name);
 
-    /*document.getElementById("bg-euros").style.display = "none";
-    document.getElementById("bg-insolvencies").style.display = "none";
-    document.getElementById("bg-employees").style.display = "block";*/
-   //  document.body.style.backgroundImage = "url(img/bg-employees2.png)";
-    //document.body.style.transition = "background-image 0.2s ease-in-out";
-   // document.body.style.animation = "fadeBackground 6s";
     //Korrektes Ranking einblenden, Rest ausblenden
     document.getElementById("ranking_header_text").innerHTML = '<span class="material-symbols-rounded" style="color:darkgrey;"id="arbeitnehmer">groups</span>&nbsp;Arbeitnehmerrückgang nach Bundesländer (in %)';
     document.getElementById("legend-unit").innerHTML = "Anzahl Arbeitnehmende";
    
-   /*document.body.style.transition = "background-image 0.2s ease-in-out";
-    document.body.style.animation = "slide 10s";
-    document.querySelector("body").style.backgroundImage = "url(img/bg-employees2.png)";
-    background.classList.add("fade-in");*/
-/*
-    var image2 = new Image();
-    image2.onload = function() {
-    background.style.backgroundImage ="url(img/bg-employees2.png)";
-    background.classList.add("fade-in");
-    }
-    image2.src = "";
-*/
-    var image2 = new Image();
-    image2.src="img/bg-employees2.png";
-    setTimeout(function(){
-        background.style.backgroundImage = "none";
-        background.style.backgroundImage = "url('img/bg-employees2.png')";
-        background.classList.add("fade-in");
-        setTimeout(function(){
-            background.classList.remove("remove-bg");
+      var image2 = new Image();
+      image2.src="img/bg-employees2.png";
+      setTimeout(function(){
+          background.style.backgroundImage = "none";
+          background.style.backgroundImage = "url('img/bg-employees2.png')";
+          background.classList.add("fade-in");
+          setTimeout(function(){
+              ackground.classList.remove("remove-bg");
             background.classList.remove("fade-in");
-        },1000);
-        image2.src = "";
-      },100);
-
-  /*  background.style.backgroundImage ="url(img/bg-employees2.png)";
-    background.classList.add("fade-in");*/
+          },1000);
+          image2.src = "";
+        },100);
 
 
     //Blende alles andere aus
@@ -290,40 +274,26 @@ function changeEmployee() {
 
 
 function changeInsolvency() {
+    
     document.getElementById("wert").innerHTML = "<div id='wert2'>Insolvenzrückgang&nbsp;<span class='material-symbols-rounded' id='down'>trending_down</span></div>";
     document.getElementById("heatmapheader").innerHTML = "Insolvenzrückgang in % (pro Bundesland)";
 
     colorHeatmap(Category.Insolvency.name);
     updateMouseOvers(Category.Insolvency.name);
 
-   /* document.getElementById("bg-insolvencies").style.display = "block";
-    document.getElementById("bg-euros").style.display = "none";
-    document.getElementById("bg-employees").style.display = "none";*/
-   // document.body.style.backgroundImage = "url(img/bg-insolvencies.png)";
-   /* document.body.style.transition = "background-image 0.2s ease-in-out";
-    document.body.style.animation = "slide 10s";
-    document.querySelector("body").style.backgroundImage = "url(img/bg-insolvencies2.png)";*/
-    var image3 = new Image();
-    image3.src="img/bg-insolvencies2.png";
-    setTimeout(function(){
-        background.style.backgroundImage = "none";
-        background.style.backgroundImage = "url('img/bg-insolvencies2.png')";
-        background.classList.add("fade-in");
-        setTimeout(function(){
-            background.classList.remove("remove-bg");
+      var image3 = new Image();
+      image3.src="img/bg-insolvencies2.png";
+      setTimeout(function(){
+          background.style.backgroundImage = "none";
+          background.style.backgroundImage = "url('img/bg-insolvencies2.png')";
+          background.classList.add("fade-in");
+          setTimeout(function(){
+              ackground.classList.remove("remove-bg");
             background.classList.remove("fade-in");
-        },1000);
-        image3.src = "";
-      },100);
-
-  /*  var image3 = new Image();
-    image3.setTimeout = function() {
-    image3.src = "img/bg-insolvencies2.png";
-    background.style.backgroundImage ="url(img/bg-insolvencies2.png)";
-    background.classList.add("fade-in");
-    }
-    image3.src = "";*/
-
+          },1000);
+          image3.src = "";
+        },100);
+    
     //Korrektes Ranking einblenden, Rest ausblenden
     document.getElementById("ranking_header_text").innerHTML = '<span class="material-symbols-rounded" id="insolvenzen" style="color: darkgrey;">apartment</span>&nbsp;Insolvenzrückgang nach Bundesländer (in %)';
     document.getElementById("legend-unit").innerHTML = "Anzahl Insolvenzen";
@@ -333,7 +303,6 @@ function changeInsolvency() {
     document.getElementById("card-graph").style.display = 'none';
     disableButton();
 }
-
 
 //Resetbutton-Funktionen
 function toggleButton() {
@@ -361,7 +330,6 @@ function reset() {
     g.selectAll("path").classed("active", false);
     disableButton();
 
-    //GRAPH UMSÄTZE AUSBLENDEN
     document.getElementById("ranking").style.display = 'block';
     document.getElementById("card-graph").style.display = 'none';
 
