@@ -60,15 +60,28 @@ function updateChart(category, state) {
         const stateEntry = data.filter(entry => entry['Bundesland'] === state);
         const months = Object.entries((Object.entries(stateEntry)[0][1])).slice(1);
         let result = [];
+        let lowerBound = 2018;
+        let upperBound = 2018;
         for (const key in months) {
             const date = d3.timeParse("%Y-%m-%d")(months[key][0]);
             const value = months[key][1];
-            //if (value != "NaN") {
-                result.push({date, value});
-            //}
+            result.push({date, value});
+            if (value !== "NaN") {
+                const year = d3.timeFormat("%Y")(date);
+                if (year < lowerBound) {
+                    lowerBound = year;
+                } else if (year > upperBound) {
+                    upperBound = year;
+                }
+            }
         }
         createAreaGraph(result, category);
+        configureCardTimeSpan(lowerBound.toString(), upperBound.toString());
     })
+}
+
+function configureCardTimeSpan(lowerBound, upperBound) {
+    document.getElementById("card-years").innerHTML = lowerBound + "-" + upperBound;
 }
 
 function mouseOverInfoCollectionForCategory(category, callback) {
