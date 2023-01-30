@@ -90,32 +90,45 @@ function toggleInfo() {
 }
 
 // Add all 3 functions to a single fuction and use this as onclick function for button-rund
-function combinedFunction() {
+function expandRanking() {
     toggleTableRows();
     expandDiv();
     toggleInfo()
   }
   
 // Open the linked card graph for each state
-function displayGraph(category){
+function displayGraph(){
     var table = document.getElementById('Ranking-table');
     var rows = table.getElementsByTagName('tr');
     for (var i = 0; i < rows.length; i++) {
         rows[i].onclick = function() {
           var ranking = document.getElementById("ranking");
           var target = document.getElementById('card-graph');
-          var cells = document.getElementsByTagName('td');
-          var bundesland = cells[1].innerHTML;
+          var bundesland = this.getElementsByTagName('td')[1].innerHTML;;
+
+          var selectedInfo;
+          if (document.getElementById("radio1").checked) {
+            selectedInfo = "Umsatzentwicklung";
+            selectedCategory = Category.Revenue.name;
+          } else if (document.getElementById("radio2").checked) {
+            selectedInfo = "Arbeitnehmerentwicklung";
+            selectedCategory = Category.Employee.name;
+          } else if (document.getElementById("radio3").checked) {
+            selectedInfo = "Insolvenzenentwicklung";
+            selectedCategory = Category.Insolvency.name;
+          }
+
+          document.getElementById("unterueberschrift-text").innerHTML = `${selectedInfo} in ${bundesland}`
     
           ranking.style.display = "none";
           ranking.style.transition = "opacity 0.2s ease-in-out";
           target.style.display = "block";
           target.style.transition = "opacity 0.2s ease-in-out";
-          updateChart(category, bundesland)
+
+          updateChart(selectedCategory, bundesland)
         };
     }
 }
-displayGraph('revenue')
 
 // Show different tables, after selecting different categories (revenue, incolvencies, employees)
 function displayRevenue() {
@@ -168,6 +181,7 @@ for (var i = 0; i < data.length; i++) {
     }
 }
 addTableRowsClass()
+displayGraph()
 }
 displayRevenue()
   
@@ -210,6 +224,7 @@ for (var i = 0; i < data.length; i++) {
     }
 }
 addTableRowsClass()
+displayGraph()
 }
 
 function displayEmployees() {
@@ -249,5 +264,6 @@ for (var i = 0; i < data.length; i++) {
     }
 }
 addTableRowsClass()
+displayGraph()
 }
 

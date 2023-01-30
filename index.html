@@ -35,19 +35,19 @@
             <div class="col-3">
                <p id="paragraph">Wähle ein Bundesland, um eine Detailansicht zu erhalten, wie sich Umsatz, Arbeitnehmer und Betriebe verändert haben.</p>
                <div class="buttons">
-                  <input type="radio" id="radio1" name="radios" onclick="reset(); displayRevenue(); divOriginalSize(); displayGraph('revenue')" checked>
+                  <input type="radio" id="radio1" name="radios" onclick="reset(); displayRevenue(); divOriginalSize()" checked>
                   <label for="radio1">Umsätze&nbsp;<span class="material-symbols-rounded" id="umsaetze">
                      euro
                      </span>
                      <!--<img src="img/euro-icon.svg" alt="icon for euro" id="umsaetze">--></label>
 
-                  <input type="radio" id="radio2" name="radios" onclick="reset(); displayEmployees(); divOriginalSize(); displayGraph('employees')">
+                  <input type="radio" id="radio2" name="radios" onclick="reset(); displayEmployees(); divOriginalSize()">
                   <label for="radio2">Arbeitnehmer&nbsp;<span class="material-symbols-rounded" id="arbeitnehmer">
                      groups
                      </span>
                     <!-- <img src="img/employee-icon.svg" alt="icon for employees" id="arbeitnehmer">--></label>
 
-                  <input type="radio" id="radio3" name="radios" onclick="reset(); displayIncolvencies(); divOriginalSize(); displayGraph('insolvency')">
+                  <input type="radio" id="radio3" name="radios" onclick="reset(); displayIncolvencies(); divOriginalSize()">
                   <label for="radio3">Insolvenzen&nbsp;<span class="material-symbols-rounded" id="insolvenzen">
                      apartment
                      </span>
@@ -113,91 +113,10 @@
                </table>
                   <div class="ranking-card">
                      <div style="height: 200px; width: 100%; overflow: auto;" id="ranking_div" class="Ranking-table">  
-                        <table id="Ranking-table">
-                          <tr class="table-row">
-                            <td>1</td>
-                            <td>Berlin</td>
-                            <td>-43.0</td>
-                          </tr>
-                          <tr class="table-row">
-                            <td>2</td>
-                            <td>Hessen</td>
-                            <td>-36.9</td>
-                          </tr>
-                          <tr class="table-row">
-                            <td>3</td>
-                            <td>Bayern</td>
-                            <td>-36.0</td>
-                          </tr>
-                          <tr class="table-row">
-                            <td>4</td>
-                            <td>Nordrhein-Westfalen</td>
-                            <td>-33.6</td>
-                          </tr>
-                          <tr class="table-row">
-                            <td>5</td>
-                            <td>Hamburg</td>
-                            <td>-32.7</td>
-                          </tr>
-                          <tr class="hidden-row table-row content">
-                            <td>6</td>
-                            <td>Bremen</td>
-                            <td>-32.2</td>
-                          </tr>
-                          <tr class="hidden-row table-row content">
-                            <td>7</td>
-                            <td>Baden-Württemberg</td>
-                            <td>-30.1</td>
-                          </tr>
-                          <tr class="hidden-row table-row content">
-                            <td>8</td>
-                            <td>Saarland</td>
-                            <td>-29.7</td>
-                          </tr>
-                          <tr class="hidden-row table-row content">
-                            <td>9</td>
-                            <td>Rheinland-Pfalz</td>
-                            <td>-29.3</td>
-                          </tr>
-                          <tr class="hidden-row table-row content">
-                            <td>10</td>
-                            <td>Niedersachsen</td>
-                            <td>-28.4</td>
-                          </tr>
-                          <tr class="hidden-row table-row content">
-                            <td>11</td>
-                            <td>Thüringen</td>
-                            <td>-27.0</td>
-                          </tr>
-                          <tr class="hidden-row table-row content">
-                            <td>12</td>
-                            <td>Sachsen-Anhalt</td>
-                            <td>-23.9</td>
-                          </tr>
-                          <tr class="hidden-row table-row content">
-                            <td>13</td>
-                            <td>Schleswig-Holstein</td>
-                            <td>-23.6</td>
-                          </tr>
-                          <tr class="hidden-row table-row content">
-                            <td>14</td>
-                            <td>Sachsen</td>
-                            <td>-22.9</td>
-                          </tr>
-                          <tr class="hidden-row table-row content">
-                            <td>15</td>
-                            <td>Brandenburg</td>
-                            <td>-18.1</td>
-                          </tr>
-                          <tr class="hidden-row table-row content">
-                            <td>16</td>
-                            <td>Mecklenburg-Vorpommern</td>
-                            <td>-14.6</td>
-                          </tr>
-                        </table>
+                        <table id="Ranking-table"></table>
                       </div>
                      <center style="height: 0px">
-                        <button class="button-rund" onclick="combinedFunction()"><span class="material-symbols-rounded" id="extend">keyboard_arrow_down
+                        <button class="button-rund" onclick="expandRanking()"><span class="material-symbols-rounded" id="extend">keyboard_arrow_down
                         </span></button>
                   </div>
                   <p id="hint">Mehr anzeigen</p> </center>
