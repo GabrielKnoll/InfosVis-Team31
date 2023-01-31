@@ -119,14 +119,14 @@ visibility: visible;
 }
 
 #wert {
- color:grey; 
+ color:#6E6E6E;
  border: none;
  text-align: inherit;
  padding: 0;
 }
 
 #wert2 {
-  color:grey; 
+  color:#6E6E6E;
   margin-top:-10px;
   display: inline-block;
   border: none;
@@ -134,14 +134,14 @@ visibility: visible;
  }
 
 #bundesland {
-  color:grey; 
+  color:#6E6E6E;
   border: none;
   text-align: inherit;
   padding: 0;
 }
 
 #rang {
-  color:grey; 
+  color:#6E6E6E;
   border: none;
   text-align: inherit;
   padding: 0;
@@ -359,7 +359,7 @@ html{
 }
 
 #hint {
-  color: grey; 
+  color: #6E6E6E;
   text-align: center; 
   margin-top: 5%;
 }

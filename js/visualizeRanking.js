@@ -174,7 +174,7 @@ for (var i = 0; i < data.length; i++) {
     cell2.innerHTML = data[i].bundesländer;
     cell3.innerHTML = data[i].vorjahresvergleich
     if (cell3.innerHTML < 0) {
-        cell3.style.color = "#de4667";  
+        cell3.style.color = "#ae2d4d";  
         }
     else {
         cell3.style.color = "#549AC5";
@@ -215,12 +215,12 @@ for (var i = 0; i < data.length; i++) {
     cell2.innerHTML = data[i].bundesländer;
     cell3.innerHTML = data[i].vorjahresvergleich
     if (cell3.innerHTML < 0) {
-        cell3.style.color = "#4292c4"; 
+        cell3.style.color = "#0c6ccd"; 
         //cell3.style.color ="#549AC5"; 
         }
     else {
         //cell3.style.color = "#e2062c";
-        cell3.style.color = "#de4667";
+        cell3.style.color = "#ae2d4d";
     }
 }
 addTableRowsClass()
@@ -257,7 +257,7 @@ for (var i = 0; i < data.length; i++) {
     cell2.innerHTML = data[i].bundesländer;
     cell3.innerHTML = data[i].vorjahresvergleich
     if (cell3.innerHTML < 0) {
-        cell3.style.color = "#de4667";  
+        cell3.style.color = "#ae2d4d";  
         }
     else {
         cell3.style.color = "#549AC5";
