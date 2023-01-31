@@ -114,7 +114,7 @@ function displayGraph(){
             selectedInfo = "Arbeitnehmerentwicklung";
             selectedCategory = Category.Employee.name;
           } else if (document.getElementById("radio3").checked) {
-            selectedInfo = "Insolvenzenentwicklung";
+            selectedInfo = "Insolvenzentwicklung";
             selectedCategory = Category.Insolvency.name;
           }
 

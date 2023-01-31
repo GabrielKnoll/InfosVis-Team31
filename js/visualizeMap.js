@@ -139,8 +139,13 @@ function clickPath(d) {
             selectedInfo = "Arbeitnehmerentwicklung";
             selectedCategory = Category.Employee.name;
         } else if (document.getElementById("radio3").checked) {
-            selectedInfo = "Insolvenzenentwicklung";
+            selectedInfo = "Insolvenzentwicklung";
             selectedCategory = Category.Insolvency.name;
+            var state = d.properties.name;
+            if(state=="Brandenburg" || state=="Hamburg"){
+                document.getElementById("indicator").innerHTML = '<span class="material-symbols-rounded" style="color: #9F4F5E; position: relative; top: 4px;" id="down">trending_up</span>';
+             }else{
+                document.getElementById("indicator").innerHTML = '<span class="material-symbols-rounded" style="color: #9F4F5E; position: relative; top: 4px;">trending_down</span>'}
         }
 
         //Einblenden des Graphs je nach Bundesland, Bsp: Schleswig-Holstein
@@ -151,8 +156,13 @@ function clickPath(d) {
         
         // change title
         var state = d.properties.name;
-        document.getElementById("unterueberschrift-text").innerHTML = `${selectedInfo} in ${state}`
-        
+        if(state=="Mecklenburg-Vorpommern"){
+            let stateV = "Mecklenburg-Vorp.";
+            document.getElementById("unterueberschrift-text").innerHTML = `${selectedInfo} in ${stateV}`
+        }else{
+            document.getElementById("unterueberschrift-text").innerHTML = `${selectedInfo} in ${state}`
+        }
+       
         // change diagram
         //TODO pass correct data based on selectedInfo
         updateChart(selectedCategory, state);
@@ -179,6 +189,7 @@ function clickPath(d) {
         else if (document.getElementById("radio3").checked) {
             document.getElementById('ranking').style.display = 'block';
             document.getElementById("card-graph").style.display = 'none';
+            
         }
 
     };
@@ -274,8 +285,8 @@ function changeEmployee() {
 
 
 function changeInsolvency() {
-    
     document.getElementById("wert").innerHTML = "<div id='wert2'>Insolvenzrückgang&nbsp;<span class='material-symbols-rounded' id='down'>trending_down</span></div>";
+
     document.getElementById("heatmapheader").innerHTML = "Insolvenzrückgang in % (pro Bundesland)";
 
     colorHeatmap(Category.Insolvency.name);
@@ -302,6 +313,8 @@ function changeInsolvency() {
     document.getElementById("ranking").style.display = 'block';
     document.getElementById("card-graph").style.display = 'none';
     disableButton();
+
+   
 }
 
 //Resetbutton-Funktionen
