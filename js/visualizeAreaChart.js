@@ -1,5 +1,6 @@
 var currentData = [{date: new Date("2020-01-01"), value: 99}];
 typeTick = "Error";
+maxValue = 0;
 // Set the dimensions and margins of the graph
 var margin_line = {top: 30, right: 30, bottom: 30, left: 30},
     width_line = window.innerWidth / 2 - 160 - margin_line.left - margin_line.right,
@@ -31,12 +32,15 @@ function createAreaGraph(data, category) {
   switch (category) {
     case "revenue":
       typeTick = "Mrd €";
+      maxValue = 185;
       break;
     case "employees":
-      typeTick = "Tsd €";
+      typeTick = "Tsd";
+      maxValue = 120;
       break;
     case "insolvency":
       typeTick = "Insolvenzen";
+      maxValue = 65;
       break;
   }
   svg_line.selectAll('g').remove();
@@ -69,7 +73,7 @@ function createAreaGraph(data, category) {
 
   // Add Y axis
   var y = d3.scaleLinear()
-  .domain([0, d3.max(data, d => +d.value) * 1.2])
+  .domain([0, maxValue * 1.2])
   .range([ height_line, 0 ]);
 
   const yAxis = d3.axisRight(y)
