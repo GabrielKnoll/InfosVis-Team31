@@ -135,9 +135,12 @@ function clickPath(d) {
         if (document.getElementById("radio1").checked) {
             selectedInfo = "Umsatzentwicklung";
             selectedCategory = Category.Revenue.name;
+            document.getElementById("indicator").innerHTML = '<span class="material-symbols-rounded" style="color: #9F4F5E; position: relative; top: 4px;">trending_down</span>'
+  
         } else if (document.getElementById("radio2").checked) {
             selectedInfo = "Arbeitnehmerentwicklung";
             selectedCategory = Category.Employee.name;
+            document.getElementById("indicator").innerHTML = '<span class="material-symbols-rounded" style="color: #9F4F5E; position: relative; top: 4px;">trending_down</span>'
         } else if (document.getElementById("radio3").checked) {
             selectedInfo = "Insolvenzentwicklung";
             selectedCategory = Category.Insolvency.name;
@@ -145,7 +148,7 @@ function clickPath(d) {
             if(state=="Brandenburg" || state=="Hamburg"){
                 document.getElementById("indicator").innerHTML = '<span class="material-symbols-rounded" style="color: #9F4F5E; position: relative; top: 4px;" id="down">trending_up</span>';
              }else{
-                document.getElementById("indicator").innerHTML = '<span class="material-symbols-rounded" style="color: #9F4F5E; position: relative; top: 4px;">trending_down</span>'}
+                document.getElementById("indicator").innerHTML = '<span class="material-symbols-rounded" style="color: #339DFF; position: relative; top: 4px;">trending_down</span>'}
         }
 
         //Einblenden des Graphs je nach Bundesland, Bsp: Schleswig-Holstein
