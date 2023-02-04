@@ -468,8 +468,10 @@ div.legende{
 .legendHeader{
   font-family: "Proximanova SemiBold";
   position: absolute;
-  min-width: 103px;
+  min-width: 107px;
   top: -50px;
+  left: -3px;
+
 }
 
 
