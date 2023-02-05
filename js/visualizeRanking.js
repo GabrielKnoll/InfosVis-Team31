@@ -114,7 +114,7 @@ function displayGraph(){
             selectedInfo = "Arbeitnehmerentwicklung";
             selectedCategory = Category.Employee.name;
           } else if (document.getElementById("radio3").checked) {
-            selectedInfo = "Insolvenzenentwicklung";
+            selectedInfo = "Insolvenzentwicklung";
             selectedCategory = Category.Insolvency.name;
           }
 
@@ -125,9 +125,15 @@ function displayGraph(){
           target.style.display = "block";
           target.style.transition = "opacity 0.2s ease-in-out";
 
-          updateChart(selectedCategory, bundesland)
+          updateChart(selectedCategory, bundesland);
+            selectStateInMap(bundesland);
         };
     }
+}
+
+function selectStateInMap(state) {
+    document.getElementById(state).classList.add("active");
+    document.getElementById("resetbutton").disabled = false;
 }
 
 // Show different tables, after selecting different categories (revenue, incolvencies, employees)

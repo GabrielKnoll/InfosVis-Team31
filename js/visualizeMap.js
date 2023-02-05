@@ -135,12 +135,20 @@ function clickPath(d) {
         if (document.getElementById("radio1").checked) {
             selectedInfo = "Umsatzentwicklung";
             selectedCategory = Category.Revenue.name;
+            document.getElementById("indicator").innerHTML = '<span class="material-symbols-rounded" style="color: #9F4F5E; position: relative; top: 4px;">trending_down</span>'
+  
         } else if (document.getElementById("radio2").checked) {
             selectedInfo = "Arbeitnehmerentwicklung";
             selectedCategory = Category.Employee.name;
+            document.getElementById("indicator").innerHTML = '<span class="material-symbols-rounded" style="color: #9F4F5E; position: relative; top: 4px;">trending_down</span>'
         } else if (document.getElementById("radio3").checked) {
-            selectedInfo = "Insolvenzenentwicklung";
+            selectedInfo = "Insolvenzentwicklung";
             selectedCategory = Category.Insolvency.name;
+            var state = d.properties.name;
+            if(state=="Brandenburg" || state=="Hamburg"){
+                document.getElementById("indicator").innerHTML = '<span class="material-symbols-rounded" style="color: #9F4F5E; position: relative; top: 4px;" id="down">trending_up</span>';
+             }else{
+                document.getElementById("indicator").innerHTML = '<span class="material-symbols-rounded" style="color: #339DFF; position: relative; top: 4px;">trending_down</span>'}
         }
 
         //Einblenden des Graphs je nach Bundesland, Bsp: Schleswig-Holstein
@@ -151,8 +159,13 @@ function clickPath(d) {
         
         // change title
         var state = d.properties.name;
-        document.getElementById("unterueberschrift-text").innerHTML = `${selectedInfo} in ${state}`
-        
+        if(state=="Mecklenburg-Vorpommern"){
+            let stateV = "Mecklenburg-Vorp.";
+            document.getElementById("unterueberschrift-text").innerHTML = `${selectedInfo} in ${stateV}`
+        }else{
+            document.getElementById("unterueberschrift-text").innerHTML = `${selectedInfo} in ${state}`
+        }
+       
         // change diagram
         //TODO pass correct data based on selectedInfo
         updateChart(selectedCategory, state);
@@ -179,6 +192,7 @@ function clickPath(d) {
         else if (document.getElementById("radio3").checked) {
             document.getElementById('ranking').style.display = 'block';
             document.getElementById("card-graph").style.display = 'none';
+            
         }
 
     };
@@ -222,10 +236,10 @@ function changeEuro() {
       setTimeout(function(){
           background.style.backgroundImage = "none";
           background.style.backgroundImage = "url('img/bg-euros2.png')";
-          background.classList.add("fade-in");
+         // background.classList.add("fade-in");
           setTimeout(function(){
-              ackground.classList.remove("remove-bg");
-            background.classList.remove("fade-in");
+           
+          //  background.classList.remove("fade-in");
           },1000);
           image1.src = "";
         },100);
@@ -257,10 +271,10 @@ function changeEmployee() {
       setTimeout(function(){
           background.style.backgroundImage = "none";
           background.style.backgroundImage = "url('img/bg-employees2.png')";
-          background.classList.add("fade-in");
+        //  background.classList.add("fade-in");
           setTimeout(function(){
-              ackground.classList.remove("remove-bg");
-            background.classList.remove("fade-in");
+            
+        //    background.classList.remove("fade-in");
           },1000);
           image2.src = "";
         },100);
@@ -274,8 +288,8 @@ function changeEmployee() {
 
 
 function changeInsolvency() {
-    
     document.getElementById("wert").innerHTML = "<div id='wert2'>Insolvenzrückgang&nbsp;<span class='material-symbols-rounded' id='down'>trending_down</span></div>";
+
     document.getElementById("heatmapheader").innerHTML = "Insolvenzrückgang in % (pro Bundesland)";
 
     colorHeatmap(Category.Insolvency.name);
@@ -286,10 +300,10 @@ function changeInsolvency() {
       setTimeout(function(){
           background.style.backgroundImage = "none";
           background.style.backgroundImage = "url('img/bg-insolvencies2.png')";
-          background.classList.add("fade-in");
+       //   background.classList.add("fade-in");
           setTimeout(function(){
-              ackground.classList.remove("remove-bg");
-            background.classList.remove("fade-in");
+        
+       //     background.classList.remove("fade-in");
           },1000);
           image3.src = "";
         },100);
@@ -302,6 +316,8 @@ function changeInsolvency() {
     document.getElementById("ranking").style.display = 'block';
     document.getElementById("card-graph").style.display = 'none';
     disableButton();
+
+   
 }
 
 //Resetbutton-Funktionen

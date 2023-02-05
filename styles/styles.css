@@ -184,7 +184,7 @@ visibility: visible;
 }
 
 .bundesland:hover{
-  stroke: white;
+  stroke: #94DAFF;
   stroke-linejoin: bevel;
   stroke-width: 2px;
   filter: brightness(1.1)!important;
@@ -396,7 +396,7 @@ html{
   height:15px;
   margin-bottom:-2px;
   margin-top:10px;
-  border: 1px solid white;
+  border: 1px solid #616363;
 }
 
 div.legende{
@@ -468,8 +468,10 @@ div.legende{
 .legendHeader{
   font-family: "Proximanova SemiBold";
   position: absolute;
-  min-width: 103px;
+  min-width: 107px;
   top: -50px;
+  left: -3px;
+
 }
 
 
@@ -904,6 +906,7 @@ table tr td:nth-child(3)::before {
 #ranking_div table tr td:nth-child(3)::after {
   content: "%";
   position: relative; 
+  
   /* Add some additional styling to the descending symbol */
 }
 
