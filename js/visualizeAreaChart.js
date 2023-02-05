@@ -31,11 +31,11 @@ function createAreaGraph(data, category) {
   currentData = data;
   switch (category) {
     case "revenue":
-      typeTick = "Mrd €";
+      typeTick = "Millarden €";
       maxValue = 185;
       break;
     case "employees":
-      typeTick = "Tsd";
+      typeTick = "Tausend Arbeitnehmer";
       maxValue = 120;
       break;
     case "insolvency":
