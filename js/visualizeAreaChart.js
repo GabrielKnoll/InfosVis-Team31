@@ -103,7 +103,7 @@ function createAreaGraph(data, category) {
   .attr("id", "area-gradient")
   .attr("gradientUnits", "userSpaceOnUse")
   .attr("x1", x(0))
-  .attr("y1", "50%")
+  .attr("y1", "80%")
   .attr("x2", x(0))
   .attr("y2", "00%")
   .selectAll("stop")
