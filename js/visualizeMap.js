@@ -236,10 +236,10 @@ function changeEuro() {
       setTimeout(function(){
           background.style.backgroundImage = "none";
           background.style.backgroundImage = "url('img/bg-euros2.png')";
-          background.classList.add("fade-in");
+         // background.classList.add("fade-in");
           setTimeout(function(){
-              ackground.classList.remove("remove-bg");
-            background.classList.remove("fade-in");
+           
+          //  background.classList.remove("fade-in");
           },1000);
           image1.src = "";
         },100);
@@ -271,10 +271,10 @@ function changeEmployee() {
       setTimeout(function(){
           background.style.backgroundImage = "none";
           background.style.backgroundImage = "url('img/bg-employees2.png')";
-          background.classList.add("fade-in");
+        //  background.classList.add("fade-in");
           setTimeout(function(){
-              ackground.classList.remove("remove-bg");
-            background.classList.remove("fade-in");
+            
+        //    background.classList.remove("fade-in");
           },1000);
           image2.src = "";
         },100);
@@ -300,10 +300,10 @@ function changeInsolvency() {
       setTimeout(function(){
           background.style.backgroundImage = "none";
           background.style.backgroundImage = "url('img/bg-insolvencies2.png')";
-          background.classList.add("fade-in");
+       //   background.classList.add("fade-in");
           setTimeout(function(){
-              ackground.classList.remove("remove-bg");
-            background.classList.remove("fade-in");
+        
+       //     background.classList.remove("fade-in");
           },1000);
           image3.src = "";
         },100);
