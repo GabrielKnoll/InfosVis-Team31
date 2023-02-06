@@ -246,7 +246,7 @@ function changeEuro() {
     
     //Umsatz-Ranking einblenden, Rest ausblenden
     document.getElementById("ranking_header_text").innerHTML = '<span class="material-symbols-rounded" style="color: darkgrey; font-size:19px; position: relative; top: 3px;">euro</span>&nbsp;Umsatzrückgang nach Bundesländer (in %)';
-    document.getElementById("legend-unit").innerHTML = "Umsätze in Euro";
+    document.getElementById("legend-unit").innerHTML = "Umsätze pro Monat";
 
     // TBD: Heatmap Datensätze, Graphen Datensätze, Ranking Datensätze auf style.display='none' setzen
     document.getElementById("ranking").style.display = 'block';
@@ -264,7 +264,7 @@ function changeEmployee() {
 
     //Korrektes Ranking einblenden, Rest ausblenden
     document.getElementById("ranking_header_text").innerHTML = '<span class="material-symbols-rounded" style="color:darkgrey;"id="arbeitnehmer">groups</span>&nbsp;Arbeitnehmerrückgang nach Bundesländer (in %)';
-    document.getElementById("legend-unit").innerHTML = "Anzahl Arbeitnehmende";
+    document.getElementById("legend-unit").innerHTML = "Anzahl Arbeitnehmer pro Monat";
    
       var image2 = new Image();
       image2.src="img/bg-employees2.png";
@@ -310,7 +310,7 @@ function changeInsolvency() {
     
     //Korrektes Ranking einblenden, Rest ausblenden
     document.getElementById("ranking_header_text").innerHTML = '<span class="material-symbols-rounded" id="insolvenzen" style="color: darkgrey;">apartment</span>&nbsp;Insolvenzrückgang nach Bundesländer (in %)';
-    document.getElementById("legend-unit").innerHTML = "Anzahl Insolvenzen";
+    document.getElementById("legend-unit").innerHTML = "Anzahl Insolvenzen pro Monat";
 
     //Graph Umsätze ausblenden
     document.getElementById("ranking").style.display = 'block';
